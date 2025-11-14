@@ -15,7 +15,6 @@ Forward Barrier:        0.002711 eV
                           2.711 meV
 
                           0.262 kJ/mol
-
   
 Reaction Energy (ΔE):   -0.001524 eV
 
@@ -139,7 +138,7 @@ Saddle point: image 7/11
 Saddle point saved: NEB_Results/saddle_translation.traj
 
 Trajectory saved: NEB_Results/neb_translation.traj
-\n✓ NEB summary appended to: NEB_Results/neb_summary.txt
+✓ NEB summary appended to: NEB_Results/neb_summary.txt
 {'barrier_type': 'translation', 'forward_barrier_fit': 0.002711328973696664, 'delta_E': -0.0015239715576171875, 'transition_state_energy': -161.48059993786313, 'trajectory': 'NEB_Results/neb_translation.traj', 'saddle_file': 'NEB_Results/saddle_translation.traj', 'saddle_index': 7, 'n_images': 12}
 
 ======================================================================
@@ -199,6 +198,60 @@ Saddle point: image 9/11
 Saddle point saved: NEB_Results/saddle_rotation.traj
 
 Trajectory saved: NEB_Results/neb_rotation.traj
-\n✓ NEB summary appended to: NEB_Results/neb_summary.txt
+✓ NEB summary appended to: NEB_Results/neb_summary.txt
 {'barrier_type': 'rotation', 'forward_barrier_fit': 0.0006192783946627149, 'delta_E': 0.00032806396484375, 'transition_state_energy': -161.48310397574687, 'trajectory': 'NEB_Results/neb_rotation.traj', 'saddle_file': 'NEB_Results/saddle_rotation.traj', 'saddle_index': 9, 'n_images': 12}
-(pynta_fairchem) [lekia.p@c3047 NEB]$ 
+
+
+================================================================================
+
+NEB Calculation Results
+
+Timestamp: 2025-11-13 22:54:41
+
+================================================================================
+
+
+Barrier Type: ROTATION
+
+--------------------------------------------------------------------------------
+
+
+Main Results:
+
+  Forward Barrier:        0.000525 eV
+
+                            0.525 meV
+                          0.051 kJ/mol
+
+
+  Reaction Energy (ΔE):   -0.001387 eV
+
+                          -1.387 meV
+
+
+  TS Absolute Energy:     -161.482873 eV
+
+
+Calculation Details:
+
+  Number of images:       12
+  Saddle point index:     5
+
+  Calculator:             FAIRChem
+
+
+Output Files:
+
+  Trajectory:             NEB_Results/neb_rotation.traj
+
+  Saddle point:           NEB_Results/saddle_rotation.traj
+
+
+For Hill's Hindered Translator/Rotor:
+
+  W_r (rotation barrier)    = 0.000525 eV
+                            = 0.525 meV
+
+
+================================================================================
+

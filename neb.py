@@ -900,7 +900,7 @@ def validate_screening_files(output_dir='Screening_Data'):
     from datetime import datetime
     
     if not os.path.exists(output_dir):
-        print(f"❌ Directory not found: {output_dir}")
+        print(f" Directory not found: {output_dir}")
         return None
     
     print(f"\n{'='*70}")
@@ -938,7 +938,7 @@ def validate_screening_files(output_dir='Screening_Data'):
             
         except Exception as e:
             validation['corrupt_files'].append({'file': pf, 'error': str(e)})
-            print(f"❌ CORRUPT PICKLE: {os.path.basename(pf)}")
+            print(f" CORRUPT PICKLE: {os.path.basename(pf)}")
             print(f"  Error: {e}")
     
     # Check JSON files
@@ -963,7 +963,7 @@ def validate_screening_files(output_dir='Screening_Data'):
             
         except json.JSONDecodeError as e:
             validation['corrupt_files'].append({'file': jf, 'error': f'JSON decode error: {e}'})
-            print(f"❌ CORRUPT JSON: {os.path.basename(jf)}")
+            print(f" CORRUPT JSON: {os.path.basename(jf)}")
             print(f"  Error: JSON decode failed - file may be truncated")
             
             # Try to show last few bytes
@@ -1089,7 +1089,7 @@ def clean_incomplete_files(output_dir='Screening_Data', dry_run=True):
                 os.remove(f)
                 print(f"    ✓ Deleted")
             except Exception as e:
-                print(f"    ❌ Error: {e}")
+                print(f"     Error: {e}")
     
     if dry_run:
         print(f"\n⚠ This was a DRY RUN - no files were deleted")
@@ -1133,7 +1133,7 @@ def recover_screening_files(output_dir='Screening_Data', timestamp=None):
         pickle_files = glob.glob(f"{output_dir}/screening_results_*.pkl")
     
     if not pickle_files:
-        print("❌ No pickle files found")
+        print(" No pickle files found")
         return 0
     
     recovered_count = 0
@@ -1149,7 +1149,7 @@ def recover_screening_files(output_dir='Screening_Data', timestamp=None):
                 screening_results = pickle.load(f)
             print(f"  ✓ Loaded pickle: {len(screening_results)} results")
         except Exception as e:
-            print(f"  ❌ Failed to load pickle: {e}")
+            print(f"   Failed to load pickle: {e}")
             continue
         
         # Regenerate JSON metadata
@@ -1203,7 +1203,7 @@ def recover_screening_files(output_dir='Screening_Data', timestamp=None):
                 os.replace(json_temp, json_file)
                 print(f"  ✓ Regenerated JSON: {json_file}")
             except Exception as e:
-                print(f"  ❌ Failed to generate JSON: {e}")
+                print(f"   Failed to generate JSON: {e}")
                 if os.path.exists(json_temp):
                     os.remove(json_temp)
         
@@ -1254,7 +1254,7 @@ def recover_screening_files(output_dir='Screening_Data', timestamp=None):
                 
                 print(f"  ✓ Generated summary: {summary_file}")
             except Exception as e:
-                print(f"  ❌ Failed to generate summary: {e}")
+                print(f"   Failed to generate summary: {e}")
         
         if json_recovered or summary_recovered:
             recovered_count += 1
@@ -1442,67 +1442,95 @@ def select_neb_endpoints_translation(site_best, screening_results):
             endpoint_final.to_dict() if hasattr(endpoint_final, 'to_dict') else endpoint_final)
 
 
-def select_neb_endpoints_rotation(site_best, screening_results, rotation_angle_diff=60):
+def select_neb_endpoints_rotation(site_best, screening_results, rotation_angle_diff=120, use_translation_initial=True):
     """
     Select rotation NEB endpoints from screening results
     
-    Strategy: Find the best site/height, then select two structures at that
-    SAME position but with DIFFERENT rotation angles from the screening.
+    Strategy: Find structures at the SAME position as translation initial/final,
+    then select two with DIFFERENT rotation angles.
     
     Args:
         site_best: DataFrame with best configuration info
         screening_results: List of screening result dicts
-        rotation_angle_diff: Desired rotation angle difference (default 60°)
+        rotation_angle_diff: Desired rotation angle difference (default 120°)
+        use_translation_initial: If True, use high-energy translation initial position
+                                 If False, use low-energy best position
     
     Returns:
         endpoint_rot_initial, endpoint_rot_final: Two endpoints with different rotations
     """
-    # Get best configuration parameters
     best_config = site_best.iloc[0]
     target_site_type = best_config['site_type']
     target_height = best_config['height']
-    best_position = np.array(best_config['site_position'][:2])
+    target_rotation = best_config['rotation']
     
-    print(f"\n{'='*70}")
-    print(f"Selecting Rotation NEB Endpoints from Screening")
-    print(f"{'='*70}")
-    print(f"Target site type: {target_site_type}")
-    print(f"Target height: {target_height:.3f} Å")
-    print(f"Target position: ({best_position[0]:.3f}, {best_position[1]:.3f})")
-    
-    # Filter: same site type, same height, converged, same position
+    # Filter: same site type, same height, converged
     df = pd.DataFrame(screening_results)
+    matches = df[
+        (df['site_type'] == target_site_type) &
+        (df['height'] == target_height) &
+        (df['rotation'] == target_rotation) &
+        (df['converged'] == True)
+    ].copy()
     
+    if use_translation_initial:
+        # Use the SAME position as translation initial (highest energy)
+        print("\n Using TRANSLATION INITIAL position for rotation NEB")
+        best_position = np.array(best_config['site_position'][:2])
+        
+        # Calculate distances and find highest energy at this site type/height
+        matches['distance'] = matches['site_position'].apply(
+            lambda pos: np.linalg.norm(np.array(pos[:2]) - best_position)
+        )
+        matches = matches[matches['distance'] > 0.1]  # Exclude best site itself
+        
+        if len(matches) < 1:
+            print(f"\n ERROR: No other sites found for translation initial!")
+            return None, None
+        
+        # Get highest energy configuration (translation initial)
+        translation_initial = matches.sort_values('total_energy', ascending=False).iloc[0]
+        reference_position = np.array(translation_initial['site_position'][:2])
+        
+        print(f"  Translation initial energy: {translation_initial['total_energy']:.6f} eV")
+        print(f"  Position: {reference_position}")
+        
+    else:
+        # Use best (lowest energy) position
+        print("\n Using BEST position for rotation NEB")
+        reference_position = np.array(best_config['site_position'][:2])
+    
+    # Now find ALL rotations at the reference position
     candidates = df[
         (df['site_type'] == target_site_type) &
         (df['height'] == target_height) &
         (df['converged'] == True)
     ].copy()
     
-    # Calculate distance to target position
+    # Calculate distance to reference position
     candidates['distance'] = candidates['site_position'].apply(
-        lambda pos: np.linalg.norm(np.array(pos[:2]) - best_position)
+        lambda pos: np.linalg.norm(np.array(pos[:2]) - reference_position)
     )
     
     # Keep only same position (within 0.1 Å)
     same_position = candidates[candidates['distance'] < 0.1].copy()
     
     if len(same_position) < 2:
-        print(f"\n❌ ERROR: Found only {len(same_position)} structure(s) at this position")
+        print(f"\n ERROR: Found only {len(same_position)} structure(s) at reference position")
         print(f"   Need at least 2 different rotation angles")
         print(f"   Available rotations at this site:")
         for _, row in same_position.iterrows():
             print(f"     Rotation: {row['rotation']:.1f}°, Energy: {row['total_energy']:.6f} eV")
         return None, None
     
-    print(f"\nFound {len(same_position)} structures at same position with different rotations:")
+    print(f"\nFound {len(same_position)} structures at reference position with different rotations:")
     
     # Group by rotation angle
     rotations = same_position.groupby('rotation').first().sort_index()
     print(f"\nAvailable rotation angles: {sorted(same_position['rotation'].unique())}")
     
     if len(rotations) < 2:
-        print(f"\n❌ ERROR: Only found {len(rotations)} unique rotation angle(s)")
+        print(f"\n ERROR: Only found {len(rotations)} unique rotation angle(s)")
         print(f"   Cannot create rotation NEB with identical angles")
         return None, None
     
@@ -1538,19 +1566,14 @@ def select_neb_endpoints_rotation(site_best, screening_results, rotation_angle_d
     E2 = endpoint_rot_final['total_energy']
     dE = abs(E2 - E1)
     
-    print(f"\nEndpoint energies:")
-    print(f"  {rot1:.1f}° rotation: {E1:.6f} eV")
-    print(f"  {rot2:.1f}° rotation: {E2:.6f} eV")
-    print(f"  Energy difference: {dE:.6f} eV ({dE*1000:.3f} meV)")
-    
     if dE < 1e-6:
-        print(f"\n⚠️  WARNING: Endpoints have IDENTICAL energies!")
+        print(f"\n  WARNING: Endpoints have IDENTICAL energies!")
         print(f"   This will cause NEB to fail. This shouldn't happen for different rotations.")
     elif dE < 1e-4:
-        print(f"\n⚠️  Note: Very small energy difference ({dE*1000:.3f} meV)")
+        print(f"\n  Note: Very small energy difference ({dE*1000:.3f} meV)")
         print(f"   Rotation barrier will be tiny (CH4 may be nearly symmetric)")
     else:
-        print(f"\n✓ GOOD: Significant energy difference found")
+        print(f"\n GOOD: Significant energy difference found ({dE*1000:.3f} meV)")
     
     print(f"✓ PURE ROTATION confirmed (same position, different angles)")
     print(f"{'='*70}")

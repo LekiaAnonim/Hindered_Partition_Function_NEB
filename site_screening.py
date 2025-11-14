@@ -19,17 +19,17 @@ screening_results = load_screening_results('/projects/westgroup/lekia.p/NEB/Scre
 
 df_sorted, site_best = best_site_results(screening_results)
 
-endpoint1_trans, endpoint2_trans = select_neb_endpoints_translation(
-        site_best, screening_results
-    )
+# endpoint1_trans, endpoint2_trans = select_neb_endpoints_translation(
+#         site_best, screening_results
+#     )
 
-images_trans, result_trans = prepare_neb_calculation(
-        endpoint1_trans, endpoint2_trans,
-        n_images=10,
-        barrier_type='translation'
-    )
+# images_trans, result_trans = prepare_neb_calculation(
+#         endpoint1_trans, endpoint2_trans,
+#         n_images=10,
+#         barrier_type='translation'
+#     )
 
-print(result_trans)
+# print(result_trans)
 
 endpoint1_rot, endpoint2_rot = select_neb_endpoints_rotation(
         site_best, screening_results, rotation_angle_diff=120
