@@ -794,7 +794,7 @@ def site_screening(slab, ads, center_xy='binding', use_all_sites=True, save_resu
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             
             # Save with pickle (includes ASE atoms objects) - use temp file for atomic write
-            pickle_file = f"{output_dir}/screening_results_{timestamp}.pkl"
+            pickle_file = f"{output_dir}/screening_results.pkl"
             pickle_temp = f"{pickle_file}.tmp"
             
             try:
@@ -916,13 +916,13 @@ def validate_screening_files(output_dir='Screening_Data'):
     }
     
     # Check pickle files
-    pickle_files = glob.glob(f"{output_dir}/screening_results_*.pkl")
+    pickle_files = glob.glob(f"{output_dir}/screening_results*.pkl")
     for pf in sorted(pickle_files):
         try:
             with open(pf, 'rb') as f:
                 data = pickle.load(f)
             size_mb = os.path.getsize(pf) / (1024 * 1024)
-            timestamp = os.path.basename(pf).replace('screening_results_', '').replace('.pkl', '')
+            timestamp = os.path.basename(pf).replace('screening_results', '').replace('.pkl', '')
             
             validation['pickle_files'].append({
                 'file': pf,
@@ -1056,9 +1056,9 @@ def clean_incomplete_files(output_dir='Screening_Data', dry_run=True):
     
     # Add files from incomplete sets
     for ts in incomplete_ts:
-        pattern_pickle = f"{output_dir}/screening_results_{ts}.pkl"
-        pattern_json = f"{output_dir}/screening_metadata_{ts}.json"
-        pattern_summary = f"{output_dir}/screening_summary_{ts}.txt"
+        pattern_pickle = f"{output_dir}/screening_results.pkl"
+        pattern_json = f"{output_dir}/screening_metadata.json"
+        pattern_summary = f"{output_dir}/screening_summary.txt"
         
         for pattern in [pattern_pickle, pattern_json, pattern_summary]:
             if os.path.exists(pattern):
@@ -1128,9 +1128,9 @@ def recover_screening_files(output_dir='Screening_Data', timestamp=None):
     
     # Find pickle files
     if timestamp:
-        pickle_files = [f"{output_dir}/screening_results_{timestamp}.pkl"]
+        pickle_files = [f"{output_dir}/screening_results.pkl"]
     else:
-        pickle_files = glob.glob(f"{output_dir}/screening_results_*.pkl")
+        pickle_files = glob.glob(f"{output_dir}/screening_results*.pkl")
     
     if not pickle_files:
         print(" No pickle files found")
@@ -1139,7 +1139,7 @@ def recover_screening_files(output_dir='Screening_Data', timestamp=None):
     recovered_count = 0
     
     for pickle_file in sorted(pickle_files):
-        ts = os.path.basename(pickle_file).replace('screening_results_', '').replace('.pkl', '')
+        ts = os.path.basename(pickle_file).replace('screening_results', '').replace('.pkl', '')
         
         print(f"Processing timestamp: {ts}")
         
@@ -1287,7 +1287,7 @@ def load_screening_results(filepath=None, output_dir='Screening_Data'):
         screening_results = load_screening_results()
         
         # Load specific file
-        screening_results = load_screening_results('Screening_Data/screening_results_20231111_143022.pkl')
+        screening_results = load_screening_results('Screening_Data/screening_results.pkl')
     """
     import pickle
     import glob
@@ -1295,7 +1295,7 @@ def load_screening_results(filepath=None, output_dir='Screening_Data'):
     # If no filepath provided, find most recent file
     if filepath is None:
         # Look for pickle files in output_dir
-        pattern = f"{output_dir}/screening_results_*.pkl"
+        pattern = f"{output_dir}/screening_results*.pkl"
         files = glob.glob(pattern)
         
         if not files:
@@ -1343,7 +1343,7 @@ def list_screening_files(output_dir='Screening_Data'):
     import glob
     from datetime import datetime
     
-    pattern = f"{output_dir}/screening_results_*.pkl"
+    pattern = f"{output_dir}/screening_results*.pkl"
     files = glob.glob(pattern)
     
     if not files:
