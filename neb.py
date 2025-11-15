@@ -1147,7 +1147,7 @@ def recover_screening_files(output_dir='Screening_Data', timestamp=None):
         try:
             with open(pickle_file, 'rb') as f:
                 screening_results = pickle.load(f)
-            print(f"  ✓ Loaded pickle: {len(screening_results)} results")
+            print(f"   Loaded pickle: {len(screening_results)} results")
         except Exception as e:
             print(f"   Failed to load pickle: {e}")
             continue
@@ -1159,13 +1159,13 @@ def recover_screening_files(output_dir='Screening_Data', timestamp=None):
             try:
                 with open(json_file, 'r') as f:
                     json.load(f)
-                print(f"  ✓ JSON already exists and is valid")
+                print(f"   JSON already exists and is valid")
                 json_recovered = False
             except:
-                print(f"  ⚠ JSON exists but is corrupt - regenerating...")
+                print(f"   JSON exists but is corrupt - regenerating...")
                 json_recovered = True
         else:
-            print(f"  ⚠ JSON missing - generating...")
+            print(f"   JSON missing - generating...")
             json_recovered = True
         
         if json_recovered:
@@ -1201,7 +1201,7 @@ def recover_screening_files(output_dir='Screening_Data', timestamp=None):
                 with open(json_temp, 'w') as f:
                     json.dump(metadata, f, indent=2)
                 os.replace(json_temp, json_file)
-                print(f"  ✓ Regenerated JSON: {json_file}")
+                print(f"   Regenerated JSON: {json_file}")
             except Exception as e:
                 print(f"   Failed to generate JSON: {e}")
                 if os.path.exists(json_temp):
@@ -1210,10 +1210,10 @@ def recover_screening_files(output_dir='Screening_Data', timestamp=None):
         # Regenerate summary
         summary_file = f"{output_dir}/screening_summary_{ts}.txt"
         if os.path.exists(summary_file):
-            print(f"  ✓ Summary already exists")
+            print(f"   Summary already exists")
             summary_recovered = False
         else:
-            print(f"  ⚠ Summary missing - generating...")
+            print(f"   Summary missing - generating...")
             summary_recovered = True
         
         if summary_recovered:
@@ -1252,18 +1252,18 @@ def recover_screening_files(output_dir='Screening_Data', timestamp=None):
                                 f.write(f"    Max: {max(site_energies):.6f} eV\n")
                                 f.write(f"    Mean: {np.mean(site_energies):.6f} eV\n")
                 
-                print(f"  ✓ Generated summary: {summary_file}")
+                print(f"   Generated summary: {summary_file}")
             except Exception as e:
                 print(f"   Failed to generate summary: {e}")
         
         if json_recovered or summary_recovered:
             recovered_count += 1
-            print(f"  ✓ Recovery complete for {ts}\n")
+            print(f"   Recovery complete for {ts}\n")
         else:
-            print(f"  ✓ No recovery needed for {ts}\n")
+            print(f"   No recovery needed for {ts}\n")
     
     print(f"{'='*70}")
-    print(f"✓ Recovery complete!")
+    print(f" Recovery complete!")
     print(f"  Timestamps processed: {len(pickle_files)}")
     print(f"  Timestamps recovered: {recovered_count}")
     print(f"{'='*70}\n")
@@ -1314,7 +1314,7 @@ def load_screening_results(filepath=None, output_dir='Screening_Data'):
         screening_results = pickle.load(f)
     
     print(f"\n{'='*70}")
-    print(f"✓ Screening results loaded successfully!")
+    print(f" Screening results loaded successfully!")
     print(f"  File: {filepath}")
     print(f"  Total configurations: {len(screening_results)}")
     
@@ -1670,16 +1670,12 @@ def prepare_neb_calculation(endpoint1, endpoint2, n_images=10, barrier_type='tra
     neb = NEB(images, climb=True, allow_shared_calculator=False)
     neb.interpolate()
     
-    print("Assigning individual calculators to intermediate images...")
     # Assign calculators to all intermediate images (not endpoints)
     for i, image in enumerate(images[1:-1], 1):  # Skip first and last
         predictor = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
         calc_individual = FAIRChemCalculator(predictor, task_name="oc20")
         image.calc = calc_individual
-        if i % 2 == 0:  # Print progress for every other image
-            print(f"  Assigned calculator to image {i}/{n_images}")
     
-    print(f"✓ All {len(images)} images have separate calculator instances")
     
     # Optimize
     slab_dir = 'NEB_Results'
@@ -1694,7 +1690,7 @@ def prepare_neb_calculation(endpoint1, endpoint2, n_images=10, barrier_type='tra
     optimizer = FIRE(neb, trajectory=traj_file, logfile=log_file)
     optimizer.run(fmax=0.05)
     
-    print("\n✓ NEB optimization completed!")
+    print("\n NEB optimization completed!")
     
     # Analyze using NEBTools
     from ase.mep import NEBTools  # Fixed import path
@@ -1709,7 +1705,7 @@ def prepare_neb_calculation(endpoint1, endpoint2, n_images=10, barrier_type='tra
         print(f"  Forward barrier (fitted): {barrier_fwd_fit:.6f} eV ({barrier_fwd_fit*1000:.3f} meV)")
         print(f"  Reaction energy (ΔE): {delta_E_fit:.6f} eV")
     except Exception as e:
-        print(f"  ⚠ Warning: Could not fit barrier curve: {e}")
+        print(f" Warning: Could not fit barrier curve: {e}")
         barrier_fwd_fit = None
         delta_E_fit = None
     
@@ -1718,7 +1714,7 @@ def prepare_neb_calculation(endpoint1, endpoint2, n_images=10, barrier_type='tra
         E_ts_abs, _ = nebtools.get_barrier(fit=True, raw=True)
         print(f"  TS absolute energy: {E_ts_abs:.6f} eV")
     except Exception as e:
-        print(f"  ⚠ Warning: Could not get TS energy: {e}")
+        print(f"   Warning: Could not get TS energy: {e}")
         E_ts_abs = None
     
     # Plot band structure
@@ -1776,9 +1772,6 @@ def check_neb_endpoints(endpoint1, endpoint2, name="endpoints"):
     Returns:
         dict with validation results
     """
-    print(f"\n{'='*70}")
-    print(f"Validating NEB Endpoints: {name}")
-    print(f"{'='*70}\n")
     
     results = {
         'valid': True,
@@ -1790,7 +1783,7 @@ def check_neb_endpoints(endpoint1, endpoint2, name="endpoints"):
     if len(endpoint1) != len(endpoint2):
         results['valid'] = False
         results['issues'].append(f"Different number of atoms: {len(endpoint1)} vs {len(endpoint2)}")
-        print(f"❌ CRITICAL: Different number of atoms!")
+        print(f" CRITICAL: Different number of atoms!")
         return results
     
     print(f"✓ Same number of atoms: {len(endpoint1)}")
@@ -1801,7 +1794,7 @@ def check_neb_endpoints(endpoint1, endpoint2, name="endpoints"):
     if symbols1 != symbols2:
         results['valid'] = False
         results['issues'].append("Different atomic species or order")
-        print(f"❌ CRITICAL: Atomic species mismatch!")
+        print(f" CRITICAL: Atomic species mismatch!")
         return results
     
     print(f"✓ Same atomic species and order")
@@ -1813,16 +1806,16 @@ def check_neb_endpoints(endpoint1, endpoint2, name="endpoints"):
     if np.any(np.isnan(pos1)) or np.any(np.isinf(pos1)):
         results['valid'] = False
         results['issues'].append("Endpoint 1 has NaN or Inf positions")
-        print(f"❌ CRITICAL: Endpoint 1 has invalid positions (NaN/Inf)!")
+        print(f" CRITICAL: Endpoint 1 has invalid positions (NaN/Inf)!")
         return results
     
     if np.any(np.isnan(pos2)) or np.any(np.isinf(pos2)):
         results['valid'] = False
         results['issues'].append("Endpoint 2 has NaN or Inf positions")
-        print(f"❌ CRITICAL: Endpoint 2 has invalid positions (NaN/Inf)!")
+        print(f" CRITICAL: Endpoint 2 has invalid positions (NaN/Inf)!")
         return results
     
-    print(f"✓ No NaN or Inf in positions")
+    print(f" No NaN or Inf in positions")
     
     # Check 4: Calculate RMSD between endpoints
     rmsd = np.sqrt(np.mean((pos1 - pos2)**2))
@@ -1834,15 +1827,15 @@ def check_neb_endpoints(endpoint1, endpoint2, name="endpoints"):
     
     if rmsd < 0.01:
         results['warnings'].append(f"Very small RMSD ({rmsd:.4f} Å) - endpoints might be too similar")
-        print(f"  ⚠ WARNING: Very small RMSD - NEB might not be meaningful")
+        print(f"   WARNING: Very small RMSD - NEB might not be meaningful")
     elif rmsd < 0.1:
         results['warnings'].append(f"Small RMSD ({rmsd:.4f} Å) - barrier might be very small")
-        print(f"  ⚠ WARNING: Small RMSD - expect small barrier")
+        print(f"   WARNING: Small RMSD - expect small barrier")
     elif rmsd > 10.0:
         results['warnings'].append(f"Large RMSD ({rmsd:.4f} Å) - may need more images")
-        print(f"  ⚠ WARNING: Large RMSD - consider using more NEB images")
+        print(f"   WARNING: Large RMSD - consider using more NEB images")
     else:
-        print(f"  ✓ RMSD looks reasonable for NEB")
+        print(f"   RMSD looks reasonable for NEB")
     
     # Check 5: Check cell similarity
     cell1 = endpoint1.get_cell()
@@ -1854,23 +1847,23 @@ def check_neb_endpoints(endpoint1, endpoint2, name="endpoints"):
     
     if cell_diff > 0.01:
         results['warnings'].append(f"Cells differ ({cell_diff:.4f} Å)")
-        print(f"  ⚠ WARNING: Different unit cells - this might cause issues")
+        print(f"   WARNING: Different unit cells - this might cause issues")
     else:
-        print(f"  ✓ Cells are the same")
+        print(f"   Cells are the same")
     
     # Check 6: Energy check (if calculators present)
     try:
         E1 = endpoint1.get_potential_energy()
         print(f"\nEndpoint 1 energy: {E1:.6f} eV")
     except:
-        print(f"\n⚠ Endpoint 1 has no calculated energy")
+        print(f"\n Endpoint 1 has no calculated energy")
         results['warnings'].append("Endpoint 1 missing energy")
     
     try:
         E2 = endpoint2.get_potential_energy()
         print(f"Endpoint 2 energy: {E2:.6f} eV")
     except:
-        print(f"⚠ Endpoint 2 has no calculated energy")
+        print(f" Endpoint 2 has no calculated energy")
         results['warnings'].append("Endpoint 2 missing energy")
     
     try:
@@ -1879,7 +1872,7 @@ def check_neb_endpoints(endpoint1, endpoint2, name="endpoints"):
         
         if dE < 0.001:  # 1 meV
             results['warnings'].append(f"Very small energy difference ({dE*1000:.3f} meV)")
-            print(f"  ⚠ WARNING: Very small energy difference - barrier will be tiny")
+            print(f"   WARNING: Very small energy difference - barrier will be tiny")
     except:
         pass
     
@@ -1896,18 +1889,16 @@ def check_neb_endpoints(endpoint1, endpoint2, name="endpoints"):
                 print(f"    Atom {idx} ({symbols1[idx]}): {displacements[idx]:.4f} Å")
     else:
         results['warnings'].append("No atoms moving significantly")
-        print(f"  ⚠ WARNING: No atoms move > 0.1 Å")
+        print(f"   WARNING: No atoms move > 0.1 Å")
     
     # Summary
-    print(f"\n{'='*70}")
     if results['valid'] and len(results['issues']) == 0:
         print(f"✓ Endpoints are VALID for NEB")
         if len(results['warnings']) > 0:
-            print(f"⚠ {len(results['warnings'])} warning(s) - see details above")
+            print(f" {len(results['warnings'])} warning(s) - see details above")
     else:
-        print(f"❌ Endpoints are INVALID for NEB")
+        print(f" Endpoints are INVALID for NEB")
         print(f"   Issues: {len(results['issues'])}")
-    print(f"{'='*70}\n")
     
     results['rmsd'] = rmsd
     results['max_displacement'] = max_displacement
@@ -1915,86 +1906,6 @@ def check_neb_endpoints(endpoint1, endpoint2, name="endpoints"):
     
     return results
 
-
-def test_neb_interpolation(endpoint1, endpoint2, n_images=5):
-    """
-    Test linear interpolation between endpoints to find where NaN appears
-    
-    Args:
-        endpoint1, endpoint2: Endpoint structures
-        n_images: Number of intermediate images to create
-    
-    Returns:
-        images: List of interpolated structures (or None if failed)
-    """
-    from ase.neb import NEB
-    
-    print(f"\n{'='*70}")
-    print(f"Testing NEB Interpolation ({n_images} images)")
-    print(f"{'='*70}\n")
-    
-    # Create copies
-    images = [endpoint1.copy()]
-    for i in range(n_images - 2):
-        images.append(endpoint1.copy())
-    images.append(endpoint2.copy())
-    
-    print(f"Created {len(images)} images (including endpoints)")
-    
-    # Check endpoints before interpolation
-    print(f"\nEndpoint 1 positions check:")
-    pos1 = endpoint1.get_positions()
-    print(f"  Min: {np.min(pos1, axis=0)}")
-    print(f"  Max: {np.max(pos1, axis=0)}")
-    print(f"  Has NaN: {np.any(np.isnan(pos1))}")
-    print(f"  Has Inf: {np.any(np.isinf(pos1))}")
-    
-    print(f"\nEndpoint 2 positions check:")
-    pos2 = endpoint2.get_positions()
-    print(f"  Min: {np.min(pos2, axis=0)}")
-    print(f"  Max: {np.max(pos2, axis=0)}")
-    print(f"  Has NaN: {np.any(np.isnan(pos2))}")
-    print(f"  Has Inf: {np.any(np.isinf(pos2))}")
-    
-    # Try linear interpolation
-    try:
-        print(f"\nAttempting linear interpolation...")
-        neb = NEB(images)
-        neb.interpolate(method='linear')
-        print(f"✓ Linear interpolation successful!")
-        
-        # Check each image for NaN
-        print(f"\nChecking interpolated images:")
-        all_valid = True
-        for i, img in enumerate(images):
-            pos = img.get_positions()
-            has_nan = np.any(np.isnan(pos))
-            has_inf = np.any(np.isinf(pos))
-            
-            if has_nan or has_inf:
-                print(f"  Image {i}: ❌ Has NaN={has_nan}, Inf={has_inf}")
-                all_valid = False
-                # Show first few positions
-                print(f"    First 3 positions: {pos[:3]}")
-            else:
-                print(f"  Image {i}: ✓ Valid")
-        
-        if all_valid:
-            print(f"\n✓ All interpolated images are valid!")
-            return images
-        else:
-            print(f"\n❌ Some interpolated images have NaN/Inf!")
-            return None
-            
-    except Exception as e:
-        print(f"❌ Interpolation failed: {e}")
-        import traceback
-        traceback.print_exc()
-        return None
-    
-    print(f"{'='*70}\n")
-    
-    return images
 
 
 def save_neb_summary(result, summary_file='NEB_Results/neb_summary.txt', append=True):
@@ -2015,65 +1926,65 @@ def save_neb_summary(result, summary_file='NEB_Results/neb_summary.txt', append=
     
     with open(summary_file, mode) as f:
         # Header with timestamp
-        f.write("="*80 + "\\n")
-        f.write(f"NEB Calculation Results\\n")
-        f.write(f"Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\\n")
-        f.write("="*80 + "\\n\\n")
+        f.write("="*80 + " \n")
+        f.write(f"NEB Calculation Results \n")
+        f.write(f"Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} \n")
+        f.write("="*80 + " \n \n")
         
         # Barrier type
         barrier_type = result.get('barrier_type', 'unknown')
-        f.write(f"Barrier Type: {barrier_type.upper()}\\n")
-        f.write("-"*80 + "\\n\\n")
+        f.write(f"Barrier Type: {barrier_type.upper()} \n")
+        f.write("-"*80 + "\n \n")
         
         # Main results
-        f.write("Main Results:\\n")
+        f.write("Main Results: \n")
         
         if result.get('forward_barrier_fit') is not None:
             barrier_eV = result['forward_barrier_fit']
             barrier_meV = barrier_eV * 1000
             barrier_kJ_mol = barrier_eV * 96.485  # Convert eV to kJ/mol
-            f.write(f"  Forward Barrier:        {barrier_eV:.6f} eV\\n")
-            f.write(f"                          {barrier_meV:.3f} meV\\n")
-            f.write(f"                          {barrier_kJ_mol:.3f} kJ/mol\\n")
+            f.write(f"  Forward Barrier:        {barrier_eV:.6f} eV \n")
+            f.write(f"                          {barrier_meV:.3f} meV \n")
+            f.write(f"                          {barrier_kJ_mol:.3f} kJ/mol \n")
         else:
-            f.write(f"  Forward Barrier:        N/A\\n")
+            f.write(f"  Forward Barrier:        N/A\n")
         
         if result.get('delta_E') is not None:
             delta_E_eV = result['delta_E']
             delta_E_meV = delta_E_eV * 1000
-            f.write(f"\\n  Reaction Energy (ΔE):   {delta_E_eV:.6f} eV\\n")
-            f.write(f"                          {delta_E_meV:.3f} meV\\n")
+            f.write(f"\n  Reaction Energy (ΔE):   {delta_E_eV:.6f} eV \n")
+            f.write(f"                          {delta_E_meV:.3f} meV \n")
         
         if result.get('transition_state_energy') is not None:
-            f.write(f"\\n  TS Absolute Energy:     {result['transition_state_energy']:.6f} eV\\n")
+            f.write(f" \n  TS Absolute Energy:     {result['transition_state_energy']:.6f} eV \n")
         
         # Calculation details
-        f.write(f"\\nCalculation Details:\\n")
-        f.write(f"  Number of images:       {result.get('n_images', 'N/A')}\\n")
-        f.write(f"  Saddle point index:     {result.get('saddle_index', 'N/A')}\\n")
+        f.write(f"\n Calculation Details: \n")
+        f.write(f"  Number of images:       {result.get('n_images', 'N/A')} \n")
+        f.write(f"  Saddle point index:     {result.get('saddle_index', 'N/A')} \n")
         
         calculator = result.get('calculator', 'FAIRChem')
-        f.write(f"  Calculator:             {calculator}\\n")
+        f.write(f"  Calculator:             {calculator} \n")
         
         # Files
-        f.write(f"\\nOutput Files:\\n")
+        f.write(f"\n Output Files: \n")
         if result.get('trajectory'):
-            f.write(f"  Trajectory:             {result['trajectory']}\\n")
+            f.write(f"  Trajectory:             {result['trajectory']} \n")
         if result.get('saddle_file'):
-            f.write(f"  Saddle point:           {result['saddle_file']}\\n")
+            f.write(f"  Saddle point:           {result['saddle_file']} \n")
         if result.get('plot_file'):
-            f.write(f"  Band plot:              {result['plot_file']}\\n")
+            f.write(f"  Band plot:              {result['plot_file']} \n")
         
         # Partition function values
-        f.write(f"\\nFor Hill's Hindered Translator/Rotor:\\n")
+        f.write(f"\n For Hill's Hindered Translator/Rotor:\n")
         if barrier_type == 'translation':
-            f.write(f"  W_x (translation barrier) = {result.get('forward_barrier_fit', 0):.6f} eV\\n")
-            f.write(f"                            = {result.get('forward_barrier_fit', 0)*1000:.3f} meV\\n")
+            f.write(f"  W_x (translation barrier) = {result.get('forward_barrier_fit', 0):.6f} eV \n")
+            f.write(f"                            = {result.get('forward_barrier_fit', 0)*1000:.3f} meV \n")
         elif barrier_type == 'rotation':
-            f.write(f"  W_r (rotation barrier)    = {result.get('forward_barrier_fit', 0):.6f} eV\\n")
-            f.write(f"                            = {result.get('forward_barrier_fit', 0)*1000:.3f} meV\\n")
+            f.write(f"  W_r (rotation barrier)    = {result.get('forward_barrier_fit', 0):.6f} eV \n")
+            f.write(f"                            = {result.get('forward_barrier_fit', 0)*1000:.3f} meV \n")
         
-        f.write(f"\\n" + "="*80 + "\\n\\n")
+        f.write(f"\n" + "="*80 + "\n \n")
     
-    print(f"\\n✓ NEB summary appended to: {summary_file}")
+    print(f"\n NEB summary appended to: {summary_file}")
     return summary_file
