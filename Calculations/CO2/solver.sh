@@ -5,5 +5,5 @@
 
 deactivate
 conda deactivate
-conda activate pynta_fairchem
-python /projects/westgroup/lekia.p/NEB/Calculations/CO2/solver.py
+conda activate mace_dev
+python /projects/westgroup/akinyemi.az/Hindered_/Hindered_Partition_Function_NEB/Calculations/NH3/solver.py

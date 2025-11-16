@@ -3,9 +3,10 @@
 #SBATCH --partition=west
 #SBATCH --cpus-per-task=16
 
-sbatch /projects/westgroup/lekia.p/NEB/Calculations/CH2/solver.sh
-sbatch /projects/westgroup/lekia.p/NEB/Calculations/CH4/solver.sh
-sbatch /projects/westgroup/lekia.p/NEB/Calculations/CH3/solver.sh
-sbatch /projects/westgroup/lekia.p/NEB/Calculations/CO2/solver.sh
-sbatch /projects/westgroup/lekia.p/NEB/Calculations/OH/solver.sh
-sbatch /projects/westgroup/lekia.p/NEB/Calculations/NH3/solver.sh
+sbatch Calculations/CH2/solver.sh
+sbatch Calculations/CH4/solver.sh
+sbatch Calculations/CH3/solver.sh
+sbatch Calculations/CO/solver.sh
+sbatch Calculations/CO2/solver.sh
+sbatch Calculations/OH/solver.sh
+sbatch Calculations/NH3/solver.sh

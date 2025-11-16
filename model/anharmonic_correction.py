@@ -275,3 +275,7 @@ dA_x_to_q = compute_anharmonic_correction(
 A1 = calculate_anharmonic_free_energy(ref_energy, dA_x_to_q)
 print("Anharmonic free energy A1:", A1)
 
+# Step 5: Calculate the hindered partition function
+
+# Step 6: Calculate Thermodynamics.
+

@@ -25,6 +25,15 @@ from ase import io
 from ase.mep import NEB
 from ase.optimize import MDMin
 import matplotlib.pyplot as plt
+
+# Import Fairchem Calculator
+# from fairchem.core.calculate import pretrained_mlip
+# from fairchem.core.calculate.ase_calculator import FAIRChemCalculator
+
+# Import MACE Calculator
+from mace.calculators import mace_mp
+
+
 #!/usr/bin/env python3
 
 vacuum = 20 # Angstrom
@@ -34,11 +43,10 @@ lattice_constant = 3.97 # Angstrom
 surface_type = 'fcc111'
 metal = 'Pt'
 
-from fairchem.core.calculate import pretrained_mlip
-from fairchem.core.calculate.ase_calculator import FAIRChemCalculator
+# predictor = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
+# calc = FAIRChemCalculator(predictor, task_name="oc20")
 
-predictor = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
-calc = FAIRChemCalculator(predictor, task_name="oc20")
+calc = mace_mp(model="medium", device='cpu')
 
 # ase_calculator = EMT()
 ase_calculator = calc
@@ -1644,13 +1652,15 @@ def prepare_neb_calculation(endpoint1, endpoint2, n_images=10, barrier_type='tra
     print("\nSetting up calculators for NEB...")
     
     # Create separate calculator for initial endpoint
-    predictor_initial = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
-    calc_initial = FAIRChemCalculator(predictor_initial, task_name="oc20")
+    #predictor_initial = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
+    # calc_initial = FAIRChemCalculator(predictor_initial, task_name="oc20")
+    calc_initial = mace_mp(model="medium", device='cpu')
     initial.calc = calc_initial
     
     # Create separate calculator for final endpoint
-    predictor_final = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
-    calc_final = FAIRChemCalculator(predictor_final, task_name="oc20")
+    #predictor_final = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
+    #calc_final = FAIRChemCalculator(predictor_final, task_name="oc20")
+    calc_final = mace_mp(model="medium", device='cpu')
     final.calc = calc_final
     
     # Calculate endpoint energies (important for barrier calculation later)
@@ -1672,8 +1682,9 @@ def prepare_neb_calculation(endpoint1, endpoint2, n_images=10, barrier_type='tra
     
     # Assign calculators to all intermediate images (not endpoints)
     for i, image in enumerate(images[1:-1], 1):  # Skip first and last
-        predictor = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
-        calc_individual = FAIRChemCalculator(predictor, task_name="oc20")
+        #predictor = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
+        #calc_individual = FAIRChemCalculator(predictor, task_name="oc20")
+        calc_individual = mace_mp(model="medium", device='cpu')
         image.calc = calc_individual
     
     

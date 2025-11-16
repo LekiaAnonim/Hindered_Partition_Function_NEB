@@ -1,10 +1,10 @@
 from neb import *
 
-mol = init_molecule('CH4')
+mol = init_molecule('CH2')
 opt_mol = opt_molecule(mol)
 slab = opt_slab()
 
-ads = opt_molecule(init_molecule('CH4'))
+ads = opt_molecule(init_molecule('CH2'))
 screening_results = site_screening(slab, ads, center_xy='binding', use_all_sites=True)
 
 # Validate all screening files
