@@ -90,7 +90,6 @@ ref_energy= -123.456
 hessian_x = "/projects/westgroup/akinyemi.az/Pynta/project_pynta/pynta/pynta/testing_data/Ru0001_fischer_tropsch_3_17_25/TS0/4/vib.json_vib.json"
 
 import json
-
 with open(hessian_x, 'r') as file:
     data = json.load(file)
 

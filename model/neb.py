@@ -1668,11 +1668,17 @@ def prepare_neb_calculation(endpoint1, endpoint2, n_images=10, barrier_type='tra
     print(f"Final structure energy: {final.get_potential_energy():.6f} eV")
     
     # Create image list
-    images = [initial]
+    # images = [initial]
+    # for i in range(n_images):
+    #     image = initial.copy()
+    #     images.append(image)
+    # images.append(final)
+
+    # Correct ASE NEB image construction # Azeez
+    images = [initial.copy()]
     for i in range(n_images):
-        image = initial.copy()
-        images.append(image)
-    images.append(final)
+        images.append(initial.copy())
+    images.append(final.copy())
     
     print(f"Created {len(images)} images (including 2 endpoints)")
     
