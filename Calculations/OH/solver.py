@@ -1,10 +1,14 @@
-from neb import *
+import sys
+import os
+parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, parent_dir)
+from model.neb import *
 
-mol = init_molecule('CH4')
+mol = init_molecule('OH')
 opt_mol = opt_molecule(mol)
 slab = opt_slab()
 
-ads = opt_molecule(init_molecule('CH4'))
+ads = opt_molecule(init_molecule('OH'))
 screening_results = site_screening(slab, ads, center_xy='binding', use_all_sites=True)
 
 # Validate all screening files

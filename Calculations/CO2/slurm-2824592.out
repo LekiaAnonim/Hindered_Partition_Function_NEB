@@ -1,0 +1,31 @@
+/home/akinyemi.az/miniforge3/envs/mace_dev/lib/python3.9/site-packages/torch/cuda/__init__.py:54: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Number of atoms: 4
+      Step     Time          Energy          fmax
+BFGS:    0 13:26:13      -19.509020        0.080325
+BFGS:    1 13:26:14      -19.509218        0.017741
+/home/akinyemi.az/miniforge3/envs/mace_dev/lib/python3.9/site-packages/ase/io/extxyz.py:311: UserWarning: Skipping unhashable information adsorbate_info
+Clean slab energy: -153.115 eV
+
+      Step     Time          Energy          fmax
+BFGS:    0 13:26:14     -153.114517        0.003688
+Number of atoms: 4
+      Step     Time          Energy          fmax
+BFGS:    0 13:26:14      -19.509020        0.080325
+BFGS:    1 13:26:15      -19.509218        0.017741
+Clean slab energy: -153.115 eV
+
+      Step     Time          Energy          fmax
+BFGS:    0 13:26:15     -153.114517        0.003688
+Total number of sites found: 54
+Site density: 8.79e+19 molecules/m^2
+
+Unique single sites: 4
+Unique site pairs: 73
+Site 3: ontop at position [ 7.0180348   2.43111857 24.58416114]
+      Step     Time          Energy          fmax
+BFGS:    0 13:26:15      -19.509218        0.017741
+/home/akinyemi.az/miniforge3/envs/mace_dev/lib/python3.9/site-packages/ase/io/extxyz.py:311: UserWarning: Skipping unhashable information adsorbate_info
+slurmstepd: error: *** JOB 2824592 ON c0628 CANCELLED AT 2025-11-18T17:26:10 DUE TO TIME LIMIT ***

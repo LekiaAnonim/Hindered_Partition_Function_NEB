@@ -1,0 +1,33 @@
+================================================================================ 
+NEB Calculation Results 
+Timestamp: 2025-11-18 20:21:07 
+================================================================================ 
+ 
+Barrier Type: TRANSLATION 
+--------------------------------------------------------------------------------
+ 
+Main Results: 
+  Forward Barrier:        0.366001 eV 
+                          366.001 meV 
+                          35.314 kJ/mol 
+
+  Reaction Energy (ΔE):   -0.002777 eV 
+                          -2.777 meV 
+ 
+  TS Absolute Energy:     -173.337536 eV 
+
+ Calculation Details: 
+  Number of images:       12 
+  Saddle point index:     2 
+  Calculator:             FAIRChem 
+
+ Output Files: 
+  Trajectory:             NEB_Results/neb_translation.traj 
+  Saddle point:           NEB_Results/saddle_translation.traj 
+
+ For Hill's Hindered Translator/Rotor:
+  W_x (translation barrier) = 0.366001 eV 
+                            = 366.001 meV 
+
+================================================================================
+ 

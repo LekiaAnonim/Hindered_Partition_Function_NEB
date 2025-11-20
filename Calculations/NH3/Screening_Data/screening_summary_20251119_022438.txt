@@ -1,0 +1,13 @@
+Screening Results Summary
+======================================================================
+Timestamp: 2025-11-19 02:24:39
+Total configurations: 2592
+Site density: 8.791634018711506e+19
+Converged: 2592
+Site types: bridge, fcc, hcp, ontop
+
+Energy Statistics:
+  Min: -1.092604 eV
+  Max: 0.048311 eV
+  Mean: -0.326865 eV
+  Std: 0.423365 eV

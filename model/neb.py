@@ -1682,18 +1682,18 @@ def prepare_neb_calculation(endpoint1, endpoint2, n_images=10, barrier_type='tra
     
     print(f"Created {len(images)} images (including 2 endpoints)")
     
-    # Setup NEB with climbing image
-    neb = NEB(images, climb=True, allow_shared_calculator=False)
-    neb.interpolate()
-    
+
     # Assign calculators to all intermediate images (not endpoints)
-    for i, image in enumerate(images[1:-1], 1):  # Skip first and last
+    for i, image in enumerate(images):  # Skip first and last
         #predictor = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
         #calc_individual = FAIRChemCalculator(predictor, task_name="oc20")
         calc_individual = mace_mp(model="medium", device='cpu')
         image.calc = calc_individual
-    
-    
+
+    # Setup NEB with climbing image
+    neb = NEB(images, climb=True, allow_shared_calculator=False)
+    neb.interpolate()
+      
     # Optimize
     slab_dir = 'NEB_Results'
     os.makedirs(slab_dir, exist_ok=True)

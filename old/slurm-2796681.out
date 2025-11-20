@@ -1,0 +1,2896 @@
+/home/akinyemi.az/miniforge3/envs/mace_dev/lib/python3.9/site-packages/torch/cuda/__init__.py:54: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Number of atoms: 4
+      Step     Time          Energy          fmax
+BFGS:    0 17:50:58      -19.509018        0.080325
+BFGS:    1 17:50:58      -19.509218        0.017747
+/home/akinyemi.az/miniforge3/envs/mace_dev/lib/python3.9/site-packages/ase/io/extxyz.py:311: UserWarning: Skipping unhashable information adsorbate_info
+Clean slab energy: -153.115 eV
+
+      Step     Time          Energy          fmax
+BFGS:    0 17:50:59     -153.114517        0.003688
+Number of atoms: 4
+      Step     Time          Energy          fmax
+BFGS:    0 17:50:59      -19.509018        0.080325
+BFGS:    1 17:50:59      -19.509218        0.017747
+Clean slab energy: -153.115 eV
+
+      Step     Time          Energy          fmax
+BFGS:    0 17:50:59     -153.114517        0.003688
+Total number of sites found: 54
+Site density: 8.79e+19 molecules/m^2
+
+Unique single sites: 4
+Unique site pairs: 73
+Site 3: ontop at position [ 7.0180348   2.43111857 24.58416114]
+      Step     Time          Energy          fmax
+BFGS:    0 17:50:59      -19.509218        0.017747
+/home/akinyemi.az/miniforge3/envs/mace_dev/lib/python3.9/site-packages/ase/io/extxyz.py:311: UserWarning: Skipping unhashable information adsorbate_info
+Site 0 (ontop ), Height 1.5 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 0 (ontop ), Height 1.5 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 1.5 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 0 (ontop ), Height 1.5 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 1.5 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 0 (ontop ), Height 1.5 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 1.5 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 0 (ontop ), Height 1.5 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 1.5 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 0 (ontop ), Height 1.5 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 1.5 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 0 (ontop ), Height 1.5 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 2.0 Å, Rotation 0°: E_ads =  -1.086 eV
+Site 0 (ontop ), Height 2.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 2.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 0 (ontop ), Height 2.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 2.0 Å, Rotation 120°: E_ads =  -1.086 eV
+Site 0 (ontop ), Height 2.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 2.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 0 (ontop ), Height 2.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 2.0 Å, Rotation 240°: E_ads =  -1.086 eV
+Site 0 (ontop ), Height 2.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 2.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 0 (ontop ), Height 2.0 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 2.5 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 0 (ontop ), Height 2.5 Å, Rotation 30°: E_ads =  -1.093 eV
+Site 0 (ontop ), Height 2.5 Å, Rotation 60°: E_ads =  -1.087 eV
+Site 0 (ontop ), Height 2.5 Å, Rotation 90°: E_ads =  -1.093 eV
+Site 0 (ontop ), Height 2.5 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 0 (ontop ), Height 2.5 Å, Rotation 150°: E_ads =  -1.093 eV
+Site 0 (ontop ), Height 2.5 Å, Rotation 180°: E_ads =  -1.087 eV
+Site 0 (ontop ), Height 2.5 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 2.5 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 0 (ontop ), Height 2.5 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 2.5 Å, Rotation 300°: E_ads =  -1.087 eV
+Site 0 (ontop ), Height 2.5 Å, Rotation 330°: E_ads =  -1.093 eV
+Site 0 (ontop ), Height 3.0 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 0 (ontop ), Height 3.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 3.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 0 (ontop ), Height 3.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 3.0 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 0 (ontop ), Height 3.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 3.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 0 (ontop ), Height 3.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 3.0 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 0 (ontop ), Height 3.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 0 (ontop ), Height 3.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 0 (ontop ), Height 3.0 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 1 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 1 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 1 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 1 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 1 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 1 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 1 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 1 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 1 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 1 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 1 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 1 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 1 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 1 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 1 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 1 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 1 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 1 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 1 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 1 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 1 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 1 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 1 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 1 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 1 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 1 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 1 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 1 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 1 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 1 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.082 eV
+Site 1 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 1 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.080 eV
+Site 1 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 1 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.082 eV
+Site 1 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 1 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 1 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 1 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 1 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 1 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 1 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 1 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 1 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 1 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 1 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 1 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 1 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 1 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 2 (fcc   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 2 (fcc   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.177 eV
+Site 2 (fcc   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 2 (fcc   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.177 eV
+Site 2 (fcc   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 2 (fcc   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.177 eV
+Site 2 (fcc   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 2 (fcc   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.177 eV
+Site 2 (fcc   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 2 (fcc   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.177 eV
+Site 2 (fcc   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 2 (fcc   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.177 eV
+Site 2 (fcc   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 2 (fcc   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 2 (fcc   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.027 eV
+Site 2 (fcc   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 2 (fcc   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 2 (fcc   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 2 (fcc   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.027 eV
+Site 2 (fcc   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 2 (fcc   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 2 (fcc   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 2 (fcc   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.027 eV
+Site 2 (fcc   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 2 (fcc   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 2 (fcc   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.169 eV
+Site 2 (fcc   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 2 (fcc   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.169 eV
+Site 2 (fcc   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 2 (fcc   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.169 eV
+Site 2 (fcc   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 2 (fcc   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.169 eV
+Site 2 (fcc   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 2 (fcc   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.169 eV
+Site 2 (fcc   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 2 (fcc   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.169 eV
+Site 2 (fcc   ), Height 3.0 Å, Rotation 0°: E_ads =   0.022 eV
+Site 2 (fcc   ), Height 3.0 Å, Rotation 30°: E_ads =   0.045 eV
+Site 2 (fcc   ), Height 3.0 Å, Rotation 60°: E_ads =   0.029 eV
+Site 2 (fcc   ), Height 3.0 Å, Rotation 90°: E_ads =   0.045 eV
+Site 2 (fcc   ), Height 3.0 Å, Rotation 120°: E_ads =   0.022 eV
+Site 2 (fcc   ), Height 3.0 Å, Rotation 150°: E_ads =   0.045 eV
+Site 2 (fcc   ), Height 3.0 Å, Rotation 180°: E_ads =   0.029 eV
+Site 2 (fcc   ), Height 3.0 Å, Rotation 210°: E_ads =   0.045 eV
+Site 2 (fcc   ), Height 3.0 Å, Rotation 240°: E_ads =   0.022 eV
+Site 2 (fcc   ), Height 3.0 Å, Rotation 270°: E_ads =   0.045 eV
+Site 2 (fcc   ), Height 3.0 Å, Rotation 300°: E_ads =   0.029 eV
+Site 2 (fcc   ), Height 3.0 Å, Rotation 330°: E_ads =   0.045 eV
+Site 3 (hcp   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 3 (hcp   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 3 (hcp   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.183 eV
+Site 3 (hcp   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 3 (hcp   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 3 (hcp   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 3 (hcp   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.183 eV
+Site 3 (hcp   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 3 (hcp   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 3 (hcp   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 3 (hcp   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.183 eV
+Site 3 (hcp   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 3 (hcp   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 3 (hcp   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 3 (hcp   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 3 (hcp   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 3 (hcp   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 3 (hcp   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 3 (hcp   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 3 (hcp   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 3 (hcp   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 3 (hcp   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 3 (hcp   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 3 (hcp   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 3 (hcp   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.022 eV
+Site 3 (hcp   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.168 eV
+Site 3 (hcp   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 3 (hcp   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.168 eV
+Site 3 (hcp   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.022 eV
+Site 3 (hcp   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.168 eV
+Site 3 (hcp   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 3 (hcp   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.168 eV
+Site 3 (hcp   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.022 eV
+Site 3 (hcp   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.168 eV
+Site 3 (hcp   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 3 (hcp   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.168 eV
+Site 3 (hcp   ), Height 3.0 Å, Rotation 0°: E_ads =   0.029 eV
+Site 3 (hcp   ), Height 3.0 Å, Rotation 30°: E_ads =   0.047 eV
+Site 3 (hcp   ), Height 3.0 Å, Rotation 60°: E_ads =   0.024 eV
+Site 3 (hcp   ), Height 3.0 Å, Rotation 90°: E_ads =   0.047 eV
+Site 3 (hcp   ), Height 3.0 Å, Rotation 120°: E_ads =   0.029 eV
+Site 3 (hcp   ), Height 3.0 Å, Rotation 150°: E_ads =   0.047 eV
+Site 3 (hcp   ), Height 3.0 Å, Rotation 180°: E_ads =   0.024 eV
+Site 3 (hcp   ), Height 3.0 Å, Rotation 210°: E_ads =   0.047 eV
+Site 3 (hcp   ), Height 3.0 Å, Rotation 240°: E_ads =   0.029 eV
+Site 3 (hcp   ), Height 3.0 Å, Rotation 270°: E_ads =   0.047 eV
+Site 3 (hcp   ), Height 3.0 Å, Rotation 300°: E_ads =   0.024 eV
+Site 3 (hcp   ), Height 3.0 Å, Rotation 330°: E_ads =   0.047 eV
+Site 4 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 4 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 4 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 4 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 4 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 4 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 4 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 4 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 4 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 4 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 4 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 4 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 4 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 4 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 4 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 4 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 4 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 4 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 4 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 4 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 4 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 4 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 4 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 4 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 4 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 4 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.081 eV
+Site 4 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 4 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 4 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 4 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.081 eV
+Site 4 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 4 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.082 eV
+Site 4 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 4 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.082 eV
+Site 4 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 4 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 4 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 4 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 4 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 4 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 4 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 4 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 4 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 4 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 4 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 4 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 4 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 4 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 5 (fcc   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 5 (fcc   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.177 eV
+Site 5 (fcc   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 5 (fcc   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.177 eV
+Site 5 (fcc   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 5 (fcc   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.177 eV
+Site 5 (fcc   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 5 (fcc   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.177 eV
+Site 5 (fcc   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 5 (fcc   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.177 eV
+Site 5 (fcc   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 5 (fcc   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.177 eV
+Site 5 (fcc   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 5 (fcc   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 5 (fcc   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.027 eV
+Site 5 (fcc   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 5 (fcc   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 5 (fcc   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 5 (fcc   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.027 eV
+Site 5 (fcc   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 5 (fcc   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 5 (fcc   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 5 (fcc   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.027 eV
+Site 5 (fcc   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 5 (fcc   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 5 (fcc   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.169 eV
+Site 5 (fcc   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 5 (fcc   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.169 eV
+Site 5 (fcc   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 5 (fcc   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.169 eV
+Site 5 (fcc   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 5 (fcc   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.169 eV
+Site 5 (fcc   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 5 (fcc   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.169 eV
+Site 5 (fcc   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 5 (fcc   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.169 eV
+Site 5 (fcc   ), Height 3.0 Å, Rotation 0°: E_ads =   0.022 eV
+Site 5 (fcc   ), Height 3.0 Å, Rotation 30°: E_ads =   0.045 eV
+Site 5 (fcc   ), Height 3.0 Å, Rotation 60°: E_ads =   0.029 eV
+Site 5 (fcc   ), Height 3.0 Å, Rotation 90°: E_ads =   0.045 eV
+Site 5 (fcc   ), Height 3.0 Å, Rotation 120°: E_ads =   0.022 eV
+Site 5 (fcc   ), Height 3.0 Å, Rotation 150°: E_ads =   0.045 eV
+Site 5 (fcc   ), Height 3.0 Å, Rotation 180°: E_ads =   0.029 eV
+Site 5 (fcc   ), Height 3.0 Å, Rotation 210°: E_ads =   0.045 eV
+Site 5 (fcc   ), Height 3.0 Å, Rotation 240°: E_ads =   0.022 eV
+Site 5 (fcc   ), Height 3.0 Å, Rotation 270°: E_ads =   0.045 eV
+Site 5 (fcc   ), Height 3.0 Å, Rotation 300°: E_ads =   0.029 eV
+Site 5 (fcc   ), Height 3.0 Å, Rotation 330°: E_ads =   0.045 eV
+Site 6 (hcp   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 6 (hcp   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 6 (hcp   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.183 eV
+Site 6 (hcp   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 6 (hcp   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 6 (hcp   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 6 (hcp   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.183 eV
+Site 6 (hcp   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 6 (hcp   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 6 (hcp   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 6 (hcp   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.183 eV
+Site 6 (hcp   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 6 (hcp   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 6 (hcp   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 6 (hcp   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 6 (hcp   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 6 (hcp   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 6 (hcp   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 6 (hcp   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 6 (hcp   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 6 (hcp   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 6 (hcp   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 6 (hcp   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 6 (hcp   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 6 (hcp   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.022 eV
+Site 6 (hcp   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.168 eV
+Site 6 (hcp   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 6 (hcp   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.168 eV
+Site 6 (hcp   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.022 eV
+Site 6 (hcp   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.168 eV
+Site 6 (hcp   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 6 (hcp   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.168 eV
+Site 6 (hcp   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.022 eV
+Site 6 (hcp   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.168 eV
+Site 6 (hcp   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 6 (hcp   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.168 eV
+Site 6 (hcp   ), Height 3.0 Å, Rotation 0°: E_ads =   0.029 eV
+Site 6 (hcp   ), Height 3.0 Å, Rotation 30°: E_ads =   0.047 eV
+Site 6 (hcp   ), Height 3.0 Å, Rotation 60°: E_ads =   0.024 eV
+Site 6 (hcp   ), Height 3.0 Å, Rotation 90°: E_ads =   0.047 eV
+Site 6 (hcp   ), Height 3.0 Å, Rotation 120°: E_ads =   0.029 eV
+Site 6 (hcp   ), Height 3.0 Å, Rotation 150°: E_ads =   0.047 eV
+Site 6 (hcp   ), Height 3.0 Å, Rotation 180°: E_ads =   0.024 eV
+Site 6 (hcp   ), Height 3.0 Å, Rotation 210°: E_ads =   0.047 eV
+Site 6 (hcp   ), Height 3.0 Å, Rotation 240°: E_ads =   0.029 eV
+Site 6 (hcp   ), Height 3.0 Å, Rotation 270°: E_ads =   0.047 eV
+Site 6 (hcp   ), Height 3.0 Å, Rotation 300°: E_ads =   0.024 eV
+Site 6 (hcp   ), Height 3.0 Å, Rotation 330°: E_ads =   0.047 eV
+Site 7 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 7 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 7 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 7 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 7 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 7 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 7 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 7 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 7 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 7 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 7 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 7 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 7 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 7 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 7 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 7 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 7 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 7 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 7 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 7 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 7 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 7 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 7 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 7 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 7 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 7 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 7 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 7 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 7 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 7 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.080 eV
+Site 7 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 7 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.080 eV
+Site 7 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 7 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.082 eV
+Site 7 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 7 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 7 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 7 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 7 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 7 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 7 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 7 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 7 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 7 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 7 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 7 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 7 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 7 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 8 (hcp   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 8 (hcp   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 8 (hcp   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.183 eV
+Site 8 (hcp   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 8 (hcp   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 8 (hcp   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 8 (hcp   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.183 eV
+Site 8 (hcp   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 8 (hcp   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 8 (hcp   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 8 (hcp   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.183 eV
+Site 8 (hcp   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 8 (hcp   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 8 (hcp   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 8 (hcp   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 8 (hcp   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 8 (hcp   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 8 (hcp   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 8 (hcp   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 8 (hcp   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 8 (hcp   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 8 (hcp   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 8 (hcp   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 8 (hcp   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 8 (hcp   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.022 eV
+Site 8 (hcp   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.168 eV
+Site 8 (hcp   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 8 (hcp   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.168 eV
+Site 8 (hcp   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.022 eV
+Site 8 (hcp   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.168 eV
+Site 8 (hcp   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 8 (hcp   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.168 eV
+Site 8 (hcp   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.022 eV
+Site 8 (hcp   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.168 eV
+Site 8 (hcp   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 8 (hcp   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.168 eV
+Site 8 (hcp   ), Height 3.0 Å, Rotation 0°: E_ads =   0.029 eV
+Site 8 (hcp   ), Height 3.0 Å, Rotation 30°: E_ads =   0.047 eV
+Site 8 (hcp   ), Height 3.0 Å, Rotation 60°: E_ads =   0.024 eV
+Site 8 (hcp   ), Height 3.0 Å, Rotation 90°: E_ads =   0.047 eV
+Site 8 (hcp   ), Height 3.0 Å, Rotation 120°: E_ads =   0.029 eV
+Site 8 (hcp   ), Height 3.0 Å, Rotation 150°: E_ads =   0.047 eV
+Site 8 (hcp   ), Height 3.0 Å, Rotation 180°: E_ads =   0.024 eV
+Site 8 (hcp   ), Height 3.0 Å, Rotation 210°: E_ads =   0.047 eV
+Site 8 (hcp   ), Height 3.0 Å, Rotation 240°: E_ads =   0.029 eV
+Site 8 (hcp   ), Height 3.0 Å, Rotation 270°: E_ads =   0.047 eV
+Site 8 (hcp   ), Height 3.0 Å, Rotation 300°: E_ads =   0.024 eV
+Site 8 (hcp   ), Height 3.0 Å, Rotation 330°: E_ads =   0.047 eV
+Site 9 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 9 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 9 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 9 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 9 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 9 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 9 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 9 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 9 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 9 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 9 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 9 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 9 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 9 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 9 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 9 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 9 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 9 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 9 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 9 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 9 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 9 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 9 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 9 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 9 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 9 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 9 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 9 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.081 eV
+Site 9 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 9 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.081 eV
+Site 9 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 9 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.080 eV
+Site 9 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 9 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.081 eV
+Site 9 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 9 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.081 eV
+Site 9 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 9 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 9 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 9 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 9 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 9 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 9 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 9 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 9 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 9 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 9 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 9 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 10 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 10 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 10 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 10 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 10 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 10 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 10 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 10 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 10 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 10 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 10 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 10 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 10 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 10 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 10 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 10 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 10 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 10 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 10 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 10 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 10 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 10 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 10 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 10 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 10 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 10 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 10 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 10 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.080 eV
+Site 10 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 10 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.082 eV
+Site 10 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 10 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.082 eV
+Site 10 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 10 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.082 eV
+Site 10 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 10 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 10 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 10 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 10 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 10 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 10 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 10 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 10 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 10 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 10 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 10 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 10 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 10 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 11 (fcc   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 11 (fcc   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.177 eV
+Site 11 (fcc   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 11 (fcc   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.177 eV
+Site 11 (fcc   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 11 (fcc   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.177 eV
+Site 11 (fcc   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 11 (fcc   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.177 eV
+Site 11 (fcc   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 11 (fcc   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.177 eV
+Site 11 (fcc   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 11 (fcc   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.177 eV
+Site 11 (fcc   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 11 (fcc   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 11 (fcc   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.027 eV
+Site 11 (fcc   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 11 (fcc   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 11 (fcc   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 11 (fcc   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.027 eV
+Site 11 (fcc   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 11 (fcc   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 11 (fcc   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 11 (fcc   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.027 eV
+Site 11 (fcc   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 11 (fcc   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 11 (fcc   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.169 eV
+Site 11 (fcc   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 11 (fcc   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.169 eV
+Site 11 (fcc   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 11 (fcc   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.169 eV
+Site 11 (fcc   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 11 (fcc   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.169 eV
+Site 11 (fcc   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 11 (fcc   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.169 eV
+Site 11 (fcc   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 11 (fcc   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.169 eV
+Site 11 (fcc   ), Height 3.0 Å, Rotation 0°: E_ads =   0.022 eV
+Site 11 (fcc   ), Height 3.0 Å, Rotation 30°: E_ads =   0.045 eV
+Site 11 (fcc   ), Height 3.0 Å, Rotation 60°: E_ads =   0.029 eV
+Site 11 (fcc   ), Height 3.0 Å, Rotation 90°: E_ads =   0.045 eV
+Site 11 (fcc   ), Height 3.0 Å, Rotation 120°: E_ads =   0.022 eV
+Site 11 (fcc   ), Height 3.0 Å, Rotation 150°: E_ads =   0.045 eV
+Site 11 (fcc   ), Height 3.0 Å, Rotation 180°: E_ads =   0.029 eV
+Site 11 (fcc   ), Height 3.0 Å, Rotation 210°: E_ads =   0.045 eV
+Site 11 (fcc   ), Height 3.0 Å, Rotation 240°: E_ads =   0.022 eV
+Site 11 (fcc   ), Height 3.0 Å, Rotation 270°: E_ads =   0.045 eV
+Site 11 (fcc   ), Height 3.0 Å, Rotation 300°: E_ads =   0.029 eV
+Site 11 (fcc   ), Height 3.0 Å, Rotation 330°: E_ads =   0.045 eV
+Site 12 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 12 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 12 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 12 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 12 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 12 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 12 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 12 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 12 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 12 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 12 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 12 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 12 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 12 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 12 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 12 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 12 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 12 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 12 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 12 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 12 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 12 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 12 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 12 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 12 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 12 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 12 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 12 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.080 eV
+Site 12 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 12 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.081 eV
+Site 12 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 12 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.082 eV
+Site 12 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 12 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.081 eV
+Site 12 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 12 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 12 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 12 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 12 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 12 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 12 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 12 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 12 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 12 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 12 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 12 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 12 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 12 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 13 (ontop ), Height 1.5 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 13 (ontop ), Height 1.5 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 13 (ontop ), Height 1.5 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 13 (ontop ), Height 1.5 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 13 (ontop ), Height 1.5 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 13 (ontop ), Height 1.5 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 13 (ontop ), Height 1.5 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 13 (ontop ), Height 1.5 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 13 (ontop ), Height 1.5 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 13 (ontop ), Height 1.5 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 13 (ontop ), Height 1.5 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 13 (ontop ), Height 1.5 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 13 (ontop ), Height 2.0 Å, Rotation 0°: E_ads =  -1.086 eV
+Site 13 (ontop ), Height 2.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 13 (ontop ), Height 2.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 13 (ontop ), Height 2.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 13 (ontop ), Height 2.0 Å, Rotation 120°: E_ads =  -1.086 eV
+Site 13 (ontop ), Height 2.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 13 (ontop ), Height 2.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 13 (ontop ), Height 2.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 13 (ontop ), Height 2.0 Å, Rotation 240°: E_ads =  -1.086 eV
+Site 13 (ontop ), Height 2.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 13 (ontop ), Height 2.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 13 (ontop ), Height 2.0 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 13 (ontop ), Height 2.5 Å, Rotation 0°: E_ads =  -1.086 eV
+Site 13 (ontop ), Height 2.5 Å, Rotation 30°: E_ads =  -1.093 eV
+Site 13 (ontop ), Height 2.5 Å, Rotation 60°: E_ads =  -1.087 eV
+Site 13 (ontop ), Height 2.5 Å, Rotation 90°: E_ads =  -1.093 eV
+Site 13 (ontop ), Height 2.5 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 13 (ontop ), Height 2.5 Å, Rotation 150°: E_ads =  -1.093 eV
+Site 13 (ontop ), Height 2.5 Å, Rotation 180°: E_ads =  -1.087 eV
+Site 13 (ontop ), Height 2.5 Å, Rotation 210°: E_ads =  -1.093 eV
+Site 13 (ontop ), Height 2.5 Å, Rotation 240°: E_ads =  -1.086 eV
+Site 13 (ontop ), Height 2.5 Å, Rotation 270°: E_ads =  -1.093 eV
+Site 13 (ontop ), Height 2.5 Å, Rotation 300°: E_ads =  -1.087 eV
+Site 13 (ontop ), Height 2.5 Å, Rotation 330°: E_ads =  -1.093 eV
+Site 13 (ontop ), Height 3.0 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 13 (ontop ), Height 3.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 13 (ontop ), Height 3.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 13 (ontop ), Height 3.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 13 (ontop ), Height 3.0 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 13 (ontop ), Height 3.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 13 (ontop ), Height 3.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 13 (ontop ), Height 3.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 13 (ontop ), Height 3.0 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 13 (ontop ), Height 3.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 13 (ontop ), Height 3.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 13 (ontop ), Height 3.0 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 14 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 14 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 14 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 14 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 14 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 14 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 14 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 14 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 14 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 14 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 14 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 14 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 14 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 14 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 14 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 14 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 14 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 14 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 14 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 14 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 14 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 14 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 14 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 14 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 14 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 14 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.081 eV
+Site 14 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 14 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.080 eV
+Site 14 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 14 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.081 eV
+Site 14 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 14 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.081 eV
+Site 14 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 14 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.081 eV
+Site 14 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 14 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 14 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 14 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 14 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 14 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 14 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 14 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 14 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 14 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 14 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 14 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 14 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 14 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 15 (fcc   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 15 (fcc   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.177 eV
+Site 15 (fcc   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 15 (fcc   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.177 eV
+Site 15 (fcc   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 15 (fcc   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.177 eV
+Site 15 (fcc   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 15 (fcc   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.177 eV
+Site 15 (fcc   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 15 (fcc   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.177 eV
+Site 15 (fcc   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 15 (fcc   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.177 eV
+Site 15 (fcc   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 15 (fcc   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 15 (fcc   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.027 eV
+Site 15 (fcc   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 15 (fcc   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 15 (fcc   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 15 (fcc   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.027 eV
+Site 15 (fcc   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 15 (fcc   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 15 (fcc   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 15 (fcc   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.027 eV
+Site 15 (fcc   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 15 (fcc   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 15 (fcc   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.169 eV
+Site 15 (fcc   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 15 (fcc   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.169 eV
+Site 15 (fcc   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 15 (fcc   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.169 eV
+Site 15 (fcc   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 15 (fcc   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.169 eV
+Site 15 (fcc   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 15 (fcc   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.169 eV
+Site 15 (fcc   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 15 (fcc   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.169 eV
+Site 15 (fcc   ), Height 3.0 Å, Rotation 0°: E_ads =   0.022 eV
+Site 15 (fcc   ), Height 3.0 Å, Rotation 30°: E_ads =   0.045 eV
+Site 15 (fcc   ), Height 3.0 Å, Rotation 60°: E_ads =   0.029 eV
+Site 15 (fcc   ), Height 3.0 Å, Rotation 90°: E_ads =   0.045 eV
+Site 15 (fcc   ), Height 3.0 Å, Rotation 120°: E_ads =   0.022 eV
+Site 15 (fcc   ), Height 3.0 Å, Rotation 150°: E_ads =   0.045 eV
+Site 15 (fcc   ), Height 3.0 Å, Rotation 180°: E_ads =   0.029 eV
+Site 15 (fcc   ), Height 3.0 Å, Rotation 210°: E_ads =   0.045 eV
+Site 15 (fcc   ), Height 3.0 Å, Rotation 240°: E_ads =   0.022 eV
+Site 15 (fcc   ), Height 3.0 Å, Rotation 270°: E_ads =   0.045 eV
+Site 15 (fcc   ), Height 3.0 Å, Rotation 300°: E_ads =   0.029 eV
+Site 15 (fcc   ), Height 3.0 Å, Rotation 330°: E_ads =   0.045 eV
+Site 16 (hcp   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 16 (hcp   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 16 (hcp   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.183 eV
+Site 16 (hcp   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 16 (hcp   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 16 (hcp   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 16 (hcp   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.183 eV
+Site 16 (hcp   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 16 (hcp   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 16 (hcp   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 16 (hcp   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.183 eV
+Site 16 (hcp   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 16 (hcp   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 16 (hcp   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 16 (hcp   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 16 (hcp   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 16 (hcp   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 16 (hcp   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 16 (hcp   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 16 (hcp   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 16 (hcp   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 16 (hcp   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 16 (hcp   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 16 (hcp   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 16 (hcp   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.022 eV
+Site 16 (hcp   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.168 eV
+Site 16 (hcp   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 16 (hcp   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.168 eV
+Site 16 (hcp   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.022 eV
+Site 16 (hcp   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.168 eV
+Site 16 (hcp   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 16 (hcp   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.168 eV
+Site 16 (hcp   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.022 eV
+Site 16 (hcp   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.168 eV
+Site 16 (hcp   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 16 (hcp   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.168 eV
+Site 16 (hcp   ), Height 3.0 Å, Rotation 0°: E_ads =   0.029 eV
+Site 16 (hcp   ), Height 3.0 Å, Rotation 30°: E_ads =   0.047 eV
+Site 16 (hcp   ), Height 3.0 Å, Rotation 60°: E_ads =   0.024 eV
+Site 16 (hcp   ), Height 3.0 Å, Rotation 90°: E_ads =   0.047 eV
+Site 16 (hcp   ), Height 3.0 Å, Rotation 120°: E_ads =   0.029 eV
+Site 16 (hcp   ), Height 3.0 Å, Rotation 150°: E_ads =   0.047 eV
+Site 16 (hcp   ), Height 3.0 Å, Rotation 180°: E_ads =   0.024 eV
+Site 16 (hcp   ), Height 3.0 Å, Rotation 210°: E_ads =   0.047 eV
+Site 16 (hcp   ), Height 3.0 Å, Rotation 240°: E_ads =   0.029 eV
+Site 16 (hcp   ), Height 3.0 Å, Rotation 270°: E_ads =   0.047 eV
+Site 16 (hcp   ), Height 3.0 Å, Rotation 300°: E_ads =   0.024 eV
+Site 16 (hcp   ), Height 3.0 Å, Rotation 330°: E_ads =   0.047 eV
+Site 17 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 17 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 17 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 17 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 17 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 17 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 17 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 17 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 17 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 17 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 17 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 17 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 17 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 17 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 17 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 17 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 17 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 17 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 17 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 17 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 17 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 17 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 17 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 17 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 17 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 17 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 17 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 17 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 17 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 17 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.082 eV
+Site 17 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 17 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.082 eV
+Site 17 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 17 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.080 eV
+Site 17 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 17 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.080 eV
+Site 17 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 17 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 17 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 17 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 17 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 17 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 17 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 17 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 17 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 17 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 17 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 17 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 18 (hcp   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 18 (hcp   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 18 (hcp   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.183 eV
+Site 18 (hcp   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 18 (hcp   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 18 (hcp   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 18 (hcp   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.183 eV
+Site 18 (hcp   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 18 (hcp   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 18 (hcp   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 18 (hcp   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.183 eV
+Site 18 (hcp   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 18 (hcp   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 18 (hcp   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 18 (hcp   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 18 (hcp   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 18 (hcp   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 18 (hcp   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 18 (hcp   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 18 (hcp   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 18 (hcp   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 18 (hcp   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 18 (hcp   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 18 (hcp   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 18 (hcp   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.022 eV
+Site 18 (hcp   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.168 eV
+Site 18 (hcp   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 18 (hcp   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.168 eV
+Site 18 (hcp   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.022 eV
+Site 18 (hcp   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.168 eV
+Site 18 (hcp   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 18 (hcp   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.168 eV
+Site 18 (hcp   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.022 eV
+Site 18 (hcp   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.168 eV
+Site 18 (hcp   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 18 (hcp   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.168 eV
+Site 18 (hcp   ), Height 3.0 Å, Rotation 0°: E_ads =   0.029 eV
+Site 18 (hcp   ), Height 3.0 Å, Rotation 30°: E_ads =   0.047 eV
+Site 18 (hcp   ), Height 3.0 Å, Rotation 60°: E_ads =   0.024 eV
+Site 18 (hcp   ), Height 3.0 Å, Rotation 90°: E_ads =   0.047 eV
+Site 18 (hcp   ), Height 3.0 Å, Rotation 120°: E_ads =   0.029 eV
+Site 18 (hcp   ), Height 3.0 Å, Rotation 150°: E_ads =   0.047 eV
+Site 18 (hcp   ), Height 3.0 Å, Rotation 180°: E_ads =   0.024 eV
+Site 18 (hcp   ), Height 3.0 Å, Rotation 210°: E_ads =   0.047 eV
+Site 18 (hcp   ), Height 3.0 Å, Rotation 240°: E_ads =   0.029 eV
+Site 18 (hcp   ), Height 3.0 Å, Rotation 270°: E_ads =   0.047 eV
+Site 18 (hcp   ), Height 3.0 Å, Rotation 300°: E_ads =   0.024 eV
+Site 18 (hcp   ), Height 3.0 Å, Rotation 330°: E_ads =   0.047 eV
+Site 19 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 19 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 19 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 19 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 19 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 19 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 19 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 19 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 19 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 19 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 19 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 19 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 19 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 19 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 19 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 19 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 19 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 19 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 19 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 19 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 19 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 19 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 19 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 19 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 19 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 19 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.081 eV
+Site 19 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 19 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 19 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 19 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.080 eV
+Site 19 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 19 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.082 eV
+Site 19 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 19 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.081 eV
+Site 19 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 19 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 19 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 19 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 19 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 19 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 19 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 19 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 19 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 19 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 19 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 19 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 19 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 19 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 20 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 20 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 20 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 20 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 20 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 20 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 20 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 20 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 20 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 20 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 20 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 20 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 20 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 20 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 20 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 20 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 20 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 20 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 20 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 20 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 20 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 20 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 20 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 20 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 20 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 20 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 20 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 20 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 20 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 20 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.082 eV
+Site 20 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 20 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.081 eV
+Site 20 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 20 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.082 eV
+Site 20 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 20 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 20 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 20 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 20 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 20 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 20 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 20 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 20 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 20 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 20 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 20 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 20 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 20 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 21 (fcc   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 21 (fcc   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.177 eV
+Site 21 (fcc   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 21 (fcc   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.177 eV
+Site 21 (fcc   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 21 (fcc   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.177 eV
+Site 21 (fcc   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 21 (fcc   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.177 eV
+Site 21 (fcc   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 21 (fcc   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.177 eV
+Site 21 (fcc   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 21 (fcc   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.177 eV
+Site 21 (fcc   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 21 (fcc   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 21 (fcc   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.027 eV
+Site 21 (fcc   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 21 (fcc   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 21 (fcc   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 21 (fcc   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.027 eV
+Site 21 (fcc   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 21 (fcc   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 21 (fcc   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 21 (fcc   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.027 eV
+Site 21 (fcc   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 21 (fcc   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 21 (fcc   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.169 eV
+Site 21 (fcc   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 21 (fcc   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.169 eV
+Site 21 (fcc   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 21 (fcc   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.169 eV
+Site 21 (fcc   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 21 (fcc   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.169 eV
+Site 21 (fcc   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 21 (fcc   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.169 eV
+Site 21 (fcc   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 21 (fcc   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.169 eV
+Site 21 (fcc   ), Height 3.0 Å, Rotation 0°: E_ads =   0.022 eV
+Site 21 (fcc   ), Height 3.0 Å, Rotation 30°: E_ads =   0.045 eV
+Site 21 (fcc   ), Height 3.0 Å, Rotation 60°: E_ads =   0.029 eV
+Site 21 (fcc   ), Height 3.0 Å, Rotation 90°: E_ads =   0.045 eV
+Site 21 (fcc   ), Height 3.0 Å, Rotation 120°: E_ads =   0.022 eV
+Site 21 (fcc   ), Height 3.0 Å, Rotation 150°: E_ads =   0.045 eV
+Site 21 (fcc   ), Height 3.0 Å, Rotation 180°: E_ads =   0.029 eV
+Site 21 (fcc   ), Height 3.0 Å, Rotation 210°: E_ads =   0.045 eV
+Site 21 (fcc   ), Height 3.0 Å, Rotation 240°: E_ads =   0.022 eV
+Site 21 (fcc   ), Height 3.0 Å, Rotation 270°: E_ads =   0.045 eV
+Site 21 (fcc   ), Height 3.0 Å, Rotation 300°: E_ads =   0.029 eV
+Site 21 (fcc   ), Height 3.0 Å, Rotation 330°: E_ads =   0.045 eV
+Site 22 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 22 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 22 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 22 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 22 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 22 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 22 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 22 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 22 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 22 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 22 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 22 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 22 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 22 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 22 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 22 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 22 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 22 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 22 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 22 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 22 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 22 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 22 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 22 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 22 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 22 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.081 eV
+Site 22 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 22 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 22 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 22 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.082 eV
+Site 22 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 22 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.082 eV
+Site 22 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 22 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.080 eV
+Site 22 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 22 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 22 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 22 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 22 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 22 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 22 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 22 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 22 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 22 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 22 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 22 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 22 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 22 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 23 (ontop ), Height 1.5 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 23 (ontop ), Height 1.5 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 1.5 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 23 (ontop ), Height 1.5 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 1.5 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 23 (ontop ), Height 1.5 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 1.5 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 23 (ontop ), Height 1.5 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 1.5 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 23 (ontop ), Height 1.5 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 1.5 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 23 (ontop ), Height 1.5 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 2.0 Å, Rotation 0°: E_ads =  -1.086 eV
+Site 23 (ontop ), Height 2.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 2.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 23 (ontop ), Height 2.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 2.0 Å, Rotation 120°: E_ads =  -1.086 eV
+Site 23 (ontop ), Height 2.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 2.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 23 (ontop ), Height 2.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 2.0 Å, Rotation 240°: E_ads =  -1.086 eV
+Site 23 (ontop ), Height 2.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 2.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 23 (ontop ), Height 2.0 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 2.5 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 23 (ontop ), Height 2.5 Å, Rotation 30°: E_ads =  -1.093 eV
+Site 23 (ontop ), Height 2.5 Å, Rotation 60°: E_ads =  -1.087 eV
+Site 23 (ontop ), Height 2.5 Å, Rotation 90°: E_ads =  -1.093 eV
+Site 23 (ontop ), Height 2.5 Å, Rotation 120°: E_ads =  -1.086 eV
+Site 23 (ontop ), Height 2.5 Å, Rotation 150°: E_ads =  -1.093 eV
+Site 23 (ontop ), Height 2.5 Å, Rotation 180°: E_ads =  -1.087 eV
+Site 23 (ontop ), Height 2.5 Å, Rotation 210°: E_ads =  -1.093 eV
+Site 23 (ontop ), Height 2.5 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 23 (ontop ), Height 2.5 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 2.5 Å, Rotation 300°: E_ads =  -1.087 eV
+Site 23 (ontop ), Height 2.5 Å, Rotation 330°: E_ads =  -1.093 eV
+Site 23 (ontop ), Height 3.0 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 23 (ontop ), Height 3.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 3.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 23 (ontop ), Height 3.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 3.0 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 23 (ontop ), Height 3.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 3.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 23 (ontop ), Height 3.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 3.0 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 23 (ontop ), Height 3.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 23 (ontop ), Height 3.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 23 (ontop ), Height 3.0 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 24 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 24 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 24 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 24 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 24 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 24 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 24 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 24 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 24 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 24 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 24 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 24 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 24 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 24 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 24 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 24 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 24 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 24 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 24 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 24 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 24 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 24 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 24 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 24 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 24 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 24 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 24 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 24 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 24 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 24 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.082 eV
+Site 24 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 24 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.082 eV
+Site 24 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 24 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.082 eV
+Site 24 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 24 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 24 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 24 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 24 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 24 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 24 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 24 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 24 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 24 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 24 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 24 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 24 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 24 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 25 (hcp   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 25 (hcp   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 25 (hcp   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.183 eV
+Site 25 (hcp   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 25 (hcp   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 25 (hcp   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 25 (hcp   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.183 eV
+Site 25 (hcp   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 25 (hcp   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 25 (hcp   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 25 (hcp   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.183 eV
+Site 25 (hcp   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 25 (hcp   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 25 (hcp   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 25 (hcp   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 25 (hcp   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 25 (hcp   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 25 (hcp   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 25 (hcp   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 25 (hcp   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 25 (hcp   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 25 (hcp   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 25 (hcp   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 25 (hcp   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 25 (hcp   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.022 eV
+Site 25 (hcp   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.168 eV
+Site 25 (hcp   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 25 (hcp   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.168 eV
+Site 25 (hcp   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.022 eV
+Site 25 (hcp   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.168 eV
+Site 25 (hcp   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 25 (hcp   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.168 eV
+Site 25 (hcp   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.022 eV
+Site 25 (hcp   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.168 eV
+Site 25 (hcp   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 25 (hcp   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.168 eV
+Site 25 (hcp   ), Height 3.0 Å, Rotation 0°: E_ads =   0.029 eV
+Site 25 (hcp   ), Height 3.0 Å, Rotation 30°: E_ads =   0.047 eV
+Site 25 (hcp   ), Height 3.0 Å, Rotation 60°: E_ads =   0.024 eV
+Site 25 (hcp   ), Height 3.0 Å, Rotation 90°: E_ads =   0.047 eV
+Site 25 (hcp   ), Height 3.0 Å, Rotation 120°: E_ads =   0.029 eV
+Site 25 (hcp   ), Height 3.0 Å, Rotation 150°: E_ads =   0.047 eV
+Site 25 (hcp   ), Height 3.0 Å, Rotation 180°: E_ads =   0.024 eV
+Site 25 (hcp   ), Height 3.0 Å, Rotation 210°: E_ads =   0.047 eV
+Site 25 (hcp   ), Height 3.0 Å, Rotation 240°: E_ads =   0.029 eV
+Site 25 (hcp   ), Height 3.0 Å, Rotation 270°: E_ads =   0.047 eV
+Site 25 (hcp   ), Height 3.0 Å, Rotation 300°: E_ads =   0.024 eV
+Site 25 (hcp   ), Height 3.0 Å, Rotation 330°: E_ads =   0.047 eV
+Site 26 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 26 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 26 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 26 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 26 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 26 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 26 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 26 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 26 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 26 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 26 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 26 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 26 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 26 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 26 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 26 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 26 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 26 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 26 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 26 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 26 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 26 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 26 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 26 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 26 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 26 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 26 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 26 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 26 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 26 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.082 eV
+Site 26 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 26 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.082 eV
+Site 26 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 26 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.080 eV
+Site 26 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 26 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 26 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 26 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 26 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 26 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 26 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 26 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 26 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 26 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 26 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 26 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 26 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 26 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 27 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 27 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 27 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 27 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 27 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 27 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 27 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 27 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 27 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 27 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 27 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 27 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 27 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 27 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 27 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 27 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 27 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 27 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 27 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 27 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 27 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 27 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 27 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 27 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 27 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 27 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 27 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 27 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 27 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 27 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.082 eV
+Site 27 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 27 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.081 eV
+Site 27 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 27 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.082 eV
+Site 27 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 27 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.081 eV
+Site 27 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 27 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 27 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 27 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 27 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 27 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 27 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 27 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 27 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 27 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 27 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 27 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 28 (fcc   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 28 (fcc   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.177 eV
+Site 28 (fcc   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 28 (fcc   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.177 eV
+Site 28 (fcc   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 28 (fcc   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.177 eV
+Site 28 (fcc   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 28 (fcc   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.177 eV
+Site 28 (fcc   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 28 (fcc   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.177 eV
+Site 28 (fcc   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 28 (fcc   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.177 eV
+Site 28 (fcc   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 28 (fcc   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 28 (fcc   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.027 eV
+Site 28 (fcc   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 28 (fcc   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 28 (fcc   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 28 (fcc   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.027 eV
+Site 28 (fcc   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 28 (fcc   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 28 (fcc   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 28 (fcc   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.027 eV
+Site 28 (fcc   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 28 (fcc   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 28 (fcc   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.169 eV
+Site 28 (fcc   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 28 (fcc   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.169 eV
+Site 28 (fcc   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 28 (fcc   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.169 eV
+Site 28 (fcc   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 28 (fcc   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.169 eV
+Site 28 (fcc   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 28 (fcc   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.169 eV
+Site 28 (fcc   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 28 (fcc   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.169 eV
+Site 28 (fcc   ), Height 3.0 Å, Rotation 0°: E_ads =   0.022 eV
+Site 28 (fcc   ), Height 3.0 Å, Rotation 30°: E_ads =   0.045 eV
+Site 28 (fcc   ), Height 3.0 Å, Rotation 60°: E_ads =   0.029 eV
+Site 28 (fcc   ), Height 3.0 Å, Rotation 90°: E_ads =   0.045 eV
+Site 28 (fcc   ), Height 3.0 Å, Rotation 120°: E_ads =   0.022 eV
+Site 28 (fcc   ), Height 3.0 Å, Rotation 150°: E_ads =   0.045 eV
+Site 28 (fcc   ), Height 3.0 Å, Rotation 180°: E_ads =   0.029 eV
+Site 28 (fcc   ), Height 3.0 Å, Rotation 210°: E_ads =   0.045 eV
+Site 28 (fcc   ), Height 3.0 Å, Rotation 240°: E_ads =   0.022 eV
+Site 28 (fcc   ), Height 3.0 Å, Rotation 270°: E_ads =   0.045 eV
+Site 28 (fcc   ), Height 3.0 Å, Rotation 300°: E_ads =   0.029 eV
+Site 28 (fcc   ), Height 3.0 Å, Rotation 330°: E_ads =   0.045 eV
+Site 29 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 29 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 29 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 29 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 29 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 29 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 29 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 29 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 29 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 29 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 29 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 29 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 29 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 29 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 29 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 29 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 29 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 29 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 29 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 29 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 29 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 29 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 29 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 29 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 29 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 29 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 29 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 29 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.080 eV
+Site 29 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 29 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.082 eV
+Site 29 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 29 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.082 eV
+Site 29 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 29 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.081 eV
+Site 29 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 29 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 29 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 29 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 29 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 29 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 29 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 29 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 29 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 29 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 29 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 29 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 29 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 29 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 30 (ontop ), Height 1.5 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 30 (ontop ), Height 1.5 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 30 (ontop ), Height 1.5 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 30 (ontop ), Height 1.5 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 30 (ontop ), Height 1.5 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 30 (ontop ), Height 1.5 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 30 (ontop ), Height 1.5 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 30 (ontop ), Height 1.5 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 30 (ontop ), Height 1.5 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 30 (ontop ), Height 1.5 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 30 (ontop ), Height 1.5 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 30 (ontop ), Height 1.5 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 30 (ontop ), Height 2.0 Å, Rotation 0°: E_ads =  -1.086 eV
+Site 30 (ontop ), Height 2.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 30 (ontop ), Height 2.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 30 (ontop ), Height 2.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 30 (ontop ), Height 2.0 Å, Rotation 120°: E_ads =  -1.086 eV
+Site 30 (ontop ), Height 2.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 30 (ontop ), Height 2.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 30 (ontop ), Height 2.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 30 (ontop ), Height 2.0 Å, Rotation 240°: E_ads =  -1.086 eV
+Site 30 (ontop ), Height 2.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 30 (ontop ), Height 2.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 30 (ontop ), Height 2.0 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 30 (ontop ), Height 2.5 Å, Rotation 0°: E_ads =  -1.086 eV
+Site 30 (ontop ), Height 2.5 Å, Rotation 30°: E_ads =  -1.093 eV
+Site 30 (ontop ), Height 2.5 Å, Rotation 60°: E_ads =  -1.087 eV
+Site 30 (ontop ), Height 2.5 Å, Rotation 90°: E_ads =  -1.093 eV
+Site 30 (ontop ), Height 2.5 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 30 (ontop ), Height 2.5 Å, Rotation 150°: E_ads =  -1.093 eV
+Site 30 (ontop ), Height 2.5 Å, Rotation 180°: E_ads =  -1.087 eV
+Site 30 (ontop ), Height 2.5 Å, Rotation 210°: E_ads =  -1.093 eV
+Site 30 (ontop ), Height 2.5 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 30 (ontop ), Height 2.5 Å, Rotation 270°: E_ads =  -1.093 eV
+Site 30 (ontop ), Height 2.5 Å, Rotation 300°: E_ads =  -1.087 eV
+Site 30 (ontop ), Height 2.5 Å, Rotation 330°: E_ads =  -1.093 eV
+Site 30 (ontop ), Height 3.0 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 30 (ontop ), Height 3.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 30 (ontop ), Height 3.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 30 (ontop ), Height 3.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 30 (ontop ), Height 3.0 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 30 (ontop ), Height 3.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 30 (ontop ), Height 3.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 30 (ontop ), Height 3.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 30 (ontop ), Height 3.0 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 30 (ontop ), Height 3.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 30 (ontop ), Height 3.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 30 (ontop ), Height 3.0 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 31 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 31 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 31 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 31 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 31 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 31 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 31 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 31 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 31 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 31 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 31 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 31 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 31 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 31 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 31 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 31 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 31 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 31 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 31 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 31 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 31 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 31 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 31 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 31 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 31 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 31 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 31 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 31 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 31 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 31 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.082 eV
+Site 31 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 31 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.082 eV
+Site 31 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 31 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.082 eV
+Site 31 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 31 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 31 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 31 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 31 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 31 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 31 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 31 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 31 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 31 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 31 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 31 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 31 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 31 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 32 (fcc   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 32 (fcc   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.177 eV
+Site 32 (fcc   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 32 (fcc   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.177 eV
+Site 32 (fcc   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 32 (fcc   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.177 eV
+Site 32 (fcc   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 32 (fcc   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.177 eV
+Site 32 (fcc   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 32 (fcc   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.177 eV
+Site 32 (fcc   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 32 (fcc   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.177 eV
+Site 32 (fcc   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 32 (fcc   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 32 (fcc   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.027 eV
+Site 32 (fcc   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 32 (fcc   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 32 (fcc   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 32 (fcc   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.027 eV
+Site 32 (fcc   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 32 (fcc   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 32 (fcc   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 32 (fcc   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.027 eV
+Site 32 (fcc   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 32 (fcc   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 32 (fcc   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.169 eV
+Site 32 (fcc   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 32 (fcc   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.169 eV
+Site 32 (fcc   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 32 (fcc   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.169 eV
+Site 32 (fcc   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 32 (fcc   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.169 eV
+Site 32 (fcc   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 32 (fcc   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.169 eV
+Site 32 (fcc   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 32 (fcc   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.169 eV
+Site 32 (fcc   ), Height 3.0 Å, Rotation 0°: E_ads =   0.022 eV
+Site 32 (fcc   ), Height 3.0 Å, Rotation 30°: E_ads =   0.045 eV
+Site 32 (fcc   ), Height 3.0 Å, Rotation 60°: E_ads =   0.029 eV
+Site 32 (fcc   ), Height 3.0 Å, Rotation 90°: E_ads =   0.045 eV
+Site 32 (fcc   ), Height 3.0 Å, Rotation 120°: E_ads =   0.022 eV
+Site 32 (fcc   ), Height 3.0 Å, Rotation 150°: E_ads =   0.045 eV
+Site 32 (fcc   ), Height 3.0 Å, Rotation 180°: E_ads =   0.029 eV
+Site 32 (fcc   ), Height 3.0 Å, Rotation 210°: E_ads =   0.045 eV
+Site 32 (fcc   ), Height 3.0 Å, Rotation 240°: E_ads =   0.022 eV
+Site 32 (fcc   ), Height 3.0 Å, Rotation 270°: E_ads =   0.045 eV
+Site 32 (fcc   ), Height 3.0 Å, Rotation 300°: E_ads =   0.029 eV
+Site 32 (fcc   ), Height 3.0 Å, Rotation 330°: E_ads =   0.045 eV
+Site 33 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 33 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 33 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 33 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 33 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 33 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 33 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 33 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 33 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 33 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 33 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 33 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 33 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 33 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 33 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 33 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 33 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 33 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 33 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 33 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 33 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 33 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 33 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 33 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 33 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 33 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 33 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 33 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 33 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 33 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.082 eV
+Site 33 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 33 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.080 eV
+Site 33 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 33 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.082 eV
+Site 33 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 33 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 33 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 33 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 33 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 33 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 33 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 33 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 33 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 33 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 33 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 33 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 33 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 33 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 34 (fcc   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 34 (fcc   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.177 eV
+Site 34 (fcc   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 34 (fcc   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.177 eV
+Site 34 (fcc   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 34 (fcc   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.177 eV
+Site 34 (fcc   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 34 (fcc   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.177 eV
+Site 34 (fcc   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 34 (fcc   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.177 eV
+Site 34 (fcc   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 34 (fcc   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.177 eV
+Site 34 (fcc   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 34 (fcc   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 34 (fcc   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.027 eV
+Site 34 (fcc   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 34 (fcc   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 34 (fcc   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 34 (fcc   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.027 eV
+Site 34 (fcc   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 34 (fcc   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 34 (fcc   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 34 (fcc   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.027 eV
+Site 34 (fcc   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 34 (fcc   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 34 (fcc   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.169 eV
+Site 34 (fcc   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 34 (fcc   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.169 eV
+Site 34 (fcc   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 34 (fcc   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.169 eV
+Site 34 (fcc   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 34 (fcc   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.169 eV
+Site 34 (fcc   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 34 (fcc   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.169 eV
+Site 34 (fcc   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 34 (fcc   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.169 eV
+Site 34 (fcc   ), Height 3.0 Å, Rotation 0°: E_ads =   0.022 eV
+Site 34 (fcc   ), Height 3.0 Å, Rotation 30°: E_ads =   0.045 eV
+Site 34 (fcc   ), Height 3.0 Å, Rotation 60°: E_ads =   0.029 eV
+Site 34 (fcc   ), Height 3.0 Å, Rotation 90°: E_ads =   0.045 eV
+Site 34 (fcc   ), Height 3.0 Å, Rotation 120°: E_ads =   0.022 eV
+Site 34 (fcc   ), Height 3.0 Å, Rotation 150°: E_ads =   0.045 eV
+Site 34 (fcc   ), Height 3.0 Å, Rotation 180°: E_ads =   0.029 eV
+Site 34 (fcc   ), Height 3.0 Å, Rotation 210°: E_ads =   0.045 eV
+Site 34 (fcc   ), Height 3.0 Å, Rotation 240°: E_ads =   0.022 eV
+Site 34 (fcc   ), Height 3.0 Å, Rotation 270°: E_ads =   0.045 eV
+Site 34 (fcc   ), Height 3.0 Å, Rotation 300°: E_ads =   0.029 eV
+Site 34 (fcc   ), Height 3.0 Å, Rotation 330°: E_ads =   0.045 eV
+Site 35 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 35 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 35 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 35 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 35 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 35 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 35 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 35 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 35 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 35 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 35 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 35 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 35 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 35 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 35 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 35 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 35 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 35 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 35 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 35 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 35 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 35 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 35 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 35 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 35 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 35 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.080 eV
+Site 35 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 35 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 35 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 35 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.082 eV
+Site 35 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 35 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.080 eV
+Site 35 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 35 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.082 eV
+Site 35 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 35 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 35 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 35 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 35 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 35 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 35 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 35 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 35 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 35 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 35 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 35 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 35 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 35 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 36 (hcp   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 36 (hcp   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 36 (hcp   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.183 eV
+Site 36 (hcp   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 36 (hcp   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 36 (hcp   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 36 (hcp   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.183 eV
+Site 36 (hcp   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 36 (hcp   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 36 (hcp   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 36 (hcp   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.183 eV
+Site 36 (hcp   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 36 (hcp   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 36 (hcp   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 36 (hcp   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 36 (hcp   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 36 (hcp   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 36 (hcp   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 36 (hcp   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 36 (hcp   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 36 (hcp   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 36 (hcp   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 36 (hcp   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 36 (hcp   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 36 (hcp   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.022 eV
+Site 36 (hcp   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.168 eV
+Site 36 (hcp   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 36 (hcp   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.168 eV
+Site 36 (hcp   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.022 eV
+Site 36 (hcp   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.168 eV
+Site 36 (hcp   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 36 (hcp   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.168 eV
+Site 36 (hcp   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.022 eV
+Site 36 (hcp   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.168 eV
+Site 36 (hcp   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 36 (hcp   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.168 eV
+Site 36 (hcp   ), Height 3.0 Å, Rotation 0°: E_ads =   0.029 eV
+Site 36 (hcp   ), Height 3.0 Å, Rotation 30°: E_ads =   0.047 eV
+Site 36 (hcp   ), Height 3.0 Å, Rotation 60°: E_ads =   0.024 eV
+Site 36 (hcp   ), Height 3.0 Å, Rotation 90°: E_ads =   0.047 eV
+Site 36 (hcp   ), Height 3.0 Å, Rotation 120°: E_ads =   0.029 eV
+Site 36 (hcp   ), Height 3.0 Å, Rotation 150°: E_ads =   0.047 eV
+Site 36 (hcp   ), Height 3.0 Å, Rotation 180°: E_ads =   0.024 eV
+Site 36 (hcp   ), Height 3.0 Å, Rotation 210°: E_ads =   0.047 eV
+Site 36 (hcp   ), Height 3.0 Å, Rotation 240°: E_ads =   0.029 eV
+Site 36 (hcp   ), Height 3.0 Å, Rotation 270°: E_ads =   0.047 eV
+Site 36 (hcp   ), Height 3.0 Å, Rotation 300°: E_ads =   0.024 eV
+Site 36 (hcp   ), Height 3.0 Å, Rotation 330°: E_ads =   0.047 eV
+Site 37 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 37 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 37 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 37 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 37 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 37 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 37 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 37 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 37 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 37 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 37 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 37 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 37 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 37 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 37 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 37 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 37 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 37 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 37 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 37 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 37 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 37 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 37 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 37 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 37 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 37 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 37 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 37 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.081 eV
+Site 37 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 37 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.083 eV
+Site 37 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 37 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.082 eV
+Site 37 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 37 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.083 eV
+Site 37 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 37 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 37 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 37 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 37 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 37 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 37 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 37 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 37 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 37 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 37 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 37 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 37 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 37 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 38 (ontop ), Height 1.5 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 38 (ontop ), Height 1.5 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 1.5 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 38 (ontop ), Height 1.5 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 1.5 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 38 (ontop ), Height 1.5 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 1.5 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 38 (ontop ), Height 1.5 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 1.5 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 38 (ontop ), Height 1.5 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 1.5 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 38 (ontop ), Height 1.5 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 2.0 Å, Rotation 0°: E_ads =  -1.086 eV
+Site 38 (ontop ), Height 2.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 2.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 38 (ontop ), Height 2.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 2.0 Å, Rotation 120°: E_ads =  -1.086 eV
+Site 38 (ontop ), Height 2.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 2.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 38 (ontop ), Height 2.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 2.0 Å, Rotation 240°: E_ads =  -1.086 eV
+Site 38 (ontop ), Height 2.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 2.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 38 (ontop ), Height 2.0 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 2.5 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 38 (ontop ), Height 2.5 Å, Rotation 30°: E_ads =  -1.093 eV
+Site 38 (ontop ), Height 2.5 Å, Rotation 60°: E_ads =  -1.087 eV
+Site 38 (ontop ), Height 2.5 Å, Rotation 90°: E_ads =  -1.093 eV
+Site 38 (ontop ), Height 2.5 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 38 (ontop ), Height 2.5 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 2.5 Å, Rotation 180°: E_ads =  -1.087 eV
+Site 38 (ontop ), Height 2.5 Å, Rotation 210°: E_ads =  -1.093 eV
+Site 38 (ontop ), Height 2.5 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 38 (ontop ), Height 2.5 Å, Rotation 270°: E_ads =  -1.093 eV
+Site 38 (ontop ), Height 2.5 Å, Rotation 300°: E_ads =  -1.087 eV
+Site 38 (ontop ), Height 2.5 Å, Rotation 330°: E_ads =  -1.093 eV
+Site 38 (ontop ), Height 3.0 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 38 (ontop ), Height 3.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 3.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 38 (ontop ), Height 3.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 3.0 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 38 (ontop ), Height 3.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 3.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 38 (ontop ), Height 3.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 3.0 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 38 (ontop ), Height 3.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 38 (ontop ), Height 3.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 38 (ontop ), Height 3.0 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 39 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 39 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 39 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 39 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 39 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 39 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 39 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 39 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 39 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 39 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 39 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 39 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 39 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 39 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 39 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 39 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 39 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 39 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 39 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 39 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 39 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 39 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 39 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 39 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 39 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 39 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.081 eV
+Site 39 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 39 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 39 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 39 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.082 eV
+Site 39 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 39 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.082 eV
+Site 39 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 39 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.082 eV
+Site 39 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 39 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 39 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 39 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 39 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 39 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 39 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 39 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 39 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 39 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 39 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 39 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 39 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 39 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 40 (fcc   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 40 (fcc   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.177 eV
+Site 40 (fcc   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 40 (fcc   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.177 eV
+Site 40 (fcc   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 40 (fcc   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.177 eV
+Site 40 (fcc   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 40 (fcc   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.177 eV
+Site 40 (fcc   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 40 (fcc   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.177 eV
+Site 40 (fcc   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 40 (fcc   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.177 eV
+Site 40 (fcc   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 40 (fcc   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 40 (fcc   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.027 eV
+Site 40 (fcc   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 40 (fcc   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 40 (fcc   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 40 (fcc   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.027 eV
+Site 40 (fcc   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 40 (fcc   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 40 (fcc   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 40 (fcc   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.027 eV
+Site 40 (fcc   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 40 (fcc   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.183 eV
+Site 40 (fcc   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.169 eV
+Site 40 (fcc   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.028 eV
+Site 40 (fcc   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.169 eV
+Site 40 (fcc   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.183 eV
+Site 40 (fcc   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.169 eV
+Site 40 (fcc   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.028 eV
+Site 40 (fcc   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.169 eV
+Site 40 (fcc   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.183 eV
+Site 40 (fcc   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.169 eV
+Site 40 (fcc   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.028 eV
+Site 40 (fcc   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.169 eV
+Site 40 (fcc   ), Height 3.0 Å, Rotation 0°: E_ads =   0.022 eV
+Site 40 (fcc   ), Height 3.0 Å, Rotation 30°: E_ads =   0.045 eV
+Site 40 (fcc   ), Height 3.0 Å, Rotation 60°: E_ads =   0.029 eV
+Site 40 (fcc   ), Height 3.0 Å, Rotation 90°: E_ads =   0.045 eV
+Site 40 (fcc   ), Height 3.0 Å, Rotation 120°: E_ads =   0.022 eV
+Site 40 (fcc   ), Height 3.0 Å, Rotation 150°: E_ads =   0.045 eV
+Site 40 (fcc   ), Height 3.0 Å, Rotation 180°: E_ads =   0.029 eV
+Site 40 (fcc   ), Height 3.0 Å, Rotation 210°: E_ads =   0.045 eV
+Site 40 (fcc   ), Height 3.0 Å, Rotation 240°: E_ads =   0.022 eV
+Site 40 (fcc   ), Height 3.0 Å, Rotation 270°: E_ads =   0.045 eV
+Site 40 (fcc   ), Height 3.0 Å, Rotation 300°: E_ads =   0.029 eV
+Site 40 (fcc   ), Height 3.0 Å, Rotation 330°: E_ads =   0.045 eV
+Site 41 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 41 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 41 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 41 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 41 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 41 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 41 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 41 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 41 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 41 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 41 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 41 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 41 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 41 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 41 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 41 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 41 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 41 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 41 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 41 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 41 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 41 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 41 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 41 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 41 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 41 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 41 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 41 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 41 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 41 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.082 eV
+Site 41 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 41 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.080 eV
+Site 41 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 41 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.081 eV
+Site 41 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 41 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 41 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 41 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 41 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 41 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 41 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 41 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 41 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 41 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 41 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 41 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 41 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 41 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 42 (hcp   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 42 (hcp   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 42 (hcp   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.183 eV
+Site 42 (hcp   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 42 (hcp   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 42 (hcp   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 42 (hcp   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.183 eV
+Site 42 (hcp   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 42 (hcp   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 42 (hcp   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 42 (hcp   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.183 eV
+Site 42 (hcp   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 42 (hcp   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 42 (hcp   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 42 (hcp   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 42 (hcp   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 42 (hcp   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 42 (hcp   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 42 (hcp   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 42 (hcp   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 42 (hcp   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 42 (hcp   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 42 (hcp   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 42 (hcp   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 42 (hcp   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.022 eV
+Site 42 (hcp   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.168 eV
+Site 42 (hcp   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 42 (hcp   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.168 eV
+Site 42 (hcp   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.022 eV
+Site 42 (hcp   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.168 eV
+Site 42 (hcp   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 42 (hcp   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.168 eV
+Site 42 (hcp   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.022 eV
+Site 42 (hcp   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.168 eV
+Site 42 (hcp   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 42 (hcp   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.168 eV
+Site 42 (hcp   ), Height 3.0 Å, Rotation 0°: E_ads =   0.029 eV
+Site 42 (hcp   ), Height 3.0 Å, Rotation 30°: E_ads =   0.047 eV
+Site 42 (hcp   ), Height 3.0 Å, Rotation 60°: E_ads =   0.024 eV
+Site 42 (hcp   ), Height 3.0 Å, Rotation 90°: E_ads =   0.047 eV
+Site 42 (hcp   ), Height 3.0 Å, Rotation 120°: E_ads =   0.029 eV
+Site 42 (hcp   ), Height 3.0 Å, Rotation 150°: E_ads =   0.047 eV
+Site 42 (hcp   ), Height 3.0 Å, Rotation 180°: E_ads =   0.024 eV
+Site 42 (hcp   ), Height 3.0 Å, Rotation 210°: E_ads =   0.047 eV
+Site 42 (hcp   ), Height 3.0 Å, Rotation 240°: E_ads =   0.029 eV
+Site 42 (hcp   ), Height 3.0 Å, Rotation 270°: E_ads =   0.047 eV
+Site 42 (hcp   ), Height 3.0 Å, Rotation 300°: E_ads =   0.024 eV
+Site 42 (hcp   ), Height 3.0 Å, Rotation 330°: E_ads =   0.047 eV
+Site 43 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 43 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 43 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 43 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 43 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 43 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 43 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 43 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 43 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 43 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 43 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 43 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 43 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 43 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 43 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 43 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 43 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 43 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 43 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 43 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 43 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 43 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 43 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 43 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 43 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 43 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 43 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 43 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.081 eV
+Site 43 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 43 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.081 eV
+Site 43 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 43 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.080 eV
+Site 43 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 43 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.082 eV
+Site 43 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 43 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 43 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 43 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 43 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 43 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 43 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 43 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 43 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 43 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 43 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 43 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 43 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 43 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 44 (ontop ), Height 1.5 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 44 (ontop ), Height 1.5 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 44 (ontop ), Height 1.5 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 44 (ontop ), Height 1.5 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 44 (ontop ), Height 1.5 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 44 (ontop ), Height 1.5 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 44 (ontop ), Height 1.5 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 44 (ontop ), Height 1.5 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 44 (ontop ), Height 1.5 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 44 (ontop ), Height 1.5 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 44 (ontop ), Height 1.5 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 44 (ontop ), Height 1.5 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 44 (ontop ), Height 2.0 Å, Rotation 0°: E_ads =  -1.086 eV
+Site 44 (ontop ), Height 2.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 44 (ontop ), Height 2.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 44 (ontop ), Height 2.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 44 (ontop ), Height 2.0 Å, Rotation 120°: E_ads =  -1.086 eV
+Site 44 (ontop ), Height 2.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 44 (ontop ), Height 2.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 44 (ontop ), Height 2.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 44 (ontop ), Height 2.0 Å, Rotation 240°: E_ads =  -1.086 eV
+Site 44 (ontop ), Height 2.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 44 (ontop ), Height 2.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 44 (ontop ), Height 2.0 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 44 (ontop ), Height 2.5 Å, Rotation 0°: E_ads =  -1.086 eV
+Site 44 (ontop ), Height 2.5 Å, Rotation 30°: E_ads =  -1.093 eV
+Site 44 (ontop ), Height 2.5 Å, Rotation 60°: E_ads =  -1.087 eV
+Site 44 (ontop ), Height 2.5 Å, Rotation 90°: E_ads =  -1.093 eV
+Site 44 (ontop ), Height 2.5 Å, Rotation 120°: E_ads =  -1.086 eV
+Site 44 (ontop ), Height 2.5 Å, Rotation 150°: E_ads =  -1.093 eV
+Site 44 (ontop ), Height 2.5 Å, Rotation 180°: E_ads =  -1.087 eV
+Site 44 (ontop ), Height 2.5 Å, Rotation 210°: E_ads =  -1.093 eV
+Site 44 (ontop ), Height 2.5 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 44 (ontop ), Height 2.5 Å, Rotation 270°: E_ads =  -1.093 eV
+Site 44 (ontop ), Height 2.5 Å, Rotation 300°: E_ads =  -1.087 eV
+Site 44 (ontop ), Height 2.5 Å, Rotation 330°: E_ads =  -1.093 eV
+Site 44 (ontop ), Height 3.0 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 44 (ontop ), Height 3.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 44 (ontop ), Height 3.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 44 (ontop ), Height 3.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 44 (ontop ), Height 3.0 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 44 (ontop ), Height 3.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 44 (ontop ), Height 3.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 44 (ontop ), Height 3.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 44 (ontop ), Height 3.0 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 44 (ontop ), Height 3.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 44 (ontop ), Height 3.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 44 (ontop ), Height 3.0 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 45 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 45 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 45 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 45 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 45 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 45 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 45 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 45 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 45 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 45 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 45 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 45 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 45 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 45 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 45 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 45 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 45 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 45 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 45 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 45 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 45 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 45 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 45 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 45 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 45 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 45 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 45 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 45 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 45 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 45 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.082 eV
+Site 45 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 45 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.082 eV
+Site 45 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 45 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.082 eV
+Site 45 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 45 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 45 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 45 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 45 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 45 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 45 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 45 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 45 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 45 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 45 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 45 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 45 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 45 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 46 (hcp   ), Height 1.5 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 46 (hcp   ), Height 1.5 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 46 (hcp   ), Height 1.5 Å, Rotation 60°: E_ads =  -0.183 eV
+Site 46 (hcp   ), Height 1.5 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 46 (hcp   ), Height 1.5 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 46 (hcp   ), Height 1.5 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 46 (hcp   ), Height 1.5 Å, Rotation 180°: E_ads =  -0.183 eV
+Site 46 (hcp   ), Height 1.5 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 46 (hcp   ), Height 1.5 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 46 (hcp   ), Height 1.5 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 46 (hcp   ), Height 1.5 Å, Rotation 300°: E_ads =  -0.183 eV
+Site 46 (hcp   ), Height 1.5 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 46 (hcp   ), Height 2.0 Å, Rotation 0°: E_ads =  -0.021 eV
+Site 46 (hcp   ), Height 2.0 Å, Rotation 30°: E_ads =  -0.181 eV
+Site 46 (hcp   ), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 46 (hcp   ), Height 2.0 Å, Rotation 90°: E_ads =  -0.181 eV
+Site 46 (hcp   ), Height 2.0 Å, Rotation 120°: E_ads =  -0.021 eV
+Site 46 (hcp   ), Height 2.0 Å, Rotation 150°: E_ads =  -0.181 eV
+Site 46 (hcp   ), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 46 (hcp   ), Height 2.0 Å, Rotation 210°: E_ads =  -0.181 eV
+Site 46 (hcp   ), Height 2.0 Å, Rotation 240°: E_ads =  -0.021 eV
+Site 46 (hcp   ), Height 2.0 Å, Rotation 270°: E_ads =  -0.181 eV
+Site 46 (hcp   ), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 46 (hcp   ), Height 2.0 Å, Rotation 330°: E_ads =  -0.181 eV
+Site 46 (hcp   ), Height 2.5 Å, Rotation 0°: E_ads =  -0.022 eV
+Site 46 (hcp   ), Height 2.5 Å, Rotation 30°: E_ads =  -0.168 eV
+Site 46 (hcp   ), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 46 (hcp   ), Height 2.5 Å, Rotation 90°: E_ads =  -0.168 eV
+Site 46 (hcp   ), Height 2.5 Å, Rotation 120°: E_ads =  -0.022 eV
+Site 46 (hcp   ), Height 2.5 Å, Rotation 150°: E_ads =  -0.168 eV
+Site 46 (hcp   ), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 46 (hcp   ), Height 2.5 Å, Rotation 210°: E_ads =  -0.168 eV
+Site 46 (hcp   ), Height 2.5 Å, Rotation 240°: E_ads =  -0.022 eV
+Site 46 (hcp   ), Height 2.5 Å, Rotation 270°: E_ads =  -0.168 eV
+Site 46 (hcp   ), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 46 (hcp   ), Height 2.5 Å, Rotation 330°: E_ads =  -0.168 eV
+Site 46 (hcp   ), Height 3.0 Å, Rotation 0°: E_ads =   0.029 eV
+Site 46 (hcp   ), Height 3.0 Å, Rotation 30°: E_ads =   0.047 eV
+Site 46 (hcp   ), Height 3.0 Å, Rotation 60°: E_ads =   0.024 eV
+Site 46 (hcp   ), Height 3.0 Å, Rotation 90°: E_ads =   0.047 eV
+Site 46 (hcp   ), Height 3.0 Å, Rotation 120°: E_ads =   0.029 eV
+Site 46 (hcp   ), Height 3.0 Å, Rotation 150°: E_ads =   0.047 eV
+Site 46 (hcp   ), Height 3.0 Å, Rotation 180°: E_ads =   0.024 eV
+Site 46 (hcp   ), Height 3.0 Å, Rotation 210°: E_ads =   0.047 eV
+Site 46 (hcp   ), Height 3.0 Å, Rotation 240°: E_ads =   0.029 eV
+Site 46 (hcp   ), Height 3.0 Å, Rotation 270°: E_ads =   0.047 eV
+Site 46 (hcp   ), Height 3.0 Å, Rotation 300°: E_ads =   0.024 eV
+Site 46 (hcp   ), Height 3.0 Å, Rotation 330°: E_ads =   0.047 eV
+Site 47 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 47 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 47 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 47 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 47 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 47 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 47 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 47 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 47 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 47 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 47 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 47 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 47 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 47 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 47 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 47 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 47 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 47 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 47 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 47 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 47 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 47 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 47 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 47 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 47 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 47 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.080 eV
+Site 47 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 47 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 47 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 47 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.080 eV
+Site 47 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 47 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.082 eV
+Site 47 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 47 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.082 eV
+Site 47 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 47 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.081 eV
+Site 47 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 47 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 47 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 47 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 47 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 47 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 47 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 47 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 47 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 47 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 47 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 47 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 48 (ontop ), Height 1.5 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 48 (ontop ), Height 1.5 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 48 (ontop ), Height 1.5 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 48 (ontop ), Height 1.5 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 48 (ontop ), Height 1.5 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 48 (ontop ), Height 1.5 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 48 (ontop ), Height 1.5 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 48 (ontop ), Height 1.5 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 48 (ontop ), Height 1.5 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 48 (ontop ), Height 1.5 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 48 (ontop ), Height 1.5 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 48 (ontop ), Height 1.5 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 48 (ontop ), Height 2.0 Å, Rotation 0°: E_ads =  -1.086 eV
+Site 48 (ontop ), Height 2.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 48 (ontop ), Height 2.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 48 (ontop ), Height 2.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 48 (ontop ), Height 2.0 Å, Rotation 120°: E_ads =  -1.086 eV
+Site 48 (ontop ), Height 2.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 48 (ontop ), Height 2.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 48 (ontop ), Height 2.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 48 (ontop ), Height 2.0 Å, Rotation 240°: E_ads =  -1.086 eV
+Site 48 (ontop ), Height 2.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 48 (ontop ), Height 2.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 48 (ontop ), Height 2.0 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 48 (ontop ), Height 2.5 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 48 (ontop ), Height 2.5 Å, Rotation 30°: E_ads =  -1.093 eV
+Site 48 (ontop ), Height 2.5 Å, Rotation 60°: E_ads =  -1.087 eV
+Site 48 (ontop ), Height 2.5 Å, Rotation 90°: E_ads =  -1.093 eV
+Site 48 (ontop ), Height 2.5 Å, Rotation 120°: E_ads =  -1.086 eV
+Site 48 (ontop ), Height 2.5 Å, Rotation 150°: E_ads =  -1.093 eV
+Site 48 (ontop ), Height 2.5 Å, Rotation 180°: E_ads =  -1.087 eV
+Site 48 (ontop ), Height 2.5 Å, Rotation 210°: E_ads =  -1.093 eV
+Site 48 (ontop ), Height 2.5 Å, Rotation 240°: E_ads =  -1.086 eV
+Site 48 (ontop ), Height 2.5 Å, Rotation 270°: E_ads =  -1.093 eV
+Site 48 (ontop ), Height 2.5 Å, Rotation 300°: E_ads =  -1.087 eV
+Site 48 (ontop ), Height 2.5 Å, Rotation 330°: E_ads =  -1.093 eV
+Site 48 (ontop ), Height 3.0 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 48 (ontop ), Height 3.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 48 (ontop ), Height 3.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 48 (ontop ), Height 3.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 48 (ontop ), Height 3.0 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 48 (ontop ), Height 3.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 48 (ontop ), Height 3.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 48 (ontop ), Height 3.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 48 (ontop ), Height 3.0 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 48 (ontop ), Height 3.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 48 (ontop ), Height 3.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 48 (ontop ), Height 3.0 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 49 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 49 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 49 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 49 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 49 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 49 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 49 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 49 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 49 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 49 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 49 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 49 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 49 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 49 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 49 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 49 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 49 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 49 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 49 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 49 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 49 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 49 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 49 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 49 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 49 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 49 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 49 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 49 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.081 eV
+Site 49 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 49 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.082 eV
+Site 49 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 49 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.082 eV
+Site 49 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 49 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.082 eV
+Site 49 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 49 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.080 eV
+Site 49 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 49 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 49 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 49 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 49 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 49 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 49 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 49 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 49 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 49 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 49 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 49 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 50 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 50 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 50 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 50 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 50 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 50 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 50 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 50 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 50 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 50 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 50 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 50 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 50 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 50 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 50 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 50 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 50 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 50 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 50 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 50 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 50 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 50 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 50 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 50 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 50 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 50 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 50 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 50 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 50 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 50 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.082 eV
+Site 50 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 50 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.082 eV
+Site 50 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 50 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.081 eV
+Site 50 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 50 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 50 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 50 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 50 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 50 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 50 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 50 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 50 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 50 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 50 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 50 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 50 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 50 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 51 (ontop ), Height 1.5 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 51 (ontop ), Height 1.5 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 1.5 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 51 (ontop ), Height 1.5 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 1.5 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 51 (ontop ), Height 1.5 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 1.5 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 51 (ontop ), Height 1.5 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 1.5 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 51 (ontop ), Height 1.5 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 1.5 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 51 (ontop ), Height 1.5 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 2.0 Å, Rotation 0°: E_ads =  -1.086 eV
+Site 51 (ontop ), Height 2.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 2.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 51 (ontop ), Height 2.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 2.0 Å, Rotation 120°: E_ads =  -1.086 eV
+Site 51 (ontop ), Height 2.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 2.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 51 (ontop ), Height 2.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 2.0 Å, Rotation 240°: E_ads =  -1.086 eV
+Site 51 (ontop ), Height 2.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 2.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 51 (ontop ), Height 2.0 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 2.5 Å, Rotation 0°: E_ads =  -1.086 eV
+Site 51 (ontop ), Height 2.5 Å, Rotation 30°: E_ads =  -1.093 eV
+Site 51 (ontop ), Height 2.5 Å, Rotation 60°: E_ads =  -1.087 eV
+Site 51 (ontop ), Height 2.5 Å, Rotation 90°: E_ads =  -1.093 eV
+Site 51 (ontop ), Height 2.5 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 51 (ontop ), Height 2.5 Å, Rotation 150°: E_ads =  -1.093 eV
+Site 51 (ontop ), Height 2.5 Å, Rotation 180°: E_ads =  -1.087 eV
+Site 51 (ontop ), Height 2.5 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 2.5 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 51 (ontop ), Height 2.5 Å, Rotation 270°: E_ads =  -1.093 eV
+Site 51 (ontop ), Height 2.5 Å, Rotation 300°: E_ads =  -1.087 eV
+Site 51 (ontop ), Height 2.5 Å, Rotation 330°: E_ads =  -1.093 eV
+Site 51 (ontop ), Height 3.0 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 51 (ontop ), Height 3.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 3.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 51 (ontop ), Height 3.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 3.0 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 51 (ontop ), Height 3.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 3.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 51 (ontop ), Height 3.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 3.0 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 51 (ontop ), Height 3.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 51 (ontop ), Height 3.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 51 (ontop ), Height 3.0 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 52 (bridge), Height 1.5 Å, Rotation 0°: E_ads =  -0.185 eV
+Site 52 (bridge), Height 1.5 Å, Rotation 30°: E_ads =  -0.138 eV
+Site 52 (bridge), Height 1.5 Å, Rotation 60°: E_ads =  -0.185 eV
+Site 52 (bridge), Height 1.5 Å, Rotation 90°: E_ads =  -0.138 eV
+Site 52 (bridge), Height 1.5 Å, Rotation 120°: E_ads =  -0.185 eV
+Site 52 (bridge), Height 1.5 Å, Rotation 150°: E_ads =  -0.138 eV
+Site 52 (bridge), Height 1.5 Å, Rotation 180°: E_ads =  -0.185 eV
+Site 52 (bridge), Height 1.5 Å, Rotation 210°: E_ads =  -0.138 eV
+Site 52 (bridge), Height 1.5 Å, Rotation 240°: E_ads =  -0.185 eV
+Site 52 (bridge), Height 1.5 Å, Rotation 270°: E_ads =  -0.138 eV
+Site 52 (bridge), Height 1.5 Å, Rotation 300°: E_ads =  -0.185 eV
+Site 52 (bridge), Height 1.5 Å, Rotation 330°: E_ads =  -0.138 eV
+Site 52 (bridge), Height 2.0 Å, Rotation 0°: E_ads =  -0.182 eV
+Site 52 (bridge), Height 2.0 Å, Rotation 30°: E_ads =  -0.137 eV
+Site 52 (bridge), Height 2.0 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 52 (bridge), Height 2.0 Å, Rotation 90°: E_ads =  -0.137 eV
+Site 52 (bridge), Height 2.0 Å, Rotation 120°: E_ads =  -0.182 eV
+Site 52 (bridge), Height 2.0 Å, Rotation 150°: E_ads =  -0.137 eV
+Site 52 (bridge), Height 2.0 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 52 (bridge), Height 2.0 Å, Rotation 210°: E_ads =  -0.137 eV
+Site 52 (bridge), Height 2.0 Å, Rotation 240°: E_ads =  -0.182 eV
+Site 52 (bridge), Height 2.0 Å, Rotation 270°: E_ads =  -0.137 eV
+Site 52 (bridge), Height 2.0 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 52 (bridge), Height 2.0 Å, Rotation 330°: E_ads =  -0.137 eV
+Site 52 (bridge), Height 2.5 Å, Rotation 0°: E_ads =  -0.180 eV
+Site 52 (bridge), Height 2.5 Å, Rotation 30°: E_ads =  -1.082 eV
+Site 52 (bridge), Height 2.5 Å, Rotation 60°: E_ads =  -0.182 eV
+Site 52 (bridge), Height 2.5 Å, Rotation 90°: E_ads =  -1.082 eV
+Site 52 (bridge), Height 2.5 Å, Rotation 120°: E_ads =  -0.180 eV
+Site 52 (bridge), Height 2.5 Å, Rotation 150°: E_ads =  -1.080 eV
+Site 52 (bridge), Height 2.5 Å, Rotation 180°: E_ads =  -0.182 eV
+Site 52 (bridge), Height 2.5 Å, Rotation 210°: E_ads =  -1.081 eV
+Site 52 (bridge), Height 2.5 Å, Rotation 240°: E_ads =  -0.180 eV
+Site 52 (bridge), Height 2.5 Å, Rotation 270°: E_ads =  -1.082 eV
+Site 52 (bridge), Height 2.5 Å, Rotation 300°: E_ads =  -0.182 eV
+Site 52 (bridge), Height 2.5 Å, Rotation 330°: E_ads =  -1.082 eV
+Site 52 (bridge), Height 3.0 Å, Rotation 0°: E_ads =   0.044 eV
+Site 52 (bridge), Height 3.0 Å, Rotation 30°: E_ads =   0.048 eV
+Site 52 (bridge), Height 3.0 Å, Rotation 60°: E_ads =   0.045 eV
+Site 52 (bridge), Height 3.0 Å, Rotation 90°: E_ads =   0.048 eV
+Site 52 (bridge), Height 3.0 Å, Rotation 120°: E_ads =   0.044 eV
+Site 52 (bridge), Height 3.0 Å, Rotation 150°: E_ads =   0.048 eV
+Site 52 (bridge), Height 3.0 Å, Rotation 180°: E_ads =   0.045 eV
+Site 52 (bridge), Height 3.0 Å, Rotation 210°: E_ads =   0.048 eV
+Site 52 (bridge), Height 3.0 Å, Rotation 240°: E_ads =   0.044 eV
+Site 52 (bridge), Height 3.0 Å, Rotation 270°: E_ads =   0.048 eV
+Site 52 (bridge), Height 3.0 Å, Rotation 300°: E_ads =   0.045 eV
+Site 52 (bridge), Height 3.0 Å, Rotation 330°: E_ads =   0.048 eV
+Site 53 (ontop ), Height 1.5 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 53 (ontop ), Height 1.5 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 53 (ontop ), Height 1.5 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 53 (ontop ), Height 1.5 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 53 (ontop ), Height 1.5 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 53 (ontop ), Height 1.5 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 53 (ontop ), Height 1.5 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 53 (ontop ), Height 1.5 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 53 (ontop ), Height 1.5 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 53 (ontop ), Height 1.5 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 53 (ontop ), Height 1.5 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 53 (ontop ), Height 1.5 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 53 (ontop ), Height 2.0 Å, Rotation 0°: E_ads =  -1.086 eV
+Site 53 (ontop ), Height 2.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 53 (ontop ), Height 2.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 53 (ontop ), Height 2.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 53 (ontop ), Height 2.0 Å, Rotation 120°: E_ads =  -1.086 eV
+Site 53 (ontop ), Height 2.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 53 (ontop ), Height 2.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 53 (ontop ), Height 2.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 53 (ontop ), Height 2.0 Å, Rotation 240°: E_ads =  -1.086 eV
+Site 53 (ontop ), Height 2.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 53 (ontop ), Height 2.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 53 (ontop ), Height 2.0 Å, Rotation 330°: E_ads =  -1.092 eV
+Site 53 (ontop ), Height 2.5 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 53 (ontop ), Height 2.5 Å, Rotation 30°: E_ads =  -1.093 eV
+Site 53 (ontop ), Height 2.5 Å, Rotation 60°: E_ads =  -1.087 eV
+Site 53 (ontop ), Height 2.5 Å, Rotation 90°: E_ads =  -1.093 eV
+Site 53 (ontop ), Height 2.5 Å, Rotation 120°: E_ads =  -1.086 eV
+Site 53 (ontop ), Height 2.5 Å, Rotation 150°: E_ads =  -1.093 eV
+Site 53 (ontop ), Height 2.5 Å, Rotation 180°: E_ads =  -1.087 eV
+Site 53 (ontop ), Height 2.5 Å, Rotation 210°: E_ads =  -1.093 eV
+Site 53 (ontop ), Height 2.5 Å, Rotation 240°: E_ads =  -1.086 eV
+Site 53 (ontop ), Height 2.5 Å, Rotation 270°: E_ads =  -1.093 eV
+Site 53 (ontop ), Height 2.5 Å, Rotation 300°: E_ads =  -1.087 eV
+Site 53 (ontop ), Height 2.5 Å, Rotation 330°: E_ads =  -1.093 eV
+Site 53 (ontop ), Height 3.0 Å, Rotation 0°: E_ads =  -1.087 eV
+Site 53 (ontop ), Height 3.0 Å, Rotation 30°: E_ads =  -1.092 eV
+Site 53 (ontop ), Height 3.0 Å, Rotation 60°: E_ads =  -1.089 eV
+Site 53 (ontop ), Height 3.0 Å, Rotation 90°: E_ads =  -1.092 eV
+Site 53 (ontop ), Height 3.0 Å, Rotation 120°: E_ads =  -1.087 eV
+Site 53 (ontop ), Height 3.0 Å, Rotation 150°: E_ads =  -1.092 eV
+Site 53 (ontop ), Height 3.0 Å, Rotation 180°: E_ads =  -1.089 eV
+Site 53 (ontop ), Height 3.0 Å, Rotation 210°: E_ads =  -1.092 eV
+Site 53 (ontop ), Height 3.0 Å, Rotation 240°: E_ads =  -1.087 eV
+Site 53 (ontop ), Height 3.0 Å, Rotation 270°: E_ads =  -1.092 eV
+Site 53 (ontop ), Height 3.0 Å, Rotation 300°: E_ads =  -1.089 eV
+Site 53 (ontop ), Height 3.0 Å, Rotation 330°: E_ads =  -1.092 eV
+✓ Saved pickle file: Screening_Data/screening_results.pkl
+✓ Saved JSON metadata: Screening_Data/screening_metadata_20251117_001235.json
+✓ Saved summary: Screening_Data/screening_summary_20251117_001235.txt
+
+======================================================================
+✓ Screening results saved successfully!
+  Location: Screening_Data/
+  Timestamp: 20251117_001235
+======================================================================
+
+
+======================================================================
+Validating Screening Files in: Screening_Data
+======================================================================
+
+✓ VALID PICKLE: screening_results.pkl
+  Size: 4.68 MB, Results: 2592
+✓ VALID JSON: screening_metadata_20251117_001235.json
+  Size: 898.74 KB, Results: 2592
+✓ SUMMARY: screening_summary_20251117_001235.txt
+
+======================================================================
+Timestamp Analysis:
+======================================================================
+
+⚠ Incomplete sets (missing files): 2
+  -  [P--]  (P=pickle, J=json, S=summary)
+  - 20251117_001235 [-JS]  (P=pickle, J=json, S=summary)
+
+======================================================================
+Summary:
+  Total pickle files: 1
+  Total JSON files: 1
+  Total summary files: 1
+  Corrupt files: 0
+  Complete sets: 0
+======================================================================
+
+
+======================================================================
+Validating Screening Files in: Screening_Data
+======================================================================
+
+✓ VALID PICKLE: screening_results.pkl
+  Size: 4.68 MB, Results: 2592
+✓ VALID JSON: screening_metadata_20251117_001235.json
+  Size: 898.74 KB, Results: 2592
+✓ SUMMARY: screening_summary_20251117_001235.txt
+
+======================================================================
+Timestamp Analysis:
+======================================================================
+
+⚠ Incomplete sets (missing files): 2
+  -  [P--]  (P=pickle, J=json, S=summary)
+  - 20251117_001235 [-JS]  (P=pickle, J=json, S=summary)
+
+======================================================================
+Summary:
+  Total pickle files: 1
+  Total JSON files: 1
+  Total summary files: 1
+  Corrupt files: 0
+  Complete sets: 0
+======================================================================
+
+
+======================================================================
+DRY RUN - Files that WOULD be deleted (2):
+======================================================================
+
+  - screening_results.pkl (4789.3 KB)
+  - screening_results.pkl (4789.3 KB)
+
+⚠ This was a DRY RUN - no files were deleted
+To actually delete files, run:
+  clean_incomplete_files('Screening_Data', dry_run=False)
+======================================================================
+
+
+======================================================================
+Recovering Screening Files in: Screening_Data
+======================================================================
+
+Processing timestamp: 
+   Loaded pickle: 2592 results
+   JSON missing - generating...
+   Regenerated JSON: Screening_Data/screening_metadata_.json
+   Summary missing - generating...
+   Generated summary: Screening_Data/screening_summary_.txt
+   Recovery complete for 
+
+======================================================================
+ Recovery complete!
+  Timestamps processed: 1
+  Timestamps recovered: 1
+======================================================================
+
+
+======================================================================
+ Screening results loaded successfully!
+  File: Screening_Data/screening_results.pkl
+  Total configurations: 2592
+  Converged: 2592/2592
+  Site types: bridge, fcc, hcp, ontop
+======================================================================
+
+All site results:
+      site_index  ... converged
+1475          30  ...      True
+2137          44  ...      True
+2337          48  ...      True
+2477          51  ...      True
+1131          23  ...      True
+...          ...  ...       ...
+2389          49  ...      True
+479            9  ...      True
+2103          43  ...      True
+87             1  ...      True
+91             1  ...      True
+
+[2592 rows x 10 columns]
+Best site results:
+      site_index  ... converged
+1805          37  ...      True
+1544          32  ...      True
+146            3  ...      True
+649           13  ...      True
+
+[4 rows x 10 columns]
+✓ Constraint verification passed: 18 atoms fixed
+
+Setting up calculators for NEB...
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Initial structure energy: -173.703552 eV
+Final structure energy: -173.706329 eV
+Created 12 images (including 2 endpoints)
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+
+Starting NEB optimization...
+  Trajectory: NEB_Results/neb_translation.traj
+  Log file: NEB_Results/neb_translation.log
+
+ NEB optimization completed!
+
+Calculating barriers...
+  Forward barrier (fitted): 0.501160 eV (501.160 meV)
+  Reaction energy (ΔE): -0.002777 eV
+  TS absolute energy: -173.202393 eV
+Appears to be only one band in the images.
+Processing band          0 /          1
+
+Saddle point: image 7/11
+Saddle point saved: NEB_Results/saddle_translation.traj
+
+Trajectory saved: NEB_Results/neb_translation.traj
+
+ NEB summary appended to: NEB_Results/neb_summary.txt
+{'barrier_type': 'translation', 'forward_barrier_fit': 0.50115966796875, 'delta_E': -0.002777099609375, 'transition_state_energy': -173.202392578125, 'trajectory': 'NEB_Results/neb_translation.traj', 'saddle_file': 'NEB_Results/saddle_translation.traj', 'saddle_index': 7, 'n_images': 12}
+
+ Using TRANSLATION INITIAL position for rotation NEB
+  Translation initial energy: -173.703552 eV
+  Position: [0.70180348 1.21555928]
+
+Found 12 structures at reference position with different rotations:
+
+Available rotation angles: [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330]
+
+Selected rotation angles:
+  Initial: 0.0°
+  Final:   120.0°
+  Angle difference: 120.0° (target was 120°)
+
+  Note: Very small energy difference (0.015 meV)
+   Rotation barrier will be tiny (CH4 may be nearly symmetric)
+✓ PURE ROTATION confirmed (same position, different angles)
+======================================================================
+✓ Constraint verification passed: 18 atoms fixed
+
+Setting up calculators for NEB...
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Initial structure energy: -172.803665 eV
+Final structure energy: -172.803650 eV
+Created 12 images (including 2 endpoints)
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+Using Materials Project MACE for MACECalculator with /home/akinyemi.az/.cache/mace/20231203mace128L1_epoch199model
+Using float32 for MACECalculator, which is faster but less accurate. Recommended for MD. Use float64 for geometry optimization.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+
+Starting NEB optimization...
+  Trajectory: NEB_Results/neb_rotation.traj
+  Log file: NEB_Results/neb_rotation.log
+
+ NEB optimization completed!
+
+Calculating barriers...
+  Forward barrier (fitted): 0.043503 eV (43.503 meV)
+  Reaction energy (ΔE): 0.000015 eV
+  TS absolute energy: -172.760162 eV
+Appears to be only one band in the images.
+Processing band          0 /          1
+
+Saddle point: image 7/11
+Saddle point saved: NEB_Results/saddle_rotation.traj
+
+Trajectory saved: NEB_Results/neb_rotation.traj
+
+ NEB summary appended to: NEB_Results/neb_summary.txt
+{'barrier_type': 'rotation', 'forward_barrier_fit': 0.043502704948729765, 'delta_E': 1.52587890625e-05, 'transition_state_energy': -172.76016245618408, 'trajectory': 'NEB_Results/neb_rotation.traj', 'saddle_file': 'NEB_Results/saddle_rotation.traj', 'saddle_index': 7, 'n_images': 12}
