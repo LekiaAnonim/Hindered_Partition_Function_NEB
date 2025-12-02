@@ -4,20 +4,20 @@ parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__f
 sys.path.insert(0, parent_dir)
 from model.neb import *
 
-mol = init_molecule('OH')
-opt_mol = opt_molecule(mol)
-slab = opt_slab()
+# mol = init_molecule('OH')
+# opt_mol = opt_molecule(mol)
+# slab = opt_slab()
 
-ads = opt_molecule(init_molecule('OH'))
-screening_results = site_screening(slab, ads, center_xy='binding', use_all_sites=True)
+# ads = opt_molecule(init_molecule('OH'))
+# screening_results = site_screening(slab, ads, center_xy='binding', use_all_sites=True)
 
-# Validate all screening files
-validation = validate_screening_files('Screening_Data')
+# # Validate all screening files
+# validation = validate_screening_files('Screening_Data')
 
-clean_incomplete_files('Screening_Data', dry_run=True)
+# clean_incomplete_files('Screening_Data', dry_run=True)
 
-# Recover the missing JSON and summary files from your valid pickle file
-recover_screening_files('Screening_Data')
+# # Recover the missing JSON and summary files from your valid pickle file
+# recover_screening_files('Screening_Data')
 
 screening_results = load_screening_results('Screening_Data/screening_results.pkl')
 
