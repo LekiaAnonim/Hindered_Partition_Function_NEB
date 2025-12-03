@@ -1,0 +1,10 @@
+{
+  "barrier_type": "rotation",
+  "forward_barrier_fit": 1.9073486328125e-06,
+  "delta_E": 1.9073486328125e-06,
+  "transition_state_energy": -206.42544628104332,
+  "trajectory": "/projects/westgroup/lekia.p/NEB/Adsorbates/NH3/NEB_Rotation/neb_rotation.traj",
+  "saddle_file": "/projects/westgroup/lekia.p/NEB/Adsorbates/NH3/NEB_Rotation/saddle_rotation.traj",
+  "saddle_index": 11,
+  "n_images": 12
+}

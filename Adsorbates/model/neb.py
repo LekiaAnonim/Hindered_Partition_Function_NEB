@@ -701,52 +701,48 @@ def opt_slab(metal='Pt', size=(3, 3, 4), lattice_constant=3.97, vacuum=20, slab_
 
 
 def site_screening(slab, ads, center_xy='site', use_all_sites=True,
-                   save_results=True, workdir="Screening_Data"):
+                   save_results=True, workdir="Screening_Data", resume=True):
     """
-    Multiprocessing-safe site screening function.
-    All outputs stay inside the adsorbate-specific workdir.
+    Multiprocessing-safe site screening function with checkpoint/resume support.
     """
-
-    # Make sure local dirs exist
     log_dir = os.path.join(workdir, "logs")
     structures_dir = os.path.join(workdir, "structures")
     os.makedirs(log_dir, exist_ok=True)
     os.makedirs(structures_dir, exist_ok=True)
 
-    # Local calculator (never share between processes)
+    # Load existing results if resuming
+    results_pkl = os.path.join(workdir, "screening_results.pkl")
+    if resume and os.path.exists(results_pkl):
+        import pickle
+        with open(results_pkl, "rb") as f:
+            screening_results = pickle.load(f)
+        completed = {(r["site_index"], r["height"], r["rotation"]) for r in screening_results}
+        print(f"Resuming: found {len(completed)} completed configurations")
+    else:
+        screening_results = []
+        completed = set()
+
     def calc():
         pred = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
         return FAIRChemCalculator(pred, task_name="oc20")
 
     local_calc = calc()
-
-    # Optimize slab once
     slab = opt_slab(slab_dir=workdir)
     slab.calc = local_calc
-
-    # Compute clean slab energy once (huge speedup)
     clean_slab_energy = slab.get_potential_energy()
 
-    # Optimize adsorbate once
     ads = opt_molecule(ads)
     ads.calc = local_calc
     ads_energy = ads.get_potential_energy()
 
-    # Find adsorption sites
     all_sites, site_density, unique_site_lists, unique_site_pair_lists, \
         single_bond_params, double_bond_params = adsorption_sites_and_unique_placements(slab)
 
     heights = np.arange(1.5, 3.5, 0.5)
     rotations = np.arange(0, 360, 30)
-
-    # Determine which sites to test
     sites_to_screen = all_sites if use_all_sites else [lst[0] for lst in unique_site_lists]
 
-    screening_results = []
-
-    # Begin screening loop
     for site_idx, site in enumerate(sites_to_screen):
-
         bond_params = [{
             "site_pos": site["position"],
             "ind": None,
@@ -756,22 +752,20 @@ def site_screening(slab, ads, center_xy='site', use_all_sites=True,
 
         for height in heights:
             for rot in rotations:
+                # Skip if already completed
+                if (site_idx, float(height), float(rot)) in completed:
+                    print(f"Skipping site {site_idx}, h={height}, r={rot} (already done)")
+                    continue
 
-                # Build structure
                 test_slab = create_structure(
                     slab, ads, site, bond_params,
-                    height,
-                    rotation=rot,
+                    height, rotation=rot,
                     rotation_center=center_xy,
                     binding_atom_idx=None
                 )
                 test_slab.calc = local_calc
 
-                # Optimize structure
-                log_file = os.path.join(
-                    log_dir,
-                    f"site{site_idx}_{site['site']}_h{height}_r{rot}.log"
-                )
+                log_file = os.path.join(log_dir, f"site{site_idx}_{site['site']}_h{height}_r{rot}.log")
                 opt = BFGS(test_slab, logfile=log_file)
 
                 try:
@@ -779,21 +773,17 @@ def site_screening(slab, ads, center_xy='site', use_all_sites=True,
                     converged = True
                 except:
                     converged = False
+
+                if not converged:
                     continue
 
-                # Compute adsorption energy
                 E_total = test_slab.get_potential_energy()
                 E_ads = E_total - clean_slab_energy - ads_energy
 
-                # Save structure
-                struct_file = os.path.join(
-                    structures_dir,
-                    f"{site['site']}_h{height}_r{rot}.xyz"
-                )
+                struct_file = os.path.join(structures_dir, f"{site['site']}_h{height}_r{rot}.xyz")
                 test_slab.write(struct_file)
 
-                # Store result
-                screening_results.append({
+                result = {
                     "site_index": site_idx,
                     "site_type": site["site"],
                     "site_position": site["position"],
@@ -803,23 +793,23 @@ def site_screening(slab, ads, center_xy='site', use_all_sites=True,
                     "total_energy": float(E_total),
                     "structure_file": struct_file,
                     "converged": converged
-                })
-
+                }
+                screening_results.append(result)
                 print(f"Site {site_idx} ({site['site']}), h={height}, r={rot} → E_ads={E_ads:.3f} eV")
 
+                # Incremental save after each successful calculation
+                if save_results:
+                    import pickle
+                    with open(results_pkl, "wb") as f:
+                        pickle.dump(screening_results, f)
 
-    # Save results
+    # Final save (JSON for human readability)
     if save_results:
-        import pickle, json
-        results_pkl = os.path.join(workdir, "screening_results.pkl")
-        with open(results_pkl, "wb") as f:
-            pickle.dump(screening_results, f)
-
+        import json
         json_file = os.path.join(workdir, "screening_metadata.json")
         with open(json_file, "w") as f:
             json.dump(screening_results, f, indent=2)
-
-        print(f"✓ Saved screening results in {workdir}")
+        print(f"✓ Saved {len(screening_results)} screening results in {workdir}")
 
     return screening_results
 
@@ -1325,203 +1315,131 @@ def best_site_results(screening_results):
     return df_sorted, site_best
 
 
-def select_neb_endpoints_translation(site_best, screening_results):
+def select_neb_endpoints_translation(site_best, screening_results, 
+                                      min_distance=2, max_distance=4.3):
     """
-    Select NEB endpoints for PURE TRANSLATION between identical site types
+    Select NEB endpoints for translation between NEIGHBORING sites of same type.
     
-    Strategy: Same site type, same height/rotation, highest vs lowest energy
-    Example: fcc → fcc (different positions), NOT fcc → bridge
+    Parameters:
+        min_distance: Minimum separation to avoid same-site duplicates (Å)
+        max_distance: Maximum separation for nearest-neighbor hop (Å)
+                      Typical: ~2.8 Å for fcc-fcc on Pt(111)
     """
+    
     best_config = site_best.iloc[0]
-    
-    target_site_type = best_config['site_type'] #
-    target_height = best_config['height']
-    target_rotation = best_config['rotation']
+    target_site_type = best_config['site_type']
     best_position = np.array(best_config['site_position'][:2])
-    best_energy = best_config['total_energy']
-
-  
-    # Filter by site type + geometry (no distance constraint)
+    
     df = pd.DataFrame(screening_results)
+    
+    # Filter for same site type and converged
     matches = df[
-        (df['site_type'] == target_site_type) &  # ← NEW: Same site type only!
-        (df['height'] == target_height) & 
-        (df['rotation'] == target_rotation) & 
+        (df['site_type'] == target_site_type) &
         (df['converged'] == True)
     ].copy()
     
     if len(matches) < 2:
-        print(f"\n ERROR: Not enough matching {target_site_type} sites!")
-        print(f"   Need at least 2 sites of the same type for pure translation")
-        return None, best_config
+        print(f"\nERROR: Not enough {target_site_type} sites!")
+        return None, None
     
-    # Calculate distances and energy differences
+    # Calculate distances from best site
     matches['distance'] = matches['site_position'].apply(
         lambda pos: np.linalg.norm(np.array(pos[:2]) - best_position)
     )
-    matches['dE_meV'] = (matches['total_energy'] - best_energy) * 1000
     
-    # Remove the best site itself (distance ≈ 0)
-    matches = matches[matches['distance'] > 0.1]
+    # Find nearest neighbor (not self, within reasonable range)
+    neighbors = matches[
+        (matches['distance'] > min_distance) &
+        (matches['distance'] < max_distance)
+    ].copy()
     
-    # Sort by energy (descending)
-    matches_sorted = matches.sort_values('total_energy', ascending=False)
+    if len(neighbors) == 0:
+        print(f"\nERROR: No neighboring {target_site_type} sites found!")
+        print(f"  Distance range searched: {min_distance}–{max_distance} Å")
+        print(f"  Available distances: {sorted(matches['distance'].unique())}")
+        return None, None
     
-    endpoint_initial = matches_sorted.iloc[0]  # Highest energy fcc
-    endpoint_final = best_config                # Lowest energy fcc
+    # Pick the closest neighbor
+    neighbors_sorted = neighbors.sort_values('distance')
+    neighbor = neighbors_sorted.iloc[0]
     
-    # Ensure correct ordering
-    dE = endpoint_initial['total_energy'] - endpoint_final['total_energy']
+    print(f"\nSelected translation pathway:")
+    print(f"  Site type: {target_site_type} → {target_site_type}")
+    print(f"  Distance: {neighbor['distance']:.2f} Å")
+    print(f"  Energy difference: {abs(neighbor['total_energy'] - best_config['total_energy'])*1000:.1f} meV")
     
-    if dE < 0:
-        print(f"\n  WARNING: Initial energy < Final energy!")
-        print(f"  Swapping endpoints...")
-        endpoint_initial, endpoint_final = endpoint_final, endpoint_initial
-        dE = -dE
+    # Use structures with same height/rotation for cleaner path
+    # Or let NEB find the optimal path
+    endpoint1 = best_config.to_dict() if hasattr(best_config, 'to_dict') else dict(best_config)
+    endpoint2 = neighbor.to_dict() if hasattr(neighbor, 'to_dict') else dict(neighbor)
     
-    return (endpoint_initial.to_dict() if hasattr(endpoint_initial, 'to_dict') else endpoint_initial,
-            endpoint_final.to_dict() if hasattr(endpoint_final, 'to_dict') else endpoint_final)
+    return endpoint1, endpoint2
 
 
-def select_neb_endpoints_rotation(site_best, screening_results, rotation_angle_diff=120, use_translation_initial=True):
+def select_neb_endpoints_rotation(site_best, screening_results, 
+                                   rotation_angle_diff=120):
     """
-    Select rotation NEB endpoints from screening results
-    
-    Strategy: Find structures at the SAME position as translation initial/final,
-    then select two with DIFFERENT rotation angles.
-    
-    Args:
-        site_best: DataFrame with best configuration info
-        screening_results: List of screening result dicts
-        rotation_angle_diff: Desired rotation angle difference (default 120°)
-        use_translation_initial: If True, use high-energy translation initial position
-                                 If False, use low-energy best position
-    
-    Returns:
-        endpoint_rot_initial, endpoint_rot_final: Two endpoints with different rotations
+    Select rotation NEB endpoints: same position, different rotation angles.
+    Only meaningful for asymmetric adsorbates (CH3, NH2, etc.), not CO.
     """
     best_config = site_best.iloc[0]
     target_site_type = best_config['site_type']
     target_height = best_config['height']
-    target_rotation = best_config['rotation']
+    reference_position = np.array(best_config['site_position'][:2])
     
-    # Filter: same site type, same height, converged
     df = pd.DataFrame(screening_results)
-    matches = df[
-        (df['site_type'] == target_site_type) &
-        (df['height'] == target_height) &
-        (df['rotation'] == target_rotation) &
-        (df['converged'] == True)
-    ].copy()
     
-    if use_translation_initial:
-        # Use the SAME position as translation initial (highest energy)
-        print("\n Using TRANSLATION INITIAL position for rotation NEB")
-        best_position = np.array(best_config['site_position'][:2])
-        
-        # Calculate distances and find highest energy at this site type/height
-        matches['distance'] = matches['site_position'].apply(
-            lambda pos: np.linalg.norm(np.array(pos[:2]) - best_position)
-        )
-        matches = matches[matches['distance'] > 0.1]  # Exclude best site itself
-        
-        if len(matches) < 1:
-            print(f"\n ERROR: No other sites found for translation initial!")
-            return None, None
-        
-        # Get highest energy configuration (translation initial)
-        translation_initial = matches.sort_values('total_energy', ascending=False).iloc[0]
-        reference_position = np.array(translation_initial['site_position'][:2])
-        
-        print(f"  Translation initial energy: {translation_initial['total_energy']:.6f} eV")
-        print(f"  Position: {reference_position}")
-        
-    else:
-        # Use best (lowest energy) position
-        print("\n Using BEST position for rotation NEB")
-        reference_position = np.array(best_config['site_position'][:2])
-    
-    # Now find ALL rotations at the reference position
+    # Find all rotations at the same position
     candidates = df[
         (df['site_type'] == target_site_type) &
         (df['height'] == target_height) &
         (df['converged'] == True)
     ].copy()
     
-    # Calculate distance to reference position
     candidates['distance'] = candidates['site_position'].apply(
         lambda pos: np.linalg.norm(np.array(pos[:2]) - reference_position)
     )
     
-    # Keep only same position (within 0.1 Å)
+    # Keep only structures at the same position
     same_position = candidates[candidates['distance'] < 0.1].copy()
     
     if len(same_position) < 2:
-        print(f"\n ERROR: Found only {len(same_position)} structure(s) at reference position")
-        print(f"   Need at least 2 different rotation angles")
-        print(f"   Available rotations at this site:")
-        for _, row in same_position.iterrows():
-            print(f"     Rotation: {row['rotation']:.1f}°, Energy: {row['total_energy']:.6f} eV")
+        print(f"ERROR: Found only {len(same_position)} structure(s) at reference position")
         return None, None
     
-    print(f"\nFound {len(same_position)} structures at reference position with different rotations:")
-    
-    # Group by rotation angle
-    rotations = same_position.groupby('rotation').first().sort_index()
-    print(f"\nAvailable rotation angles: {sorted(same_position['rotation'].unique())}")
-    
-    if len(rotations) < 2:
-        print(f"\n ERROR: Only found {len(rotations)} unique rotation angle(s)")
-        print(f"   Cannot create rotation NEB with identical angles")
-        return None, None
-    
-    # Strategy: Find two rotations separated by ~rotation_angle_diff degrees
     rotation_angles = sorted(same_position['rotation'].unique())
+    print(f"Available rotations: {rotation_angles}")
     
-    # Find best pair with angle difference closest to target
+    if len(rotation_angles) < 2:
+        print("ERROR: Need at least 2 different rotation angles")
+        return None, None
+    
+    # Find pair closest to target angle difference
     best_pair = None
-    best_diff = 0
+    best_match = float('inf')
     
     for i, rot1 in enumerate(rotation_angles):
         for rot2 in rotation_angles[i+1:]:
-            angle_diff = abs(rot2 - rot1)
-            # Consider periodic boundary (0° = 360°)
-            angle_diff = min(angle_diff, 360 - angle_diff)
-            
-            if best_pair is None or abs(angle_diff - rotation_angle_diff) < abs(best_diff - rotation_angle_diff):
+            diff = min(abs(rot2 - rot1), 360 - abs(rot2 - rot1))
+            if abs(diff - rotation_angle_diff) < best_match:
+                best_match = abs(diff - rotation_angle_diff)
                 best_pair = (rot1, rot2)
-                best_diff = angle_diff
     
     rot1, rot2 = best_pair
-    print(f"\nSelected rotation angles:")
-    print(f"  Initial: {rot1:.1f}°")
-    print(f"  Final:   {rot2:.1f}°")
-    print(f"  Angle difference: {best_diff:.1f}° (target was {rotation_angle_diff}°)")
+    actual_diff = min(abs(rot2 - rot1), 360 - abs(rot2 - rot1))
     
-    # Get the structures at these rotation angles
-    endpoint_rot_initial = same_position[same_position['rotation'] == rot1].iloc[0]
-    endpoint_rot_final = same_position[same_position['rotation'] == rot2].iloc[0]
+    print(f"\nSelected: {rot1:.0f}° → {rot2:.0f}° (Δ = {actual_diff:.0f}°)")
     
-    # Report energies
-    E1 = endpoint_rot_initial['total_energy']
-    E2 = endpoint_rot_final['total_energy']
-    dE = abs(E2 - E1)
+    ep1 = same_position[same_position['rotation'] == rot1].iloc[0]
+    ep2 = same_position[same_position['rotation'] == rot2].iloc[0]
     
-    if dE < 1e-6:
-        print(f"\n  WARNING: Endpoints have IDENTICAL energies!")
-        print(f"   This will cause NEB to fail. This shouldn't happen for different rotations.")
-    elif dE < 1e-4:
-        print(f"\n  Note: Very small energy difference ({dE*1000:.3f} meV)")
-    else:
-        print(f"\n GOOD: Significant energy difference found ({dE*1000:.3f} meV)")
+    dE = abs(ep2['total_energy'] - ep1['total_energy']) * 1000
+    print(f"Energy difference: {dE:.1f} meV")
     
-    print(f"✓ PURE ROTATION confirmed (same position, different angles)")
-    print(f"{'='*70}")
+    if dE < 1:
+        print("WARNING: Very small energy difference — check if molecule has rotational symmetry")
     
-    rot_initial = endpoint_rot_initial.to_dict() if hasattr(endpoint_rot_initial, 'to_dict') else endpoint_rot_initial
-    rot_final = endpoint_rot_final.to_dict() if hasattr(endpoint_rot_final, 'to_dict') else endpoint_rot_final
-    
-    return rot_initial, rot_final
+    return ep1.to_dict(), ep2.to_dict()
 
 
 def _verify_constraints(atoms1, atoms2):
@@ -1546,14 +1464,8 @@ def _verify_constraints(atoms1, atoms2):
 
 def prepare_neb_calculation(endpoint1, endpoint2, n_images=10,
                              barrier_type='translation', workdir="NEB"):
-    """
-    Multiprocessing-safe NEB setup + optimization.
-    All files written inside the adsorbate-specific workdir.
-    """
-
     os.makedirs(workdir, exist_ok=True)
 
-    # --- Load initial & final structures ---
     def load_structure(ep):
         if isinstance(ep, dict):
             if 'structure' in ep:
@@ -1562,53 +1474,66 @@ def prepare_neb_calculation(endpoint1, endpoint2, n_images=10,
         return ep.copy()
 
     initial = load_structure(endpoint1)
-    final   = load_structure(endpoint2)
-
-    # --- Check constraints alignment ---
+    final = load_structure(endpoint2)
     _verify_constraints(initial, final)
+
+    # Check endpoint difference before proceeding
+    disp = np.abs(final.positions - initial.positions).max()
+    print(f"Max displacement between endpoints: {disp:.3f} Å")
+    if disp < 0.00001:
+        raise ValueError("Endpoints too similar for meaningful NEB")
 
     print("\nSetting up NEB calculators...")
 
-    # --- Create fresh calculators (SAFE) ---
     def fresh_calc():
         pred = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
         return FAIRChemCalculator(pred, task_name="oc20")
 
     initial.calc = fresh_calc()
-    final.calc   = fresh_calc()
+    final.calc = fresh_calc()
 
-    print(f"Initial energy: {initial.get_potential_energy():.6f} eV")
-    print(f"Final energy:   {final.get_potential_energy():.6f} eV")
+    E_init = initial.get_potential_energy()
+    E_final = final.get_potential_energy()
+    print(f"Initial energy: {E_init:.6f} eV")
+    print(f"Final energy:   {E_final:.6f} eV")
+    print(f"Energy difference: {abs(E_final - E_init)*1000:.3f} meV")
 
-    # --- Create NEB images ---
+    # Create images
     images = [initial]
     for _ in range(n_images):
         img = initial.copy()
-        img.calc = fresh_calc()   # SAFE: each image gets its own calculator
+        img.calc = fresh_calc()
         images.append(img)
     final.calc = fresh_calc()
     images.append(final)
 
-    neb = NEB(images, climb=True, allow_shared_calculator=False)
-    neb.interpolate()
+    # Stage 1: Relax without climbing image
+    neb = NEB(images, climb=False, allow_shared_calculator=False)
+    neb.interpolate('idpp')  # Better interpolation for surfaces
 
-    # --- Prepare output files ---
+    # Verify interpolation didn't produce nan
+    for i, img in enumerate(images):
+        if np.any(np.isnan(img.positions)):
+            raise ValueError(f"NaN positions in image {i} after interpolation")
+
     traj_file = os.path.join(workdir, f"neb_{barrier_type}.traj")
-    log_file  = os.path.join(workdir, f"neb_{barrier_type}.log")
+    log_file = os.path.join(workdir, f"neb_{barrier_type}.log")
 
-    print(f"Running NEB...")
-    print(f"Trajectory: {traj_file}")
-    print(f"Log file:   {log_file}")
+    print(f"Running NEB (stage 1: no climb)...")
+    opt = FIRE(neb, trajectory=traj_file, logfile=log_file, maxstep=0.1)
+    opt.run(fmax=0.1, steps=200)
 
-    opt = FIRE(neb, trajectory=traj_file, logfile=log_file)
-    opt.run(fmax=0.05)
+    # Stage 2: Turn on climbing image
+    print("Running NEB (stage 2: climbing image)...")
+    neb.climb = True
+    opt.run(fmax=0.05, steps=500)
 
     print("\nNEB completed!")
 
-    # --- Analyze with NEBTools ---
+    # Analysis (same as before)
     from ase.mep import NEBTools
     nebtools = NEBTools(images)
-
+    
     try:
         barrier_fwd, delta_E = nebtools.get_barrier(fit=True, raw=False)
     except:
@@ -1619,13 +1544,11 @@ def prepare_neb_calculation(endpoint1, endpoint2, n_images=10,
     except:
         E_ts_abs = None
 
-    # --- Save saddle point image ---
     energies = [img.get_potential_energy() for img in images]
     saddle_idx = int(np.argmax(energies))
     saddle_file = os.path.join(workdir, f"saddle_{barrier_type}.traj")
     write(saddle_file, images[saddle_idx])
 
-    # --- Save summary ---
     result = {
         "barrier_type": barrier_type,
         "forward_barrier_fit": barrier_fwd,
@@ -1642,7 +1565,6 @@ def prepare_neb_calculation(endpoint1, endpoint2, n_images=10,
         json.dump(result, f, indent=2)
 
     print(f"Summary saved to {summary_file}")
-
     return images, result
 
 
@@ -1860,3 +1782,397 @@ def save_neb_summary(result, summary_file, append=False):
 
     print(f"✓ NEB summary saved: {summary_file}")
     return summary_file
+
+
+
+
+# This function should be used for site screening when the site screening was interrupted
+
+import os, glob, re, pickle, json
+import numpy as np
+from ase.io import read
+
+def recover_and_resume_screening(slab, ads, center_xy='site', use_all_sites=True,
+                                  save_results=True, workdir="Screening_Data"):
+    """
+    Recover completed results from log/xyz files, then continue screening.
+    """
+    log_dir = os.path.join(workdir, "logs")
+    structures_dir = os.path.join(workdir, "structures")
+    
+    # Set up calculator
+    pred = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
+    local_calc = FAIRChemCalculator(pred, task_name="oc20")
+    
+    # Reference energies (needed regardless)
+    slab = opt_slab(slab_dir=workdir)
+    slab.calc = local_calc
+    clean_slab_energy = slab.get_potential_energy()
+    
+    ads = opt_molecule(ads)
+    ads.calc = local_calc
+    ads_energy = ads.get_potential_energy()
+    
+    # Get site info
+    all_sites, site_density, unique_site_lists, unique_site_pair_lists, \
+        single_bond_params, double_bond_params = adsorption_sites_and_unique_placements(slab)
+    
+    # === RECOVERY PHASE ===
+    pattern = re.compile(r'site(\d+)_(\w+)_h([\d.]+)_r([\d.]+)\.log')
+    screening_results = []
+    completed = set()
+    
+    for log_file in glob.glob(os.path.join(log_dir, "*.log")):
+        match = pattern.search(os.path.basename(log_file))
+        if not match:
+            continue
+        
+        site_idx = int(match.group(1))
+        site_type = match.group(2)
+        height = float(match.group(3))
+        rot = float(match.group(4))
+        
+        struct_file = os.path.join(structures_dir, f"{site_type}_h{height}_r{rot}.xyz")
+        if not os.path.exists(struct_file):
+            continue
+        
+        # Parse energy from log
+        E_total = None
+        with open(log_file, 'r') as f:
+            for line in reversed(f.readlines()):
+                parts = line.split()
+                if len(parts) >= 3:
+                    try:
+                        E_total = float(parts[2])
+                        break
+                    except ValueError:
+                        continue
+        
+        if E_total is None:
+            continue
+        
+        E_ads = E_total - clean_slab_energy - ads_energy
+        
+        screening_results.append({
+            "site_index": site_idx,
+            "site_type": site_type,
+            "site_position": list(all_sites[site_idx]["position"]) if site_idx < len(all_sites) else None,
+            "height": height,
+            "rotation": rot,
+            "adsorption_energy": float(E_ads),
+            "total_energy": float(E_total),
+            "structure_file": struct_file,
+            "converged": True
+        })
+        completed.add((site_idx, height, rot))
+    
+    print(f"Recovered {len(screening_results)} completed configurations")
+    
+    # === RESUME PHASE ===
+    heights = np.arange(1.5, 3.5, 0.5)
+    rotations = np.arange(0, 360, 30)
+    sites_to_screen = all_sites if use_all_sites else [lst[0] for lst in unique_site_lists]
+    
+    for site_idx, site in enumerate(sites_to_screen):
+        bond_params = [{
+            "site_pos": site["position"],
+            "ind": None,
+            "k": 100.0,
+            "deq": 0.0
+        }]
+        
+        for height in heights:
+            for rot in rotations:
+                if (site_idx, float(height), float(rot)) in completed:
+                    continue
+                
+                test_slab = create_structure(
+                    slab, ads, site, bond_params,
+                    height, rotation=rot,
+                    rotation_center=center_xy,
+                    binding_atom_idx=None
+                )
+                test_slab.calc = local_calc
+                
+                log_file = os.path.join(log_dir, f"site{site_idx}_{site['site']}_h{height}_r{rot}.log")
+                opt = BFGS(test_slab, logfile=log_file)
+                
+                try:
+                    opt.run(fmax=0.05)
+                    converged = True
+                except:
+                    converged = False
+                
+                if not converged:
+                    continue
+                
+                E_total = test_slab.get_potential_energy()
+                E_ads = E_total - clean_slab_energy - ads_energy
+                
+                struct_file = os.path.join(structures_dir, f"{site['site']}_h{height}_r{rot}.xyz")
+                test_slab.write(struct_file)
+                
+                screening_results.append({
+                    "site_index": site_idx,
+                    "site_type": site["site"],
+                    "site_position": list(site["position"]),
+                    "height": float(height),
+                    "rotation": float(rot),
+                    "adsorption_energy": float(E_ads),
+                    "total_energy": float(E_total),
+                    "structure_file": struct_file,
+                    "converged": converged
+                })
+                print(f"Site {site_idx} ({site['site']}), h={height}, r={rot} → E_ads={E_ads:.3f} eV")
+                
+                # Incremental save
+                if save_results:
+                    with open(os.path.join(workdir, "screening_results.pkl"), "wb") as f:
+                        pickle.dump(screening_results, f)
+    
+    # Final save
+    if save_results:
+        with open(os.path.join(workdir, "screening_results.pkl"), "wb") as f:
+            pickle.dump(screening_results, f)
+        with open(os.path.join(workdir, "screening_metadata.json"), "w") as f:
+            json.dump(screening_results, f, indent=2)
+        print(f"✓ Total: {len(screening_results)} results saved")
+    
+    return screening_results
+
+
+def plot_rotation_neb(traj_file, angle_range=120, n_images=10):
+    """
+    Plot rotational NEB energy profile by recalculating energies.
+    """
+    # Read images
+    images = read(traj_file, index=':')
+    images = images[-(n_images+2):]  # Final iteration + endpoints
+    
+    # Set up calculator
+    predictor = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
+    calc = FAIRChemCalculator(predictor, task_name="oc20")
+    
+    # Recalculate energies
+    energies = []
+    for i, img in enumerate(images):
+        img.calc = calc
+        E = img.get_potential_energy()
+        energies.append(E)
+        print(f"Image {i}: {E:.6f} eV")
+    
+    energies = np.array(energies)
+    energies_rel = (energies - energies[0]) * 1000  # meV
+    
+    # Linearly interpolate rotation angles
+    angles = np.linspace(0, angle_range, len(images))
+    
+    # Plot
+    plt.figure(figsize=(8, 6))
+    plt.plot(angles, energies_rel, 'o-', linewidth=2, markersize=8, color='tab:orange')
+    plt.xlabel('Rotation Angle (°)', fontsize=12)
+    plt.ylabel('Relative Energy (meV)', fontsize=12)
+    plt.title('NEB Rotation Pathway', fontsize=14, fontweight='bold')
+    plt.grid(True, alpha=0.3)
+    plt.axhline(y=0, color='gray', linestyle='--', alpha=0.5)
+    plt.tight_layout()
+    plt.savefig(traj_file.replace('.traj', '_profile.png'), dpi=300)
+    plt.show()
+    
+    E_min = energies_rel.min()
+    saddle_idx = np.argmax(energies_rel[1:-1]) + 1  # Exclude endpoints
+    E_saddle = energies_rel[saddle_idx]
+    true_barrier = E_saddle - E_min
+
+    print(f"\nTrue rotational barrier: {true_barrier:.3f} meV")
+    print(f"Minimum at image: {np.argmin(energies_rel)} ({angles[np.argmin(energies_rel)]:.1f}°)")
+    print(f"Saddle at image: {saddle_idx} ({angles[saddle_idx]:.1f}°)")
+    
+    return angles, energies
+
+
+def plot_translation_neb(traj_path, n_images=10):
+    """
+    Plot NEB energy profile by recalculating energies.
+    """
+    # Read final iteration images
+    configs = read(traj_path, index=f'-{n_images}:')
+    
+    # Set up calculator
+    predictor = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
+    calc = FAIRChemCalculator(predictor, task_name="oc20")
+    
+    # Recalculate energies
+    energies = []
+    for i, config in enumerate(configs):
+        config.calc = calc
+        E = config.get_potential_energy()
+        energies.append(E)
+        print(f"Image {i}: {E:.6f} eV")
+    
+    energies = np.array(energies)
+    energies_rel = (energies - energies[0]) * 1000  # meV relative to first
+    
+    # Plot
+    plt.figure(figsize=(8, 6))
+    plt.plot(range(len(energies_rel)), energies_rel, 'o-', linewidth=2, markersize=8)
+    plt.xlabel('Image', fontsize=12)
+    plt.ylabel('Energy (meV)', fontsize=12)
+    plt.title('NEB Translation Pathway', fontsize=14, fontweight='bold')
+    plt.grid(True, alpha=0.3)
+    plt.axhline(y=0, color='gray', linestyle='--', alpha=0.5)
+    plt.tight_layout()
+    plt.savefig(traj_path.replace('.traj', '_profile.png'), dpi=300)
+    plt.show()
+    
+    # Print summary
+    barrier = energies_rel.max()
+    saddle_idx = np.argmax(energies_rel)
+    print(f"\nBarrier: {barrier:.3f} meV")
+    print(f"Saddle point at image: {saddle_idx}")
+    print(f"Reaction energy: {energies_rel[-1]:.3f} meV")
+    
+    return energies
+
+
+
+def create_janaf_table(thermo, T_range=(50, 1000, 50), reference_T=298.15, potentialenergy=None, SI_unit=True):
+    if potentialenergy is None:
+        potentialenergy = 0.0
+    
+    temperatures = np.arange(T_range[0], T_range[1] + T_range[2], T_range[2])
+
+    NA = 6.02214076e23 # mol^-1
+    EV = 1.60218e-19  # J (electron volt conversion)
+    
+
+    if SI_unit == True:
+        EV_TO_J = NA * EV # J/mol
+    else:
+        EV_TO_J = 1
+    
+    if SI_unit == True:
+        data = {
+            'T (K)': temperatures,
+            'S (J/mol/K)': [],
+            'U (J/mol)': [],
+            'A (J/mol)': [],
+            'Cv (J/mol/K)': [],
+            'G (J/mol)': [],
+            'H (J/mol)': [],
+            '-(G-H(Tref))/T (J/mol/K)': [],
+            'H-H(Tref) (J/mol)': [],
+        }
+    else:
+        data = {
+            'T (K)': temperatures,
+            'S (eV/K)': [],
+            'U (eV)': [],
+            'A (eV)': [],
+            'Cv (eV/K)': [],
+            'G (eV)': [],
+            'H (eV)': [],
+            '-(G-H(Tref))/T (eV/K)': [],
+            'H-H(Tref) (eV)': [],
+        }
+
+    
+    S_ref = thermo.get_entropy(reference_T, potentialenergy) * EV_TO_J
+    U_ref = thermo.get_internal_energy(reference_T, potentialenergy) * EV_TO_J
+    A_ref = thermo.get_helmholtz_energy(reference_T, potentialenergy) * EV_TO_J
+    H_ref = U_ref  # For surface species, H ≈ U (constant area)
+    G_ref = A_ref  # For surface species, G ≈ A (constant area)
+    
+    for T in temperatures:
+        # Basic properties
+        S = thermo.get_entropy(T, potentialenergy) * EV_TO_J
+        U = thermo.get_internal_energy(T, potentialenergy) * EV_TO_J
+        A = thermo.get_helmholtz_energy(T, potentialenergy) * EV_TO_J
+        
+        # For surface species: H ≈ U, G ≈ A (constant area approximation)
+        H = U
+        G = A
+        
+        # Heat capacity (numerical derivative)
+        dT = 1.0  # K
+        if T > T_range[0]:
+            U_plus = thermo.get_internal_energy(T + dT, potentialenergy) * EV_TO_J
+            U_minus = thermo.get_internal_energy(T - dT, potentialenergy) * EV_TO_J
+            Cv = (U_plus - U_minus) / (2 * dT)
+        else:
+            U_plus = thermo.get_internal_energy(T + dT, potentialenergy) * EV_TO_J
+            Cv = (U_plus - U) / dT
+        
+        # JANAF-style derived properties
+        gibbs_function = -(G - H_ref) / T if T > 0 else 0
+        enthalpy_diff = H - H_ref
+        
+        # Store values
+        if SI_unit == True:
+            data['S (J/mol/K)'].append(S)
+            data['U (J/mol)'].append(U)
+            data['A (J/mol)'].append(A)
+            data['Cv (J/mol/K)'].append(Cv)
+            data['G (J/mol)'].append(G)
+            data['H (J/mol)'].append(H)
+            data['-(G-H(Tref))/T (J/mol/K)'].append(gibbs_function)
+            data['H-H(Tref) (J/mol)'].append(enthalpy_diff)
+        else:
+            data['S (eV/K)'].append(S)
+            data['U (eV)'].append(U)
+            data['A (eV)'].append(A)
+            data['Cv (eV/K)'].append(Cv)
+            data['G (eV)'].append(G)
+            data['H (eV)'].append(H)
+            data['-(G-H(Tref))/T (eV/K)'].append(gibbs_function)
+            data['H-H(Tref) (eV)'].append(enthalpy_diff)
+    
+    # Create DataFrame
+    df = pd.DataFrame(data)
+    
+    return df
+
+
+def plot_thermochemistry(df, filename=None):
+    """
+    Create plots of thermochemical properties vs temperature.
+    """
+    fig, axes = plt.subplots(2, 2, figsize=(14, 10))
+    
+    # Plot 1: Entropy
+    axes[0, 0].plot(df['T (K)'], df['S (eV/K)'] * 1000, 'b-', linewidth=2)
+    axes[0, 0].set_xlabel('Temperature (K)', fontsize=12)
+    axes[0, 0].set_ylabel('Entropy (meV/K)', fontsize=12)
+    axes[0, 0].set_title('Entropy vs Temperature', fontsize=14, fontweight='bold')
+    axes[0, 0].grid(True, alpha=0.3)
+    
+    # Plot 2: Heat Capacity
+    axes[0, 1].plot(df['T (K)'], df['Cv (eV/K)'] * 1000, 'r-', linewidth=2)
+    axes[0, 1].set_xlabel('Temperature (K)', fontsize=12)
+    axes[0, 1].set_ylabel('Heat Capacity Cv (meV/K)', fontsize=12)
+    axes[0, 1].set_title('Heat Capacity vs Temperature', fontsize=14, fontweight='bold')
+    axes[0, 1].grid(True, alpha=0.3)
+    
+    # Plot 3: Free Energies
+    axes[1, 0].plot(df['T (K)'], df['G (eV)'], 'g-', linewidth=2, label='G (Gibbs)')
+    axes[1, 0].plot(df['T (K)'], df['U (eV)'], 'orange', linewidth=2, label='U (Internal)')
+    axes[1, 0].set_xlabel('Temperature (K)', fontsize=12)
+    axes[1, 0].set_ylabel('Energy (eV)', fontsize=12)
+    axes[1, 0].set_title('Thermodynamic Functions vs Temperature', fontsize=14, fontweight='bold')
+    axes[1, 0].legend(fontsize=10)
+    axes[1, 0].grid(True, alpha=0.3)
+    
+    # Plot 4: Gibbs Function
+    axes[1, 1].plot(df['T (K)'], df['-(G-H(Tref))/T (eV/K)'] * 1000, 'm-', linewidth=2)
+    axes[1, 1].set_xlabel('Temperature (K)', fontsize=12)
+    axes[1, 1].set_ylabel('-(G-H(Tref))/T (meV/K)', fontsize=12)
+    axes[1, 1].set_title('Gibbs Function vs Temperature', fontsize=14, fontweight='bold')
+    axes[1, 1].grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    
+    if filename:
+        plt.savefig(filename, dpi=300, bbox_inches='tight')
+        print(f"Plots saved to {filename}")
+    
+    plt.show()

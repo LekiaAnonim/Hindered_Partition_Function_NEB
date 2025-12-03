@@ -7,7 +7,7 @@ opt_mol = opt_molecule(mol)
 slab = opt_slab()
 
 ads = opt_molecule(init_molecule('CO2'))
-screening_results = site_screening(slab, ads, center_xy='site', use_all_sites=True, workdir='/projects/westgroup/lekia.p/NEB/Adsorbates/CO2/Screening_Data')
+screening_results = recover_and_resume_screening(slab, ads, center_xy='site', use_all_sites=True, workdir='/projects/westgroup/lekia.p/NEB/Adsorbates/CO2/Screening_Data')
 
 # Validate all screening files
 validation = validate_screening_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CO2/Screening_Data')

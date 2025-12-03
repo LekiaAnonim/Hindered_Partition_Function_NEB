@@ -2,20 +2,20 @@ import sys
 sys.path.insert(0, '/projects/westgroup/lekia.p/NEB/Adsorbates')
 from model.neb import *
 
-mol = init_molecule('CO')
-opt_mol = opt_molecule(mol)
-slab = opt_slab()
+# mol = init_molecule('CO')
+# opt_mol = opt_molecule(mol)
+# slab = opt_slab()
 
-ads = opt_molecule(init_molecule('CO'))
-screening_results = site_screening(slab, ads, center_xy='site', use_all_sites=True, workdir='/projects/westgroup/lekia.p/NEB/Adsorbates/CO/Screening_Data')
+# ads = opt_molecule(init_molecule('CO'))
+# screening_results = site_screening(slab, ads, center_xy='site', use_all_sites=True, workdir='/projects/westgroup/lekia.p/NEB/Adsorbates/CO/Screening_Data')
 
 # Validate all screening files
-validation = validate_screening_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CO/Screening_Data')
+# validation = validate_screening_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CO/Screening_Data')
 
-clean_incomplete_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CO/Screening_Data', dry_run=True)
+# clean_incomplete_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CO/Screening_Data', dry_run=True)
 
-# Recover the missing JSON and summary files from your valid pickle file
-recover_screening_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CO/Screening_Data')
+# # Recover the missing JSON and summary files from your valid pickle file
+# recover_screening_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CO/Screening_Data')
 
 screening_results = load_screening_results('/projects/westgroup/lekia.p/NEB/Adsorbates/CO/Screening_Data/screening_results.pkl')
 

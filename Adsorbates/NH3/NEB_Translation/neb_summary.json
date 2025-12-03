@@ -1,0 +1,10 @@
+{
+  "barrier_type": "translation",
+  "forward_barrier_fit": 0.0063419342041015625,
+  "delta_E": 0.0063419342041015625,
+  "transition_state_energy": -206.4195335002816,
+  "trajectory": "/projects/westgroup/lekia.p/NEB/Adsorbates/NH3/NEB_Translation/neb_translation.traj",
+  "saddle_file": "/projects/westgroup/lekia.p/NEB/Adsorbates/NH3/NEB_Translation/saddle_translation.traj",
+  "saddle_index": 11,
+  "n_images": 12
+}
