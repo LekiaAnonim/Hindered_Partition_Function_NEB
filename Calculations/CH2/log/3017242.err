@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/projects/westgroup/akinyemi.az/Hindered_Partition_Function_NEB/Calculations/CH2/solver.py", line 5, in <module>
+    from model.neb import *
+  File "/projects/westgroup/akinyemi.az/Hindered_Partition_Function_NEB/model/neb.py", line 1, in <module>
+    from ase import Atoms
+ModuleNotFoundError: No module named 'ase'

@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=OH_calc
-#SBATCH --partition=west
-#SBATCH --cpus-per-task=16
+#SBATCH --partition=short
+#SBATCH --cpus-per-task=4
 
 source ~/.bashrc
 conda deactivate

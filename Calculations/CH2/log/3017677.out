@@ -1,0 +1,35 @@
+
+======================================================================
+ Screening results loaded successfully!
+  File: Screening_Data/screening_results.pkl
+  Total configurations: 2592
+  Converged: 2592/2592
+  Site types: bridge, fcc, hcp, ontop
+======================================================================
+
+All site results:
+      site_index  ... converged
+1475          30  ...      True
+1857          38  ...      True
+1131          23  ...      True
+1849          38  ...      True
+2577          53  ...      True
+...          ...  ...       ...
+2103          43  ...      True
+1431          29  ...      True
+1815          37  ...      True
+473            9  ...      True
+1285          26  ...      True
+
+[2592 rows x 10 columns]
+Best site results:
+     site_index  ... converged
+505          10  ...      True
+96            2  ...      True
+146           3  ...      True
+649          13  ...      True
+
+[4 rows x 10 columns]
+✓ Constraint verification passed: 18 atoms fixed
+
+Setting up calculators for NEB...

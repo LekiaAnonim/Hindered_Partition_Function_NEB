@@ -1,0 +1,45 @@
+/projects/westgroup/akinyemi.az/Pynta/pynta_fairchem/fairchem/src/fairchem/core/models/uma/escn_md.py:130: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+/projects/westgroup/akinyemi.az/Pynta/pynta_fairchem/fairchem/src/fairchem/core/models/uma/escn_md.py:130: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+
+======================================================================
+ Screening results loaded successfully!
+  File: Screening_Data/screening_results.pkl
+  Total configurations: 2592
+  Converged: 2592/2592
+  Site types: bridge, fcc, hcp, ontop
+======================================================================
+
+All site results:
+      site_index  ... converged
+1467          30  ...      True
+2477          51  ...      True
+2475          51  ...      True
+2473          51  ...      True
+651           13  ...      True
+...          ...  ...       ...
+1199          24  ...      True
+383            7  ...      True
+617           12  ...      True
+2399          49  ...      True
+2299          47  ...      True
+
+[2592 rows x 10 columns]
+Best site results:
+     site_index  ... converged
+511          10  ...      True
+96            2  ...      True
+146           3  ...      True
+651          13  ...      True
+
+[4 rows x 10 columns]
+✓ Constraint verification passed: 18 atoms fixed
+
+Setting up calculators for NEB...
+Traceback (most recent call last):
+  File "/projects/westgroup/akinyemi.az/Hindered_Partition_Function_NEB/Calculations/NH3/solver.py", line 30, in <module>
+    images_trans, result_trans = prepare_neb_calculation(
+  File "/projects/westgroup/akinyemi.az/Hindered_Partition_Function_NEB/model/neb.py", line 1667, in prepare_neb_calculation
+    print(f"Initial structure energy: {initial.get_potential_energy():.6f} eV")
+  File "/home/akinyemi.az/miniforge3/envs/pynta_fairchem_dev/lib/python3.8/site-packages/ase/atoms.py", line 750, in get_potential_energy
+    raise RuntimeError('Atoms object has no calculator.')
+RuntimeError: Atoms object has no calculator.
