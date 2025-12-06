@@ -10,12 +10,12 @@ a = 4.012
 # screening_results = site_screening(slab, ads, center_xy='site', use_all_sites=True, workdir='/projects/westgroup/lekia.p/NEB/Adsorbates/NH3/Screening_Data')
 
 # Validate all screening files
-# validation = validate_screening_files('/projects/westgroup/lekia.p/NEB/Adsorbates/NH3/Screening_Data')
+validation = validate_screening_files('/projects/westgroup/lekia.p/NEB/Adsorbates/NH3/Screening_Data')
 
-# clean_incomplete_files('/projects/westgroup/lekia.p/NEB/Adsorbates/NH3/Screening_Data', dry_run=True)
+clean_incomplete_files('/projects/westgroup/lekia.p/NEB/Adsorbates/NH3/Screening_Data', dry_run=True)
 
-# # Recover the missing JSON and summary files from your valid pickle file
-# recover_screening_files('/projects/westgroup/lekia.p/NEB/Adsorbates/NH3/Screening_Data')
+# Recover the missing JSON and summary files from your valid pickle file
+recover_screening_files('/projects/westgroup/lekia.p/NEB/Adsorbates/NH3/Screening_Data')
 
 screening_results = load_screening_results('/projects/westgroup/lekia.p/NEB/Adsorbates/NH3/Screening_Data/screening_results.pkl')
 
@@ -25,8 +25,6 @@ d_nn = a / np.sqrt(2)  # Surface nearest-neighbor distance ≈ 2.81 Å
 
 endpoint1_trans, endpoint2_trans = select_neb_endpoints_translation(
         site_best, screening_results,
-        min_distance=d_nn - 0.3,  # ~2.5 Å (allow small tolerance)
-        max_distance=d_nn + 0.3   # ~3.1 Å
     )
 
 images_trans, result_trans = prepare_neb_calculation(
