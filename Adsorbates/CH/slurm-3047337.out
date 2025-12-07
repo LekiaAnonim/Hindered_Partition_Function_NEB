@@ -1,0 +1,46 @@
+
+CondaError: Run 'conda init' before 'conda deactivate'
+
+
+CondaError: Run 'conda init' before 'conda activate'
+
+/projects/westgroup/lekia.p/miniforge3/envs/pynta_fairchem/lib/python3.9/site-packages/pandas/core/computation/expressions.py:21: UserWarning: Pandas requires version '2.8.4' or newer of 'numexpr' (version '2.7.3' currently installed).
+/projects/westgroup/lekia.p/miniforge3/envs/pynta_fairchem/lib/python3.9/site-packages/torchtnt/utils/version.py:12: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+/projects/westgroup/lekia.p/fairchem/src/fairchem/core/models/uma/escn_md.py:130: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+/projects/westgroup/lekia.p/miniforge3/envs/pynta_fairchem/lib/python3.9/site-packages/torch/utils/checkpoint.py:1399: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cpu', args...)` instead.
+Number of atoms: 2
+      Step     Time          Energy          fmax
+BFGS:    0 11:25:02       -5.582492        0.682914
+BFGS:    1 11:25:02       -5.590529        0.149568
+BFGS:    2 11:25:02       -5.590961        0.009267
+/projects/westgroup/lekia.p/miniforge3/envs/pynta_fairchem/lib/python3.9/site-packages/ase/io/extxyz.py:311: UserWarning: Skipping unhashable information adsorbate_info
+Clean slab energy: -186.930 eV
+
+      Step     Time          Energy          fmax
+BFGS:    0 11:25:05     -186.930334        0.225638
+BFGS:    1 11:25:07     -186.951498        0.182651
+BFGS:    2 11:25:09     -186.978088        0.081548
+BFGS:    3 11:25:12     -186.981636        0.079651
+BFGS:    4 11:25:14     -186.991195        0.107906
+BFGS:    5 11:25:17     -186.999084        0.091995
+BFGS:    6 11:25:19     -187.003677        0.042989
+Number of atoms: 2
+      Step     Time          Energy          fmax
+BFGS:    0 11:25:19       -5.582492        0.682914
+BFGS:    1 11:25:19       -5.590529        0.149569
+BFGS:    2 11:25:20       -5.590961        0.009267
+/projects/westgroup/lekia.p/fairchem/src/fairchem/core/models/uma/escn_md.py:130: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+Clean slab energy: -186.930 eV
+
+      Step     Time          Energy          fmax
+BFGS:    0 11:25:25     -186.930334        0.225638
+BFGS:    1 11:25:28     -186.951498        0.182651
+BFGS:    2 11:25:30     -186.978088        0.081548
+BFGS:    3 11:25:32     -186.981638        0.079651
+BFGS:    4 11:25:35     -186.991195        0.107906
+BFGS:    5 11:25:37     -186.999086        0.091996
+BFGS:    6 11:25:39     -187.003677        0.042989
+      Step     Time          Energy          fmax
+BFGS:    0 11:25:42       -5.590961        0.009267
+/projects/westgroup/lekia.p/miniforge3/envs/pynta_fairchem/lib/python3.9/site-packages/torch/utils/checkpoint.py:1399: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cpu', args...)` instead.
+/projects/westgroup/lekia.p/miniforge3/envs/pynta_fairchem/lib/python3.9/site-packages/ase/io/extxyz.py:311: UserWarning: Skipping unhashable information adsorbate_info

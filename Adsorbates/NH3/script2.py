@@ -9,8 +9,7 @@ import numpy as np
 sys.path.insert(0, '/projects/westgroup/lekia.p/NEB/Adsorbates')
 
 # Import from original neb.py (utilities we still need)
-
-from neb import (
+from model.neb import (
     validate_screening_files,
     clean_incomplete_files,
     recover_screening_files,
@@ -19,7 +18,7 @@ from neb import (
 )
 
 # Import new/revised functions from neb2.py
-from neb2 import (
+from model.neb2 import (
     select_neb_endpoints_translation_v2,
     select_neb_endpoints_rotation_v2,
     prepare_neb_calculation,
@@ -31,28 +30,13 @@ from neb2 import (
 # CONFIGURATION
 # =============================================================================
 
-WORKDIR = '/Users/lekiaprosper/Documents/CoMoChEng/ECC/Hindered_Partition_Function_NEB/Adsorbates/NH3'
+WORKDIR = '/projects/westgroup/lekia.p/NEB/Adsorbates/NH3'
 SCREENING_DIR = f'{WORKDIR}/Screening_Data'
 ADSORBATE = 'NH3'
 
 # =============================================================================
 # MAIN
 # =============================================================================
-
-def remap_paths(screening_results, old_prefix, new_prefix):
-    """
-    Remap file paths from cluster to local.
-    
-    Example:
-        old_prefix = '/projects/westgroup/lekia.p/NEB/Adsorbates/NH3'
-        new_prefix = '/Users/lekiaprosper/Documents/CoMoChEng/ECC/Hindered_Partition_Function_NEB/Adsorbates/NH3'
-    """
-    for result in screening_results:
-        if 'structure_file' in result:
-            result['structure_file'] = result['structure_file'].replace(
-                old_prefix, new_prefix
-            )
-    return screening_results
 
 def main():
     # -------------------------------------------------------------------------
@@ -69,14 +53,8 @@ def main():
     
     # Load results
     screening_results = load_screening_results(f'{SCREENING_DIR}/screening_results.pkl')
-    screening_results = remap_paths(
-    screening_results,
-    '/projects/westgroup/lekia.p/NEB/Adsorbates/NH3',
-    '/Users/lekiaprosper/Documents/CoMoChEng/ECC/Hindered_Partition_Function_NEB/Adsorbates/NH3'
-)
     df_sorted, site_best = best_site_results(screening_results)
-    site_best = site_best.sort_values('total_energy')
-    print(f"\nGlobal minimum: {site_best.iloc[0]['site_type']} at E={site_best.iloc[0]['total_energy']:.6f} eV")
+    
     # -------------------------------------------------------------------------
     # Step 2: Diagnose screening results
     # -------------------------------------------------------------------------
@@ -103,7 +81,7 @@ def main():
     endpoint1_trans, endpoint2_trans = select_neb_endpoints_translation_v2(
         site_best, 
         screening_results,
-        method='long_path',  # Use different site types
+        method='cross_site',  # Use different site types
     )
     
     if endpoint1_trans is None or endpoint2_trans is None:
@@ -120,15 +98,8 @@ def main():
             fmax=0.05,
         )
         
-        if result_trans and 'error' not in result_trans:
-            barrier = result_trans.get('forward_barrier_meV')
-            if barrier is not None:
-                print(f"\n✓ Translation barrier: {barrier:.2f} meV")
-            else:
-                print(f"\n⚠️  Translation barrier: Could not calculate")
-        else:
-            error_msg = result_trans.get('error', 'Unknown') if result_trans else 'No result'
-            print(f"\n❌ Translation NEB failed: {error_msg}")
+        if result_trans:
+            print(f"\n✓ Translation barrier: {result_trans.get('forward_barrier_meV', 'N/A'):.2f} meV")
     
     # -------------------------------------------------------------------------
     # Step 4: Rotation barrier NEB
@@ -139,7 +110,6 @@ def main():
     
     # Get recommended rotation angle for NH3
     recommended_angle = get_recommended_rotation_angle(ADSORBATE)
-    recommended_angle = 120
     
     if recommended_angle is None:
         print(f"\n⚠️  Rotation may be meaningless for {ADSORBATE}")
@@ -167,17 +137,8 @@ def main():
                 fmax=0.05,
             )
             
-
-            if result_rot and 'error' not in result_rot:
-                barrier = result_rot.get('forward_barrier_meV')
-                if barrier is not None:
-                    print(f"\n✓ Rotation barrier: {barrier:.2f} meV")
-                else:
-                    print(f"\n⚠️  Rotation barrier: Could not calculate")
-            else:
-                error_msg = result_rot.get('error', 'Unknown') if result_rot else 'No result'
-                print(f"\n❌ Rotation NEB failed: {error_msg}")
-
+            if result_rot:
+                print(f"\n✓ Rotation barrier: {result_rot.get('forward_barrier_meV', 'N/A'):.2f} meV")
     
     # -------------------------------------------------------------------------
     # Summary

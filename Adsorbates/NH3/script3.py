@@ -10,7 +10,7 @@ import numpy as np
 sys.path.insert(0, '/projects/westgroup/lekia.p/NEB/Adsorbates')
 
 # Import from original neb.py (utilities we still need)
-from neb import (
+from moels.neb import (
     validate_screening_files,
     clean_incomplete_files,
     recover_screening_files,
@@ -19,7 +19,7 @@ from neb import (
 )
 
 # Import from corrected neb3.py
-from neb3 import (
+from models.neb3 import (
     select_all_neb_endpoints,
     run_neb_calculation,
     diagnose_screening_results,
@@ -30,7 +30,7 @@ from neb3 import (
 # CONFIGURATION
 # =============================================================================
 
-WORKDIR = '/Users/lekiaprosper/Documents/CoMoChEng/ECC/Hindered_Partition_Function_NEB/Adsorbates/NH3'
+WORKDIR = '/projects/westgroup/lekia.p/NEB/Adsorbates/NH3'
 SCREENING_DIR = f'{WORKDIR}/Screening_Data'
 ADSORBATE = 'NH3'
 
@@ -63,11 +63,11 @@ def main():
     recover_screening_files(SCREENING_DIR)
     
     screening_results = load_screening_results(f'{SCREENING_DIR}/screening_results.pkl')
-    screening_results = remap_paths(
-        screening_results,
-        '/projects/westgroup/lekia.p/NEB/Adsorbates/NH3',
-        WORKDIR
-    )
+    # screening_results = remap_paths(
+    #     screening_results,
+    #     '/projects/westgroup/lekia.p/NEB/Adsorbates/NH3',
+    #     WORKDIR
+    # )
     
     print(f"Loaded {len(screening_results)} configurations")
     
