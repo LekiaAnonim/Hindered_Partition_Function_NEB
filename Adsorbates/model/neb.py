@@ -780,7 +780,11 @@ def site_screening(slab, ads, center_xy='site', use_all_sites=True,
                 E_total = test_slab.get_potential_energy()
                 E_ads = E_total - clean_slab_energy - ads_energy
 
-                struct_file = os.path.join(structures_dir, f"{site['site']}_h{height}_r{rot}.xyz")
+                # struct_file = os.path.join(structures_dir, f"{site['site']}_h{height}_r{rot}.xyz")
+                struct_file = os.path.join(
+                    structures_dir, 
+                    f"site{site_idx}_{site['site']}_h{height}_r{rot}.xyz"
+                )
                 test_slab.write(struct_file)
 
                 result = {
@@ -803,6 +807,7 @@ def site_screening(slab, ads, center_xy='site', use_all_sites=True,
                     with open(results_pkl, "wb") as f:
                         pickle.dump(screening_results, f)
 
+    screening_results = make_json_serializable(screening_results)
     # Final save (JSON for human readability)
     if save_results:
         import json
@@ -1315,65 +1320,203 @@ def best_site_results(screening_results):
     return df_sorted, site_best
 
 
+# def select_neb_endpoints_translation(site_best, screening_results):
+#     """
+#     Select NEB endpoints for PURE TRANSLATION between identical site types
+    
+#     Strategy: Same site type, same height/rotation, highest vs lowest energy
+#     Example: fcc → fcc (different positions), NOT fcc → bridge
+#     """
+#     best_config = site_best.iloc[0]
+    
+#     target_site_type = best_config['site_type'] #
+#     target_height = best_config['height']
+#     target_rotation = best_config['rotation']
+#     best_position = np.array(best_config['site_position'][:2])
+#     best_energy = best_config['total_energy']
+
+  
+#     # Filter by site type + geometry (no distance constraint)
+#     df = pd.DataFrame(screening_results)
+#     matches = df[
+#         (df['site_type'] == target_site_type) &  # ← NEW: Same site type only!
+#         (df['height'] == target_height) & 
+#         (df['rotation'] == target_rotation) & 
+#         (df['converged'] == True)
+#     ].copy()
+    
+#     if len(matches) < 2:
+#         print(f"\n ERROR: Not enough matching {target_site_type} sites!")
+#         print(f"   Need at least 2 sites of the same type for pure translation")
+#         return None, best_config
+    
+#     # Calculate distances and energy differences
+#     matches['distance'] = matches['site_position'].apply(
+#         lambda pos: np.linalg.norm(np.array(pos[:2]) - best_position)
+#     )
+#     matches['dE_meV'] = (matches['total_energy'] - best_energy) * 1000
+    
+#     # Remove the best site itself (distance ≈ 0)
+#     matches = matches[matches['distance'] > 0.1]
+    
+#     # Sort by energy (descending)
+#     matches_sorted = matches.sort_values('total_energy', ascending=False)
+    
+#     endpoint_initial = matches_sorted.iloc[0]  # Highest energy fcc
+#     endpoint_final = best_config                # Lowest energy fcc
+    
+#     # Ensure correct ordering
+#     dE = endpoint_initial['total_energy'] - endpoint_final['total_energy']
+    
+#     if dE < 0:
+#         print(f"\n  WARNING: Initial energy < Final energy!")
+#         print(f"  Swapping endpoints...")
+#         endpoint_initial, endpoint_final = endpoint_final, endpoint_initial
+#         dE = -dE
+    
+#     return (endpoint_initial.to_dict() if hasattr(endpoint_initial, 'to_dict') else endpoint_initial,
+#             endpoint_final.to_dict() if hasattr(endpoint_final, 'to_dict') else endpoint_final)
+
+
+
 def select_neb_endpoints_translation(site_best, screening_results, 
-                                      min_distance=2, max_distance=4.3):
+                                      min_distance=0.5, 
+                                      max_distance=5.0,
+                                      min_dE_meV=0.1,
+                                      prefer_energy_diff=True):
     """
-    Select NEB endpoints for translation between NEIGHBORING sites of same type.
+    Select NEB endpoints for translation: nearest neighbor with significant ΔE.
     
-    Parameters:
-        min_distance: Minimum separation to avoid same-site duplicates (Å)
-        max_distance: Maximum separation for nearest-neighbor hop (Å)
-                      Typical: ~2.8 Å for fcc-fcc on Pt(111)
+    Strategy options:
+    1. prefer_energy_diff=True: Among nearest neighbors, pick one with largest ΔE
+    2. prefer_energy_diff=False: Pick absolute nearest neighbor regardless of ΔE
+    
+    Parameters
+    ----------
+    site_best : DataFrame
+        Best configurations per site type
+    screening_results : list
+        Full screening results
+    min_distance : float
+        Minimum separation to exclude same-site duplicates (Å)
+    max_distance : float
+        Maximum separation for nearest-neighbor candidates (Å)
+    min_dE_meV : float
+        Minimum energy difference to consider structures "different" (meV)
+    prefer_energy_diff : bool
+        If True, among neighbors, pick the one with largest |ΔE|
     """
-    
     best_config = site_best.iloc[0]
     target_site_type = best_config['site_type']
+    target_height = best_config['height']
+    target_rotation = best_config['rotation']
     best_position = np.array(best_config['site_position'][:2])
+    best_energy = best_config['total_energy']
     
+    print(f"\nSearching for {target_site_type} → {target_site_type} translation path")
+    print(f"  Reference site: pos=({best_position[0]:.2f}, {best_position[1]:.2f})")
+    print(f"  Height: {target_height}, Rotation: {target_rotation}")
+    print(f"  Reference energy: {best_energy:.6f} eV")
+    
+    # Filter by site type + geometry
     df = pd.DataFrame(screening_results)
-    
-    # Filter for same site type and converged
     matches = df[
         (df['site_type'] == target_site_type) &
+        (df['height'] == target_height) &
+        (df['rotation'] == target_rotation) &
         (df['converged'] == True)
     ].copy()
     
+    print(f"  Found {len(matches)} matching configurations")
+    
     if len(matches) < 2:
-        print(f"\nERROR: Not enough {target_site_type} sites!")
+        print(f"\n❌ ERROR: Not enough matching {target_site_type} sites!")
         return None, None
     
-    # Calculate distances from best site
+    # Calculate distances and energy differences
     matches['distance'] = matches['site_position'].apply(
         lambda pos: np.linalg.norm(np.array(pos[:2]) - best_position)
     )
+    matches['dE_meV'] = (matches['total_energy'] - best_energy) * 1000
+    matches['abs_dE_meV'] = np.abs(matches['dE_meV'])
     
-    # Find nearest neighbor (not self, within reasonable range)
+    # Filter: not same site, within distance range
     neighbors = matches[
-        (matches['distance'] > min_distance) &
+        (matches['distance'] > min_distance) & 
         (matches['distance'] < max_distance)
     ].copy()
     
     if len(neighbors) == 0:
-        print(f"\nERROR: No neighboring {target_site_type} sites found!")
-        print(f"  Distance range searched: {min_distance}–{max_distance} Å")
-        print(f"  Available distances: {sorted(matches['distance'].unique())}")
+        print(f"\n⚠️  No neighbors in range {min_distance}–{max_distance} Å")
+        print(f"  Available distances: {sorted(matches['distance'].unique())[:10]}")
+        
+        # Expand search range
+        neighbors = matches[matches['distance'] > min_distance].copy()
+        if len(neighbors) == 0:
+            return None, None
+        print(f"  Expanded search: found {len(neighbors)} candidates")
+    
+    # Show all candidates
+    print(f"\n  Candidate neighbors ({len(neighbors)}):")
+    for _, row in neighbors.nsmallest(5, 'distance').iterrows():
+        print(f"    d={row['distance']:.2f} Å, ΔE={row['dE_meV']:.3f} meV, "
+              f"pos=({row['site_position'][0]:.2f}, {row['site_position'][1]:.2f})")
+    
+    if prefer_energy_diff:
+        # Strategy: Among nearby neighbors, pick one with significant ΔE
+        
+        # First, try to find neighbors with meaningful energy difference
+        significant_dE = neighbors[neighbors['abs_dE_meV'] > min_dE_meV]
+        
+        if len(significant_dE) > 0:
+            # Among those with significant ΔE, pick the nearest one
+            # OR pick the one with largest ΔE among nearest neighbors
+            
+            # Option A: Nearest with significant ΔE
+            selected = significant_dE.nsmallest(1, 'distance').iloc[0]
+            selection_reason = f"nearest with |ΔE| > {min_dE_meV} meV"
+            
+            # Option B: Largest ΔE among nearest few neighbors (uncomment to use)
+            # nearest_few = neighbors.nsmallest(3, 'distance')
+            # selected = nearest_few.nlargest(1, 'abs_dE_meV').iloc[0]
+            # selection_reason = "largest |ΔE| among 3 nearest neighbors"
+            
+        else:
+            # All neighbors have similar energy — just pick nearest
+            print(f"\n  ⚠️  All neighbors have |ΔE| < {min_dE_meV} meV")
+            print(f"      Sites may be symmetry-equivalent (expected for periodic surface)")
+            selected = neighbors.nsmallest(1, 'distance').iloc[0]
+            selection_reason = "nearest (all ΔE similar)"
+    else:
+        # Simple: just pick nearest neighbor
+        selected = neighbors.nsmallest(1, 'distance').iloc[0]
+        selection_reason = "nearest neighbor"
+    
+    # Report selection
+    print(f"\n✓ Selected endpoint ({selection_reason}):")
+    print(f"  Distance: {selected['distance']:.3f} Å")
+    print(f"  ΔE: {selected['dE_meV']:.3f} meV")
+    print(f"  Position: ({selected['site_position'][0]:.2f}, {selected['site_position'][1]:.2f})")
+    print(f"  File: {selected['structure_file']}")
+    
+    # Verify different files
+    if best_config['structure_file'] == selected['structure_file']:
+        print("\n❌ ERROR: Same structure file!")
         return None, None
     
-    # Pick the closest neighbor
-    neighbors_sorted = neighbors.sort_values('distance')
-    neighbor = neighbors_sorted.iloc[0]
+    # Determine which should be initial/final based on energy
+    # Convention: start from higher energy, end at lower (downhill)
+    if selected['total_energy'] > best_energy:
+        endpoint1 = selected  # Higher energy = initial
+        endpoint2 = best_config  # Lower energy = final
+        print(f"\n  Path: high E → low E (ΔE = {-selected['dE_meV']:.3f} meV)")
+    else:
+        endpoint1 = best_config
+        endpoint2 = selected
+        print(f"\n  Path: low E → high E (ΔE = {selected['dE_meV']:.3f} meV)")
     
-    print(f"\nSelected translation pathway:")
-    print(f"  Site type: {target_site_type} → {target_site_type}")
-    print(f"  Distance: {neighbor['distance']:.2f} Å")
-    print(f"  Energy difference: {abs(neighbor['total_energy'] - best_config['total_energy'])*1000:.1f} meV")
-    
-    # Use structures with same height/rotation for cleaner path
-    # Or let NEB find the optimal path
-    endpoint1 = best_config.to_dict() if hasattr(best_config, 'to_dict') else dict(best_config)
-    endpoint2 = neighbor.to_dict() if hasattr(neighbor, 'to_dict') else dict(neighbor)
-    
-    return endpoint1, endpoint2
+    return (endpoint1.to_dict() if hasattr(endpoint1, 'to_dict') else dict(endpoint1),
+            endpoint2.to_dict() if hasattr(endpoint2, 'to_dict') else dict(endpoint2))
 
 
 def select_neb_endpoints_rotation(site_best, screening_results, 
@@ -1386,6 +1529,7 @@ def select_neb_endpoints_rotation(site_best, screening_results,
     target_site_type = best_config['site_type']
     target_height = best_config['height']
     reference_position = np.array(best_config['site_position'][:2])
+    target_rotation = best_config['rotation']
     
     df = pd.DataFrame(screening_results)
     
@@ -1462,111 +1606,578 @@ def _verify_constraints(atoms1, atoms2):
         print("WARNING: No constraints on structures")
 
 
-def prepare_neb_calculation(endpoint1, endpoint2, n_images=10,
-                             barrier_type='translation', workdir="NEB"):
+# def prepare_neb_calculation(endpoint1, endpoint2, n_images=10,
+#                              barrier_type='translation', workdir="NEB"):
+#     os.makedirs(workdir, exist_ok=True)
+
+#     def load_structure(ep):
+#         if isinstance(ep, dict):
+#             if 'structure' in ep:
+#                 return ep['structure'].copy()
+#             return read(ep['structure_file'])
+#         return ep.copy()
+
+#     initial = load_structure(endpoint1)
+#     final = load_structure(endpoint2)
+#     _verify_constraints(initial, final)
+
+#     # Check endpoint difference before proceeding
+#     if barrier_type=="translation":
+#         disp = np.abs(final.positions - initial.positions).max()
+#         print(f"Max displacement between endpoints: {disp:.3f} Å")
+#         if disp < 0.00001:
+#             raise ValueError("Endpoints too similar for meaningful NEB")
+
+#     print("\nSetting up NEB calculators...")
+
+#     def fresh_calc():
+#         pred = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
+#         return FAIRChemCalculator(pred, task_name="oc20")
+
+#     initial.calc = fresh_calc()
+#     final.calc = fresh_calc()
+
+#     E_init = initial.get_potential_energy()
+#     E_final = final.get_potential_energy()
+#     print(f"Initial energy: {E_init:.6f} eV")
+#     print(f"Final energy:   {E_final:.6f} eV")
+#     print(f"Energy difference: {abs(E_final - E_init)*1000:.3f} meV")
+
+#     # Create images
+#     images = [initial]
+#     for _ in range(n_images):
+#         img = initial.copy()
+#         img.calc = fresh_calc()
+#         images.append(img)
+#     final.calc = fresh_calc()
+#     images.append(final)
+
+#     # Stage 1: Relax without climbing image
+#     neb = NEB(images, climb=False, allow_shared_calculator=False)
+#     neb.interpolate('idpp')  # Better interpolation for surfaces
+
+#     # Verify interpolation didn't produce nan
+#     for i, img in enumerate(images):
+#         if np.any(np.isnan(img.positions)):
+#             raise ValueError(f"NaN positions in image {i} after interpolation")
+
+#     traj_file = os.path.join(workdir, f"neb_{barrier_type}.traj")
+#     log_file = os.path.join(workdir, f"neb_{barrier_type}.log")
+
+#     print(f"Running NEB (stage 1: no climb)...")
+#     opt = FIRE(neb, trajectory=traj_file, logfile=log_file, maxstep=0.1)
+#     opt.run(fmax=0.1, steps=200)
+
+#     # Stage 2: Turn on climbing image
+#     print("Running NEB (stage 2: climbing image)...")
+#     neb.climb = True
+#     opt.run(fmax=0.05, steps=500)
+
+#     print("\nNEB completed!")
+
+#     # Analysis (same as before)
+#     from ase.mep import NEBTools
+#     nebtools = NEBTools(images)
+    
+#     try:
+#         barrier_fwd, delta_E = nebtools.get_barrier(fit=True, raw=False)
+#     except:
+#         barrier_fwd = delta_E = None
+
+#     try:
+#         E_ts_abs, _ = nebtools.get_barrier(fit=True, raw=True)
+#     except:
+#         E_ts_abs = None
+
+#     energies = [img.get_potential_energy() for img in images]
+#     saddle_idx = int(np.argmax(energies))
+#     saddle_file = os.path.join(workdir, f"saddle_{barrier_type}.traj")
+#     write(saddle_file, images[saddle_idx])
+
+#     result = {
+#         "barrier_type": barrier_type,
+#         "forward_barrier_fit": barrier_fwd,
+#         "delta_E": delta_E,
+#         "transition_state_energy": E_ts_abs,
+#         "trajectory": traj_file,
+#         "saddle_file": saddle_file,
+#         "saddle_index": saddle_idx,
+#         "n_images": len(images)
+#     }
+
+#     summary_file = os.path.join(workdir, "neb_summary.json")
+#     with open(summary_file, "w") as f:
+#         json.dump(result, f, indent=2)
+
+#     print(f"Summary saved to {summary_file}")
+#     return images, result
+
+# Add this helper function at the top of neb.py
+def make_json_serializable(obj):
+    """Convert numpy types to Python native types for JSON serialization."""
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, (np.int_, np.intc, np.intp, np.int8, np.int16, 
+                          np.int32, np.int64, np.uint8, np.uint16, 
+                          np.uint32, np.uint64)):
+        return int(obj)
+    elif isinstance(obj, (np.float_, np.float16, np.float32, np.float64)):
+        return float(obj)
+    elif isinstance(obj, np.bool_):
+        return bool(obj)
+    elif isinstance(obj, dict):
+        return {k: make_json_serializable(v) for k, v in obj.items()}
+    elif isinstance(obj, (list, tuple)):
+        return [make_json_serializable(item) for item in obj]
+    else:
+        return obj
+
+def prepare_neb_calculation(endpoint1, endpoint2, n_images=10, barrier_type='translation', workdir="NEB"):
+    """
+    Prepare and run NEB calculation
+    
+    Args:
+        endpoint1, endpoint2: Can be either:
+            - Dictionary with 'structure' and 'structure_file' keys (from screening)
+            - ASE Atoms objects directly
+        n_images: Number of intermediate images
+        barrier_type: 'translation' or 'rotation'
+    """
     os.makedirs(workdir, exist_ok=True)
-
-    def load_structure(ep):
-        if isinstance(ep, dict):
-            if 'structure' in ep:
-                return ep['structure'].copy()
-            return read(ep['structure_file'])
-        return ep.copy()
-
-    initial = load_structure(endpoint1)
-    final = load_structure(endpoint2)
+    # Handle both dict and Atoms input
+    if isinstance(endpoint1, dict):
+        # It's a screening result dict
+        if 'structure' in endpoint1:
+            initial = endpoint1['structure'].copy()
+        else:
+            initial = read(endpoint1['structure_file'])
+    else:
+        # It's already an Atoms object
+        initial = endpoint1.copy()
+    
+    if isinstance(endpoint2, dict):
+        # It's a screening result dict
+        if 'structure' in endpoint2:
+            final = endpoint2['structure'].copy()
+        else:
+            final = read(endpoint2['structure_file'])
+    else:
+        # It's already an Atoms object
+        final = endpoint2.copy()
+    
+    # Verify constraints
     _verify_constraints(initial, final)
-
-    # Check endpoint difference before proceeding
-    disp = np.abs(final.positions - initial.positions).max()
-    print(f"Max displacement between endpoints: {disp:.3f} Å")
-    if disp < 0.00001:
-        raise ValueError("Endpoints too similar for meaningful NEB")
-
-    print("\nSetting up NEB calculators...")
-
+    
+    # Ensure endpoints have calculators - SEPARATE instances for each!
+    print("\nSetting up calculators for NEB...")
+    
+    # Create separate calculator for initial endpoint
+    #predictor_initial = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
+    # calc_initial = FAIRChemCalculator(predictor_initial, task_name="oc20")
     def fresh_calc():
         pred = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
         return FAIRChemCalculator(pred, task_name="oc20")
-
     initial.calc = fresh_calc()
+    
+    # Create separate calculator for final endpoint
+    #predictor_final = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
+    #calc_final = FAIRChemCalculator(predictor_final, task_name="oc20")
     final.calc = fresh_calc()
+    
+    # Calculate endpoint energies (important for barrier calculation later)
+    print(f"Initial structure energy: {initial.get_potential_energy():.6f} eV")
+    print(f"Final structure energy: {final.get_potential_energy():.6f} eV")
+    
+    # Create image list
+    # images = [initial]
+    # for i in range(n_images):
+    #     image = initial.copy()
+    #     images.append(image)
+    # images.append(final)
 
-    E_init = initial.get_potential_energy()
-    E_final = final.get_potential_energy()
-    print(f"Initial energy: {E_init:.6f} eV")
-    print(f"Final energy:   {E_final:.6f} eV")
-    print(f"Energy difference: {abs(E_final - E_init)*1000:.3f} meV")
+    # Correct ASE NEB image construction # Azeez
+    images = [initial.copy()]
+    for i in range(n_images):
+        images.append(initial.copy())
+    images.append(final.copy())
+    
+    print(f"Created {len(images)} images (including 2 endpoints)")
+    
 
-    # Create images
-    images = [initial]
-    for _ in range(n_images):
-        img = initial.copy()
-        img.calc = fresh_calc()
-        images.append(img)
-    final.calc = fresh_calc()
-    images.append(final)
+    # Assign calculators to all intermediate images (not endpoints)
+    for i, image in enumerate(images):  # Skip first and last
+        image.calc = fresh_calc()
 
-    # Stage 1: Relax without climbing image
-    neb = NEB(images, climb=False, allow_shared_calculator=False)
-    neb.interpolate('idpp')  # Better interpolation for surfaces
-
-    # Verify interpolation didn't produce nan
-    for i, img in enumerate(images):
-        if np.any(np.isnan(img.positions)):
-            raise ValueError(f"NaN positions in image {i} after interpolation")
-
+    # Setup NEB with climbing image
+    neb = NEB(images, climb=True, allow_shared_calculator=False)
+    neb.interpolate('idpp')
+      
+    # Optimize
+    slab_dir = 'NEB_Results'
+    os.makedirs(slab_dir, exist_ok=True)
     traj_file = os.path.join(workdir, f"neb_{barrier_type}.traj")
     log_file = os.path.join(workdir, f"neb_{barrier_type}.log")
-
-    print(f"Running NEB (stage 1: no climb)...")
-    opt = FIRE(neb, trajectory=traj_file, logfile=log_file, maxstep=0.1)
-    opt.run(fmax=0.1, steps=200)
-
-    # Stage 2: Turn on climbing image
-    print("Running NEB (stage 2: climbing image)...")
-    neb.climb = True
-    opt.run(fmax=0.05, steps=500)
-
-    print("\nNEB completed!")
-
-    # Analysis (same as before)
-    from ase.mep import NEBTools
+    
+    print(f"\nStarting NEB optimization...")
+    print(f"  Trajectory: {traj_file}")
+    print(f"  Log file: {log_file}")
+    
+    optimizer = FIRE(neb, trajectory=traj_file, logfile=log_file)
+    optimizer.run(fmax=0.05)
+    
+    print("\n NEB optimization completed!")
+    
+    # Analyze using NEBTools
+    from ase.mep import NEBTools  # Fixed import path
     nebtools = NEBTools(images)
     
+    print("\nCalculating barriers...")
+    
+    # Get barrier and reaction energy using interpolated fit (recommended)
+    # Returns: (forward_barrier, delta_E)
     try:
-        barrier_fwd, delta_E = nebtools.get_barrier(fit=True, raw=False)
-    except:
-        barrier_fwd = delta_E = None
-
+        barrier_fwd_fit, delta_E_fit = nebtools.get_barrier(fit=True, raw=False)
+        print(f"  Forward barrier (fitted): {barrier_fwd_fit:.6f} eV ({barrier_fwd_fit*1000:.3f} meV)")
+        print(f"  Reaction energy (ΔE): {delta_E_fit:.6f} eV")
+    except Exception as e:
+        print(f" Warning: Could not fit barrier curve: {e}")
+        barrier_fwd_fit = None
+        delta_E_fit = None
+    
+    # Get raw transition state energy (absolute energy, not relative)
     try:
         E_ts_abs, _ = nebtools.get_barrier(fit=True, raw=True)
-    except:
+        print(f"  TS absolute energy: {E_ts_abs:.6f} eV")
+    except Exception as e:
+        print(f"   Warning: Could not get TS energy: {e}")
         E_ts_abs = None
-
-    energies = [img.get_potential_energy() for img in images]
-    saddle_idx = int(np.argmax(energies))
-    saddle_file = os.path.join(workdir, f"saddle_{barrier_type}.traj")
-    write(saddle_file, images[saddle_idx])
-
+    
+    # Plot band structure
+    nebtools.plot_bands()
+    
+    # Find and save saddle point
+    energies = []
+    for i, img in enumerate(images):
+        try:
+            E = img.get_potential_energy()
+            energies.append(E)
+        except:
+            energies.append(np.nan)
+    
+    if not all(np.isnan(energies)):
+        saddle_idx = np.nanargmax(energies)
+        print(f"\nSaddle point: image {saddle_idx}/{len(images)-1}")
+        
+        saddle_file = os.path.join(workdir, f"saddle_{barrier_type}.traj")
+        write(saddle_file, images[saddle_idx])
+        print(f"Saddle point saved: {saddle_file}")
+    else:
+        saddle_file = None
+        saddle_idx = None
+        print("\n  Warning: Could not determine saddle point")
+    
+    print(f"\nTrajectory saved: {traj_file}")
+    
+    # Save results
     result = {
-        "barrier_type": barrier_type,
-        "forward_barrier_fit": barrier_fwd,
-        "delta_E": delta_E,
-        "transition_state_energy": E_ts_abs,
-        "trajectory": traj_file,
-        "saddle_file": saddle_file,
-        "saddle_index": saddle_idx,
-        "n_images": len(images)
+        'barrier_type': barrier_type,
+        'forward_barrier_fit': barrier_fwd_fit,      # A → TS (use for partition function)
+        'delta_E': delta_E_fit,                      # E_B - E_A
+        'transition_state_energy': E_ts_abs,         # Absolute TS energy
+        'trajectory': traj_file,
+        'saddle_file': saddle_file,
+        'saddle_index': saddle_idx,
+        'n_images': len(images)
     }
+
+    result = make_json_serializable(result)
 
     summary_file = os.path.join(workdir, "neb_summary.json")
     with open(summary_file, "w") as f:
         json.dump(result, f, indent=2)
 
     print(f"Summary saved to {summary_file}")
+    
     return images, result
 
+
+# def prepare_neb_calculation(endpoint1, endpoint2, n_images=10, 
+#                             barrier_type='translation', workdir="NEB"):
+#     """
+#     Prepare and run NEB calculation with robust interpolation.
+    
+#     Args:
+#         endpoint1, endpoint2: Can be either:
+#             - Dictionary with 'structure' and 'structure_file' keys (from screening)
+#             - ASE Atoms objects directly
+#         n_images: Number of intermediate images
+#         barrier_type: 'translation' or 'rotation'
+#         workdir: Output directory
+#     """
+#     from ase.geometry import find_mic
+    
+#     os.makedirs(workdir, exist_ok=True)
+    
+#     # =========================================================================
+#     # LOAD STRUCTURES
+#     # =========================================================================
+#     def load_structure(ep):
+#         if isinstance(ep, dict):
+#             if 'structure' in ep:
+#                 return ep['structure'].copy()
+#             else:
+#                 return read(ep['structure_file'])
+#         else:
+#             return ep.copy()
+    
+#     initial = load_structure(endpoint1)
+#     final = load_structure(endpoint2)
+    
+#     # Verify constraints match
+#     _verify_constraints(initial, final)
+    
+#     # =========================================================================
+#     # FIX PERIODIC BOUNDARY CROSSINGS (common cause of IDPP NaN)
+#     # =========================================================================
+#     print("\nChecking for periodic boundary crossings...")
+#     diff = final.positions - initial.positions
+    
+#     # Use minimum image convention to handle PBC
+#     if np.any(initial.pbc):
+#         diff_mic, _ = find_mic(diff, initial.cell, pbc=initial.pbc)
+#         max_raw_diff = np.abs(diff).max()
+#         max_mic_diff = np.abs(diff_mic).max()
+        
+#         if max_raw_diff > max_mic_diff + 0.1:  # PBC crossing detected
+#             print(f"  PBC crossing detected!")
+#             print(f"  Raw max displacement: {max_raw_diff:.3f} Å")
+#             print(f"  MIC max displacement: {max_mic_diff:.3f} Å")
+#             print(f"  Applying minimum image correction...")
+#             final.positions = initial.positions + diff_mic
+#         else:
+#             print(f"  No PBC issues detected (max displacement: {max_mic_diff:.3f} Å)")
+#     else:
+#         print(f"  No PBC applied, max displacement: {np.abs(diff).max():.3f} Å")
+    
+#     # Check for valid displacements
+#     max_disp = np.abs(final.positions - initial.positions).max()
+#     if max_disp < 0.01:
+#         raise ValueError(f"Endpoints too similar (max displacement: {max_disp:.4f} Å)")
+    
+#     print(f"  Final max displacement: {max_disp:.3f} Å")
+    
+#     # =========================================================================
+#     # SETUP CALCULATORS
+#     # =========================================================================
+#     print("\nSetting up calculators...")
+    
+#     def fresh_calc():
+#         pred = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
+#         return FAIRChemCalculator(pred, task_name="oc20")
+    
+#     initial.calc = fresh_calc()
+#     final.calc = fresh_calc()
+    
+#     E_init = initial.get_potential_energy()
+#     E_final = final.get_potential_energy()
+#     print(f"  Initial energy: {E_init:.6f} eV")
+#     print(f"  Final energy:   {E_final:.6f} eV")
+#     print(f"  Energy diff:    {abs(E_final - E_init)*1000:.3f} meV")
+    
+#     # =========================================================================
+#     # CREATE IMAGES
+#     # =========================================================================
+#     images = [initial.copy()]
+#     for _ in range(n_images):
+#         images.append(initial.copy())
+#     images.append(final.copy())
+    
+#     # Assign calculators to ALL images
+#     for img in images:
+#         img.calc = fresh_calc()
+    
+#     print(f"\nCreated {len(images)} images (including endpoints)")
+    
+#     # =========================================================================
+#     # INTERPOLATION WITH FALLBACK
+#     # =========================================================================
+#     # Start WITHOUT climbing image (more stable for interpolation)
+#     neb = NEB(images, climb=False, allow_shared_calculator=False)
+    
+#     print("\nAttempting IDPP interpolation...")
+#     idpp_success = False
+    
+#     try:
+#         neb.interpolate('idpp')
+        
+#         # Validate interpolation
+#         has_nan = False
+#         for i, img in enumerate(images):
+#             if np.any(np.isnan(img.positions)) or np.any(np.isinf(img.positions)):
+#                 has_nan = True
+#                 print(f"  ⚠️  NaN/Inf in image {i}")
+#                 break
+        
+#         if has_nan:
+#             raise ValueError("IDPP produced invalid positions")
+        
+#         idpp_success = True
+#         print("  ✓ IDPP interpolation successful")
+        
+#     except Exception as e:
+#         print(f"  ✗ IDPP failed: {e}")
+#         print("  Falling back to linear interpolation...")
+        
+#         # Rebuild images
+#         images = [initial.copy()]
+#         for _ in range(n_images):
+#             images.append(initial.copy())
+#         images.append(final.copy())
+        
+#         for img in images:
+#             img.calc = fresh_calc()
+        
+#         # Manual linear interpolation
+#         pos_init = initial.get_positions()
+#         pos_final = final.get_positions()
+        
+#         for i in range(1, n_images + 1):
+#             frac = i / (n_images + 1)
+#             images[i].set_positions(pos_init + frac * (pos_final - pos_init))
+        
+#         # Verify
+#         for i, img in enumerate(images):
+#             if np.any(np.isnan(img.positions)):
+#                 raise ValueError(f"Linear interpolation failed at image {i}")
+        
+#         print("  ✓ Linear interpolation successful")
+        
+#         # Recreate NEB
+#         neb = NEB(images, climb=False, allow_shared_calculator=False)
+    
+#     # =========================================================================
+#     # VALIDATE ALL IMAGES
+#     # =========================================================================
+#     print("\nValidating images (calculating initial energies)...")
+#     for i, img in enumerate(images):
+#         try:
+#             E = img.get_potential_energy()
+#             print(f"  Image {i:2d}: {E:.4f} eV")
+#         except Exception as e:
+#             print(f"  Image {i:2d}: FAILED - {e}")
+#             # Show position info for debugging
+#             pos = img.positions
+#             print(f"           Positions: min={pos.min():.2f}, max={pos.max():.2f}")
+#             raise ValueError(f"Image {i} failed energy calculation")
+    
+#     # =========================================================================
+#     # NEB OPTIMIZATION
+#     # =========================================================================
+#     traj_file = os.path.join(workdir, f"neb_{barrier_type}.traj")
+#     log_file = os.path.join(workdir, f"neb_{barrier_type}.log")
+    
+#     print(f"\nStarting NEB optimization...")
+#     print(f"  Trajectory: {traj_file}")
+#     print(f"  Log file: {log_file}")
+    
+#     optimizer = FIRE(neb, trajectory=traj_file, logfile=log_file, maxstep=0.1)
+    
+#     # Stage 1: Relax without climbing image
+#     print("\nStage 1: Relaxing path (no climbing image)...")
+#     try:
+#         optimizer.run(fmax=0.1, steps=200)
+#     except Exception as e:
+#         print(f"  Stage 1 warning: {e}")
+#         write(os.path.join(workdir, f"neb_{barrier_type}_stage1_failed.traj"), images)
+    
+#     # Stage 2: Turn on climbing image for accurate TS
+#     print("\nStage 2: Refining with climbing image...")
+#     neb.climb = True
+#     try:
+#         optimizer.run(fmax=0.05, steps=500)
+#     except Exception as e:
+#         print(f"  Stage 2 warning: {e}")
+    
+#     print("\n✓ NEB optimization completed!")
+    
+#     # =========================================================================
+#     # ANALYSIS
+#     # =========================================================================
+#     from ase.mep import NEBTools
+#     nebtools = NEBTools(images)
+    
+#     print("\nCalculating barriers...")
+    
+#     # Get fitted barrier
+#     try:
+#         barrier_fwd_fit, delta_E_fit = nebtools.get_barrier(fit=True, raw=False)
+#         print(f"  Forward barrier (fitted): {barrier_fwd_fit:.6f} eV ({barrier_fwd_fit*1000:.3f} meV)")
+#         print(f"  Reaction energy (ΔE): {delta_E_fit:.6f} eV ({delta_E_fit*1000:.3f} meV)")
+#     except Exception as e:
+#         print(f"  Warning: Could not fit barrier: {e}")
+#         barrier_fwd_fit = None
+#         delta_E_fit = None
+    
+#     # Get TS absolute energy
+#     try:
+#         E_ts_abs, _ = nebtools.get_barrier(fit=True, raw=True)
+#         print(f"  TS absolute energy: {E_ts_abs:.6f} eV")
+#     except Exception as e:
+#         E_ts_abs = None
+    
+#     # Manual barrier calculation as backup
+#     energies = [img.get_potential_energy() for img in images]
+#     energies = np.array(energies)
+    
+#     if barrier_fwd_fit is None and not np.any(np.isnan(energies)):
+#         barrier_fwd_fit = float(energies.max() - energies[0])
+#         delta_E_fit = float(energies[-1] - energies[0])
+#         print(f"  Manual barrier: {barrier_fwd_fit*1000:.3f} meV")
+    
+#     # Find saddle point
+#     saddle_idx = int(np.argmax(energies))
+#     saddle_file = os.path.join(workdir, f"saddle_{barrier_type}.traj")
+#     write(saddle_file, images[saddle_idx])
+#     print(f"\nSaddle point: image {saddle_idx} (saved to {saddle_file})")
+    
+#     # Plot
+#     try:
+#         fig = nebtools.plot_bands()
+#         plot_file = os.path.join(workdir, f"neb_{barrier_type}_band.png")
+#         fig.savefig(plot_file, dpi=150, bbox_inches='tight')
+#         print(f"Band plot saved: {plot_file}")
+#         plt.close(fig)
+#     except Exception as e:
+#         print(f"Could not save band plot: {e}")
+#         plot_file = None
+    
+#     # =========================================================================
+#     # SAVE RESULTS
+#     # =========================================================================
+#     result = {
+#         'barrier_type': barrier_type,
+#         'forward_barrier_fit': float(barrier_fwd_fit) if barrier_fwd_fit else None,
+#         'delta_E': float(delta_E_fit) if delta_E_fit else None,
+#         'transition_state_energy': float(E_ts_abs) if E_ts_abs else None,
+#         'trajectory': traj_file,
+#         'saddle_file': saddle_file,
+#         'saddle_index': saddle_idx,
+#         'n_images': len(images),
+#         'energies_meV': (energies * 1000).tolist(),
+#         'idpp_used': idpp_success,
+#         'plot_file': plot_file,
+#     }
+    
+#     summary_file = os.path.join(workdir, "neb_summary.json")
+#     with open(summary_file, "w") as f:
+#         json.dump(result, f, indent=2)
+    
+#     print(f"\nSummary saved: {summary_file}")
+    
+#     # # Also save human-readable summary
+#     # save_neb_summary(result, os.path.join(workdir, "neb_summary.txt"))
+    
+#     return images, result
 
 def check_neb_endpoints(endpoint1, endpoint2, name="endpoints"):
     """
@@ -2176,3 +2787,208 @@ def plot_thermochemistry(df, filename=None):
         print(f"Plots saved to {filename}")
     
     plt.show()
+
+
+def select_neb_endpoints_translation_v2(site_best, screening_results, 
+                                         method='cross_site'):
+    """
+    Select NEB endpoints for translation barrier.
+    
+    Methods:
+    - 'cross_site': Use two different site types (bridge → top)
+                    The barrier IS the energy of the higher site.
+    - 'long_path': Use same site type but ensure path crosses intermediate site
+    """
+    best_config = site_best.iloc[0]
+    target_site_type = best_config['site_type']
+    best_position = np.array(best_config['site_position'][:2])
+    best_energy = best_config['total_energy']
+    
+    df = pd.DataFrame(screening_results)
+    df = df[df['converged'] == True].copy()
+    
+    if method == 'cross_site':
+        # =================================================================
+        # METHOD 1: Find path to DIFFERENT site type (recommended)
+        # =================================================================
+        # The translation barrier = energy difference between site types
+        
+        # Find nearest site of DIFFERENT type
+        other_sites = df[df['site_type'] != target_site_type].copy()
+        
+        if len(other_sites) == 0:
+            print("ERROR: No other site types found!")
+            return None, None
+        
+        other_sites['distance'] = other_sites['site_position'].apply(
+            lambda pos: np.linalg.norm(np.array(pos[:2]) - best_position)
+        )
+        
+        # Get the nearest site of each different type
+        site_types_available = other_sites['site_type'].unique()
+        print(f"\nAvailable site types: {list(site_types_available)}")
+        
+        candidates = []
+        for st in site_types_available:
+            st_sites = other_sites[other_sites['site_type'] == st]
+            nearest = st_sites.nsmallest(1, 'distance').iloc[0]
+            dE = (nearest['total_energy'] - best_energy) * 1000
+            candidates.append({
+                'site_type': st,
+                'distance': nearest['distance'],
+                'dE_meV': dE,
+                'config': nearest
+            })
+            print(f"  {target_site_type} → {st}: d={nearest['distance']:.2f} Å, ΔE={dE:.1f} meV")
+        
+        # Pick the one with highest energy (= largest barrier)
+        # This is the saddle point for translation
+        candidates.sort(key=lambda x: x['dE_meV'], reverse=True)
+        selected = candidates[0]
+        
+        print(f"\n✓ Selected: {target_site_type} → {selected['site_type']}")
+        print(f"  Distance: {selected['distance']:.2f} Å")
+        print(f"  Barrier estimate: {selected['dE_meV']:.1f} meV")
+        
+        endpoint1 = best_config.to_dict() if hasattr(best_config, 'to_dict') else dict(best_config)
+        endpoint2 = selected['config'].to_dict() if hasattr(selected['config'], 'to_dict') else dict(selected['config'])
+        
+        return endpoint1, endpoint2
+    
+    elif method == 'long_path':
+        # =================================================================
+        # METHOD 2: Same site type but LONGER path (must cross intermediate)
+        # =================================================================
+        # On Pt(111), bridge-bridge distance crossing a top site is ~2.8 Å
+        
+        same_sites = df[
+            (df['site_type'] == target_site_type) &
+            (df['height'] == best_config['height']) &
+            (df['rotation'] == best_config['rotation'])
+        ].copy()
+        
+        same_sites['distance'] = same_sites['site_position'].apply(
+            lambda pos: np.linalg.norm(np.array(pos[:2]) - best_position)
+        )
+        
+        # Require minimum distance that crosses an intermediate site
+        # For fcc(111): a_nn = 2.77 Å (lattice constant)
+        min_crossing_distance = 2.5  # Å - ensures we cross a saddle
+        
+        far_sites = same_sites[same_sites['distance'] > min_crossing_distance]
+        
+        if len(far_sites) == 0:
+            print(f"ERROR: No {target_site_type} sites beyond {min_crossing_distance} Å")
+            return None, None
+        
+        # Pick nearest site beyond minimum distance
+        selected = far_sites.nsmallest(1, 'distance').iloc[0]
+        
+        print(f"\n✓ Selected: {target_site_type} → {target_site_type}")
+        print(f"  Distance: {selected['distance']:.2f} Å (crosses intermediate site)")
+        
+        endpoint1 = best_config.to_dict() if hasattr(best_config, 'to_dict') else dict(best_config)
+        endpoint2 = selected.to_dict()
+        
+        return endpoint1, endpoint2
+
+
+def select_neb_endpoints_rotation_v2(site_best, screening_results):
+    """
+    Select rotation NEB endpoints accounting for molecular symmetry.
+    
+    For symmetric molecules:
+    - NH3 (C3v): Use 60° rotation (not 120°!)
+    - CH3 (C3v): Use 60° rotation  
+    - CO (C∞v): Rotation is meaningless (linear molecule)
+    - H2O (C2v): Use 90° rotation
+    """
+    best_config = site_best.iloc[0]
+    target_site_type = best_config['site_type']
+    target_height = best_config['height']
+    reference_position = np.array(best_config['site_position'][:2])
+    
+    df = pd.DataFrame(screening_results)
+    
+    # Find all rotations at the SAME position
+    candidates = df[
+        (df['site_type'] == target_site_type) &
+        (df['height'] == target_height) &
+        (df['converged'] == True)
+    ].copy()
+    
+    candidates['distance'] = candidates['site_position'].apply(
+        lambda pos: np.linalg.norm(np.array(pos[:2]) - reference_position)
+    )
+    
+    same_position = candidates[candidates['distance'] < 0.1].copy()
+    
+    if len(same_position) < 2:
+        print(f"ERROR: Only {len(same_position)} rotation(s) at reference position")
+        return None, None
+    
+    # Get rotation angles and their energies
+    rotation_data = []
+    for _, row in same_position.iterrows():
+        rotation_data.append({
+            'rotation': row['rotation'],
+            'energy': row['total_energy'],
+            'config': row
+        })
+    
+    rotation_data.sort(key=lambda x: x['rotation'])
+    rotations = [r['rotation'] for r in rotation_data]
+    energies = [r['energy'] for r in rotation_data]
+    
+    print(f"Available rotations: {rotations}")
+    print(f"Energies (meV rel to min): {[(e - min(energies))*1000 for e in energies]}")
+    
+    # Check for symmetry (energies repeat)
+    energy_range = (max(energies) - min(energies)) * 1000  # meV
+    
+    if energy_range < 1.0:
+        print(f"\n⚠️  WARNING: Energy range only {energy_range:.2f} meV")
+        print("    Molecule may have high rotational symmetry or be nearly spherical")
+        print("    Rotation barrier may be negligible")
+    
+    # Find the pair with maximum energy difference
+    # This captures the actual barrier
+    best_pair = None
+    max_dE = 0
+    
+    for i, r1 in enumerate(rotation_data):
+        for r2 in rotation_data[i+1:]:
+            dE = abs(r2['energy'] - r1['energy']) * 1000
+            angle_diff = abs(r2['rotation'] - r1['rotation'])
+            
+            # Prefer smaller angle differences (direct path to barrier)
+            # but require meaningful energy difference
+            if dE > max_dE:
+                max_dE = dE
+                best_pair = (r1, r2)
+    
+    if best_pair is None or max_dE < 0.1:
+        # Fall back to fixed angle difference
+        print("\n  Using fixed 60° rotation (assuming C3v symmetry)")
+        rot_ref = rotation_data[0]['rotation']
+        target_rot = (rot_ref + 60) % 360
+        
+        # Find closest available rotation
+        closest = min(rotation_data, key=lambda x: min(abs(x['rotation'] - target_rot), 
+                                                        360 - abs(x['rotation'] - target_rot)))
+        best_pair = (rotation_data[0], closest)
+    
+    r1, r2 = best_pair
+    actual_diff = abs(r2['rotation'] - r1['rotation'])
+    dE = abs(r2['energy'] - r1['energy']) * 1000
+    
+    print(f"\n✓ Selected: {r1['rotation']:.0f}° → {r2['rotation']:.0f}° (Δ = {actual_diff:.0f}°)")
+    print(f"  Energy difference: {dE:.2f} meV")
+    
+    if dE < 1:
+        print("  ⚠️  Very small barrier — check molecular symmetry")
+    
+    ep1 = r1['config'].to_dict() if hasattr(r1['config'], 'to_dict') else dict(r1['config'])
+    ep2 = r2['config'].to_dict() if hasattr(r2['config'], 'to_dict') else dict(r2['config'])
+    
+    return ep1, ep2

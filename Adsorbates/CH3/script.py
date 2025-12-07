@@ -7,15 +7,16 @@ opt_mol = opt_molecule(mol)
 slab = opt_slab()
 
 ads = opt_molecule(init_molecule('CH3'))
-screening_results = recover_and_resume_screening(slab, ads, center_xy='site', use_all_sites=True, workdir='/projects/westgroup/lekia.p/NEB/Adsorbates/CH3/Screening_Data')
+screening_results = site_screening(slab, ads, center_xy='site', use_all_sites=True, workdir='/projects/westgroup/lekia.p/NEB/Adsorbates/CH3/Screening_Data', resume=True)
+# screening_results = recover_and_resume_screening(slab, ads, center_xy='site', use_all_sites=True, workdir='/projects/westgroup/lekia.p/NEB/Adsorbates/CH3/Screening_Data')
 
 # Validate all screening files
-# validation = validate_screening_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CH3/Screening_Data')
+validation = validate_screening_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CH3/Screening_Data')
 
-# clean_incomplete_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CH3/Screening_Data', dry_run=True)
+clean_incomplete_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CH3/Screening_Data', dry_run=True)
 
 # Recover the missing JSON and summary files from your valid pickle file
-# recover_screening_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CH3/Screening_Data')
+recover_screening_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CH3/Screening_Data')
 
 screening_results = load_screening_results('/projects/westgroup/lekia.p/NEB/Adsorbates/CH3/Screening_Data/screening_results.pkl')
 

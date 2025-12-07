@@ -6,4 +6,4 @@
 
 conda deactivate
 conda activate pynta_fairchem
-python /projects/westgroup/lekia.p/NEB/Adsorbates/NH3/script.py
+python /projects/westgroup/lekia.p/NEB/Adsorbates/NH3/script2.py

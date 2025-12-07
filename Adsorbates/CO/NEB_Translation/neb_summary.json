@@ -1,10 +1,10 @@
 {
   "barrier_type": "translation",
-  "forward_barrier_fit": 32.20075469933313,
-  "delta_E": 0.00019073486328125,
-  "transition_state_energy": -170.6790575376982,
+  "forward_barrier_fit": 0.0,
+  "delta_E": -5.7220458984375e-06,
+  "transition_state_energy": -202.87981223703136,
   "trajectory": "/projects/westgroup/lekia.p/NEB/Adsorbates/CO/NEB_Translation/neb_translation.traj",
   "saddle_file": "/projects/westgroup/lekia.p/NEB/Adsorbates/CO/NEB_Translation/saddle_translation.traj",
-  "saddle_index": 10,
+  "saddle_index": 0,
   "n_images": 12
 }

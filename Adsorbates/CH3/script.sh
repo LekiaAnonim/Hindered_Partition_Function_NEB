@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=CH3_calc
 #SBATCH --partition=west
-#SBATCH --cpus-per-task=2
+#SBATCH --cpus-per-task=8
 
 
 conda deactivate
