@@ -1,6 +1,7 @@
 import sys
 sys.path.insert(0, '/projects/westgroup/lekia.p/NEB/Adsorbates')
-from model.neb import *
+from Hindered_Partition_Function_NEB.Adsorbates.NH3.neb import *
+from model.neb2 import *
 a = 4.012
 # mol = init_molecule('NH3')
 # opt_mol = opt_molecule(mol)
@@ -23,7 +24,7 @@ df_sorted, site_best = best_site_results(screening_results)
 
 d_nn = a / np.sqrt(2)  # Surface nearest-neighbor distance ≈ 2.81 Å
 
-endpoint1_trans, endpoint2_trans = select_neb_endpoints_translation(
+endpoint1_trans, endpoint2_trans = select_neb_endpoints_translation_v2(
         site_best, screening_results,
     )
 
@@ -36,8 +37,8 @@ images_trans, result_trans = prepare_neb_calculation(
 
 print(result_trans)
 
-endpoint1_rot, endpoint2_rot = select_neb_endpoints_rotation(
-        site_best, screening_results, rotation_angle_diff=120
+endpoint1_rot, endpoint2_rot = select_neb_endpoints_rotation_v2(
+        site_best, screening_results, rotation_angle_diff=60
     )
 
 images_rot, result_rot = prepare_neb_calculation(
