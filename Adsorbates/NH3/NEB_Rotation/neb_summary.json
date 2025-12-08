@@ -1,0 +1,29 @@
+{
+  "barrier_type": "rotation",
+  "forward_barrier_eV": 0.0010013580322265625,
+  "forward_barrier_meV": 1.0013580322265625,
+  "delta_E_eV": 0.0010013580322265625,
+  "transition_state_energy": -206.99304080924156,
+  "initial_energy": -206.9940421672738,
+  "final_energy": -206.99304080924156,
+  "trajectory": "/Users/lekiaprosper/Documents/CoMoChEng/ECC/Hindered_Partition_Function_NEB/Adsorbates/NH3/NEB_Rotation/neb_rotation.traj",
+  "saddle_file": "/Users/lekiaprosper/Documents/CoMoChEng/ECC/Hindered_Partition_Function_NEB/Adsorbates/NH3/NEB_Rotation/saddle_rotation.traj",
+  "saddle_index": 11,
+  "n_images": 12,
+  "converged": false,
+  "energies_eV": [
+    -206.9940421672738,
+    -207.01114917716149,
+    -207.0109527202523,
+    -207.01062274893883,
+    -207.01033283194664,
+    -207.01015354117516,
+    -207.01013446768883,
+    -207.0102660747445,
+    -207.01051975211266,
+    -207.01080013236168,
+    -207.01099658927086,
+    -206.99304080924156
+  ],
+  "plot_file": null
+}
