@@ -1,0 +1,36 @@
+Screening Results Summary
+======================================================================
+Timestamp: 
+Recovered: 2025-12-08 08:29:41
+Total configurations: 2592
+Converged: 2592/2592
+Site types: bridge, fcc, hcp, ontop
+
+Energy Statistics (converged only):
+  Min: -5.451615 eV
+  Max: -0.308499 eV
+  Mean: -4.465051 eV
+  Std: 1.867229 eV
+  Range: 5.143116 eV
+
+Per-Site Statistics:
+  bridge:
+    Count: 1296
+    Min: -5.451615 eV
+    Max: -5.391150 eV
+    Mean: -5.407715 eV
+  fcc:
+    Count: 432
+    Min: -5.345274 eV
+    Max: -5.344441 eV
+    Mean: -5.344948 eV
+  hcp:
+    Count: 432
+    Min: -4.913847 eV
+    Max: -4.913319 eV
+    Mean: -4.913608 eV
+  ontop:
+    Count: 432
+    Min: -0.308791 eV
+    Max: -0.308499 eV
+    Mean: -0.308602 eV

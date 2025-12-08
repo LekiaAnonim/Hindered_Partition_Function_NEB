@@ -10,7 +10,7 @@ import numpy as np
 sys.path.insert(0, '/projects/westgroup/lekia.p/NEB/Adsorbates')
 
 # Import from original neb.py (utilities we still need)
-from moels.neb import (
+from model.neb import (
     validate_screening_files,
     clean_incomplete_files,
     recover_screening_files,
@@ -19,7 +19,7 @@ from moels.neb import (
 )
 
 # Import from corrected neb3.py
-from models.neb3 import (
+from model.neb3 import (
     select_all_neb_endpoints,
     run_neb_calculation,
     diagnose_screening_results,

@@ -12,10 +12,10 @@ screening_results = site_screening(slab, ads, center_xy='site', use_all_sites=Tr
 # Validate all screening files
 validation = validate_screening_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CH2/Screening_Data')
 
-clean_incomplete_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CH2/Screening_Data', dry_run=True)
+clean_incomplete_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CH/Screening_Data', dry_run=True)
 
 # Recover the missing JSON and summary files from your valid pickle file
-recover_screening_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CH2/Screening_Data')
+recover_screening_files('/projects/westgroup/lekia.p/NEB/Adsorbates/CH/Screening_Data')
 
 screening_results = load_screening_results('/projects/westgroup/lekia.p/NEB/Adsorbates/CH2/Screening_Data/screening_results.pkl')
 

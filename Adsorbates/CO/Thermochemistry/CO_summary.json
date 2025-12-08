@@ -1,0 +1,25 @@
+{
+  "adsorbate": "CO",
+  "mass_amu": 28.009999999999998,
+  "moment_of_inertia_amu_A2": 5.768513709657521e-30,
+  "W_x_eV": 0.0,
+  "W_r_eV": 0.0,
+  "n_minima": 1,
+  "symmetry_number": 1,
+  "rotor_asymmetric": false,
+  "is_free_rotor": true,
+  "q_trans_300K": 54.0,
+  "q_rot_300K": 1.4971749603407985e-14,
+  "site_type": "fcc",
+  "adsorption_energy_eV": -1.4711225032806503,
+  "vibrational_energies_eV": [
+    0.017891996192283453,
+    0.017892324288606293,
+    0.03586146721748786,
+    0.0358619117644685,
+    0.03872845945175906,
+    0.21174267029131186
+  ],
+  "n_imaginary_frequencies": 0,
+  "num_sites": 54
+}

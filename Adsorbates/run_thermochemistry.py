@@ -146,7 +146,7 @@ def process_adsorbate(ads_name, ads_dir, T=300):
     if os.path.exists(trans_summary_path):
         with open(trans_summary_path, 'r') as f:
             neb_trans = json.load(f)
-        W_x = neb_trans.get('forward_barrier_fit', 0.0)
+        W_x = neb_trans.get('forward_barrier_eV', 0.0)
         print(f"Translation barrier W_x: {W_x*1000:.3f} meV")
     else:
         print("WARNING: No translation NEB found, using W_x = 0")
@@ -154,7 +154,7 @@ def process_adsorbate(ads_name, ads_dir, T=300):
     if os.path.exists(rot_summary_path) and not is_free_rotor:
         with open(rot_summary_path, 'r') as f:
             neb_rot = json.load(f)
-        W_r = neb_rot.get('forward_barrier_fit', 0.0)
+        W_r = neb_rot.get('forward_barrier_eV', 0.0)
         print(f"Rotation barrier W_r: {W_r*1000:.3f} meV")
     else:
         if is_free_rotor:

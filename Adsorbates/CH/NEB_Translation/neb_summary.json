@@ -1,0 +1,29 @@
+{
+  "barrier_type": "translation",
+  "forward_barrier_eV": 0.4548651227297782,
+  "forward_barrier_meV": 454.8651227297782,
+  "delta_E_eV": 3.62396240234375e-05,
+  "transition_state_energy": -197.59138594260313,
+  "initial_energy": -198.0462510653329,
+  "final_energy": -198.04621673305752,
+  "trajectory": "/projects/westgroup/lekia.p/NEB/Adsorbates/CH/NEB_Translation/neb_translation.traj",
+  "saddle_file": "/projects/westgroup/lekia.p/NEB/Adsorbates/CH/NEB_Translation/saddle_translation.traj",
+  "saddle_index": 3,
+  "n_images": 12,
+  "converged": false,
+  "energies_eV": [
+    -198.0462510653329,
+    -198.06630111416104,
+    -198.0958516665292,
+    -197.80615974148037,
+    -197.84887672146084,
+    -197.96056724270107,
+    -198.01747489650967,
+    -197.9492394991708,
+    -197.806161648829,
+    -198.11779380520107,
+    -198.11905837734463,
+    -198.0462148257089
+  ],
+  "plot_file": null
+}
