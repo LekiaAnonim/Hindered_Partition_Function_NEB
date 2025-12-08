@@ -1,10 +1,29 @@
 {
   "barrier_type": "translation",
-  "forward_barrier_fit": 0.0,
-  "delta_E": -5.7220458984375e-06,
-  "transition_state_energy": -202.87981223703136,
-  "trajectory": "/projects/westgroup/lekia.p/NEB/Adsorbates/CO/NEB_Translation/neb_translation.traj",
-  "saddle_file": "/projects/westgroup/lekia.p/NEB/Adsorbates/CO/NEB_Translation/saddle_translation.traj",
-  "saddle_index": 0,
-  "n_images": 12
+  "forward_barrier_eV": 0.056214332580566406,
+  "forward_barrier_meV": 56.214332580566406,
+  "delta_E_eV": 9.5367431640625e-07,
+  "transition_state_energy": -202.8565750086378,
+  "initial_energy": -202.91278934121837,
+  "final_energy": -202.91278838754405,
+  "trajectory": "/Users/lekiaprosper/Documents/CoMoChEng/ECC/Hindered_Partition_Function_NEB/Adsorbates/CO/NEB_Translation/neb_translation.traj",
+  "saddle_file": "/Users/lekiaprosper/Documents/CoMoChEng/ECC/Hindered_Partition_Function_NEB/Adsorbates/CO/NEB_Translation/saddle_translation.traj",
+  "saddle_index": 5,
+  "n_images": 12,
+  "converged": false,
+  "energies_eV": [
+    -202.91278934121837,
+    -202.8888769114088,
+    -202.90228557229747,
+    -202.90548324228038,
+    -202.8843660318922,
+    -202.8565750086378,
+    -202.88042068124523,
+    -202.8835115397047,
+    -202.90565967202892,
+    -202.9022979700636,
+    -202.88890456796398,
+    -202.91278838754405
+  ],
+  "plot_file": null
 }

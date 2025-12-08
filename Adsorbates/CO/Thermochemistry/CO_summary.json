@@ -1,13 +1,19 @@
 {
   "adsorbate": "CO",
   "mass_amu": 28.009999999999998,
+<<<<<<< HEAD
   "moment_of_inertia_amu_A2": 5.768513709657521e-30,
   "W_x_eV": 0.0,
+=======
+  "moment_of_inertia_amu_A2": 7.444790046210053e-30,
+  "W_x_eV": 0.056214332580566406,
+>>>>>>> 5aeb9057b0a4bd4b64cf579b4f067c66bbff8528
   "W_r_eV": 0.0,
   "n_minima": 1,
   "symmetry_number": 1,
   "rotor_asymmetric": false,
   "is_free_rotor": true,
+<<<<<<< HEAD
   "q_trans_300K": 54.0,
   "q_rot_300K": 1.4971749603407985e-14,
   "site_type": "fcc",
@@ -19,6 +25,19 @@
     0.0358619117644685,
     0.03872845945175906,
     0.21174267029131186
+=======
+  "q_trans_300K": 3107.84845867047,
+  "q_rot_300K": 1.7008531466009777e-14,
+  "site_type": "fcc",
+  "adsorption_energy_eV": -1.4711225032806503,
+  "vibrational_energies_eV": [
+    0.01789207517592134,
+    0.017892339446694203,
+    0.03586155005012486,
+    0.035861888914950645,
+    0.03872836807956113,
+    0.2117426943312404
+>>>>>>> 5aeb9057b0a4bd4b64cf579b4f067c66bbff8528
   ],
   "n_imaginary_frequencies": 0,
   "num_sites": 54

@@ -19,7 +19,7 @@ from fairchem.core.calculate.ase_calculator import FAIRChemCalculator
 from model.neb import *
 from model.hindered_partition_function import *
 
-BASE_DIR = "/projects/westgroup/lekia.p/NEB/Adsorbates"
+BASE_DIR = "/Users/lekiaprosper/Documents/CoMoChEng/ECC/Hindered_Partition_Function_NEB/Adsorbates"
 LATTICE_CONSTANT = 4.012  # Angstrom (Pt)
 SITE_DENSITY = 8.79e+19  # molecules/m^2
 
@@ -88,6 +88,14 @@ def get_energy_from_atoms(atoms):
         return atoms.info['energy']
     raise ValueError("No energy available")
 
+def remap_paths(screening_results, old_prefix, new_prefix):
+    """Remap file paths from cluster to local."""
+    for result in screening_results:
+        if 'structure_file' in result:
+            result['structure_file'] = result['structure_file'].replace(
+                old_prefix, new_prefix
+            )
+    return screening_results
 
 def process_adsorbate(ads_name, ads_dir, T=300):
     """
@@ -126,6 +134,11 @@ def process_adsorbate(ads_name, ads_dir, T=300):
     # Load screening results
     screening_pkl = os.path.join(ads_dir, "Screening_Data", "screening_results.pkl")
     screening_results = load_screening_results(screening_pkl)
+    screening_results = remap_paths(
+        screening_results,
+        f'/projects/westgroup/lekia.p/NEB/Adsorbates/{ads_name}',
+        f"{BASE_DIR}/{ads_name}"
+    )
     
     # Get number of sites
     screening_json = os.path.join(ads_dir, "Screening_Data", "screening_metadata_.json")
